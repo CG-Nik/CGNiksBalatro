@@ -1,0 +1,16 @@
+{
+	"id": "CGNik",
+	"name": "CGNik's Balatro",
+	"display_name": "CGNik's Balatro",
+	"author": ["CGNik"],
+	"description": "",
+	"prefix": "CGN",
+	"main_file": "main.lua",
+	"priority": 0,
+	"badge_colour": "8FFFAA",
+	"badge_text_colour": "FFFFFF",
+	"version": "0.9.9~pre-release",
+	"dependencies": [
+		"Steamodded (>=1.0.0~BETA-1620a)"
+	]
+}
