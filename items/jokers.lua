@@ -1947,16 +1947,12 @@ SMODS.Joker{
     rarity = 2,
     config = { extra = {
         add = 1
-    }
-    },
+    }},
     loc_vars = function(self,info_queue,card)
         info_queue[#info_queue+1] = G.P_CENTERS["m_CGN_Disease"]
         return {vars = {
             card.ability.extra.add
         }}
-    end,
-    calculate = function(self,card,context)
-        
     end,
     in_pool = function(self,args)
         for i, v in ipairs(G.playing_cards or {}) do
@@ -2115,13 +2111,6 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     rarity = 1,
-    config = { extra = {
-        
-    }
-    },
-    loc_vars = function(self,info_queue,card)
-        return {vars = {}}
-    end,
     calculate = function(self,card,context)
         if context.repetition and context.other_card:get_id() == 14 and
         (context.cardarea == G.play or (context.cardarea == G.hand and (next(context.card_effects[1]) or #context.card_effects > 1))) then
@@ -2155,17 +2144,7 @@ SMODS.Joker{
     blueprint_compat = false,
     eternal_compat = true,
     perishable_compat = true,
-    rarity = 2,
-    config = { extra = {
-        
-    }
-    },
-    loc_vars = function(self,info_queue,card)
-        return {vars = {}}
-    end,
-    calculate = function(self,card,context)
-        
-    end
+    rarity = 2
 }
 
 local smods_smeared_check_ref = SMODS.smeared_check
@@ -2442,17 +2421,10 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     rarity = 2,
-    config = { extra = {
-        
-    }
-    },
     loc_vars = function(self,info_queue,card)
         if not card.edition or (card.edition and not card.edition.foil) then
             info_queue[#info_queue + 1] = G.P_CENTERS["e_foil"]
         end
-        return {vars = {
-
-        }}
     end,
     calculate = function(self,card,context)
         if context.setting_blind and context.blind.key == "bl_small" then
@@ -2489,17 +2461,10 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     rarity = 2,
-    config = { extra = {
-        
-    }
-    },
     loc_vars = function(self,info_queue,card)
         if not card.edition or (card.edition and not card.edition.holo) then
             info_queue[#info_queue + 1] = G.P_CENTERS["e_holo"]
         end
-        return {vars = {
-            
-        }}
     end,
     calculate = function(self,card,context)
         if context.setting_blind and context.blind.key == "bl_small" then
@@ -2536,17 +2501,10 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     rarity = 3,
-    config = { extra = {
-        
-    }
-    },
     loc_vars = function(self,info_queue,card)
         if not card.edition or (card.edition and not card.edition.polychrome) then
             info_queue[#info_queue + 1] = G.P_CENTERS["e_polychrome"]
         end
-        return {vars = {
-            
-        }}
     end,
     calculate = function(self,card,context)
         if context.setting_blind and context.blind.key == "bl_small" then
@@ -2582,15 +2540,6 @@ SMODS.Joker{
     eternal_compat = true,
     perishable_compat = true,
     rarity = 1,
-    config = { extra = {
-        
-    }
-    },
-    loc_vars = function(self,info_queue,card)
-        return {vars = {
-            
-        }}
-    end,
     calculate = function(self,card,context)
         if context.open_booster then
             local jokerCount = math.min(1, G.jokers.config.card_limit - (#G.jokers.cards + G.GAME.joker_buffer))
@@ -2651,7 +2600,7 @@ SMODS.Joker{
                 cardToMessage = context.blueprint_card
             end
             SMODS.calculate_effect({message=localize("k_level_up_ex"),colour=G.C.SECONDARY_SET.Planet},cardToMessage)
-            SMODS.upgrade_poker_hands({hands = context.consumeable.ability.hand_type})
+            SMODS.upgrade_poker_hands({hands = context.consumeable.ability.hand_type, from = cardToMessage})
         end
     end
 }
@@ -2892,9 +2841,6 @@ SMODS.Joker{
     },
     loc_vars = function(self,info_queue,card)
         return {vars = {card.ability.extra.dollars}}
-    end,
-    calculate = function(self,card,context)
-        
     end,
     calc_dollar_bonus = function(self, card)
         if not SMODS.last_hand_oneshot then

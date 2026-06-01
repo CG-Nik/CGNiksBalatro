@@ -569,6 +569,15 @@ return {
 			},
 		},
 		["Other"] = {
+			["undiscovered_CGN_Lua"] = {
+				["name"] = "Not Discovered",
+				["text"] = {
+					"Purchase or use",
+                    "this card in an",
+                    "unseeded run to",
+                    "learn what it does"
+				}
+			},
 			["p_CGN_NeonArcanaPack"] = {
 				["name"] = "Neon Arcana Pack",
 				["text"] = {
@@ -593,6 +602,39 @@ return {
                     "add to your deck",
 				},
 			},
+			["p_CGN_NeonBuffoonPack"] = {
+				["name"] = "Neon Buffoon Pack",
+				["text"] = {
+					"Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2#{C:attention} Joker{} cards"
+				},
+			},
+			["p_CGN_NeonSpectralPack"] = {
+				["name"] = "Neon Spectral Pack",
+				["text"] = {
+					"Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2#{C:spectral} Spectral{} cards to",
+                    "add to your deck",
+				},
+			},
+		},
+		["CGN_Lua"] = {
+			["c_CGN_JokersLua"] = {
+				["name"] = "Jokers.lua",
+				["text"] = {
+					"Creates a random",
+					"{C:dark_edition}Negative{} {C:attention}Eternal{} {C:attention}Joker{} card"
+				}
+			}
 		}
-	}
+	},
+	["misc"] = {
+		["dictionary"] = {
+			["b_CGN_Lua_cards"] = "Lua Cards",
+			["k_CGN_Lua"] = "Lua"
+		},
+		["labels"] = {
+			["CGN_Lua"] = "Lua"
+		}
+	},
 }
