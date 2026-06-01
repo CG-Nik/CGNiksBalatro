@@ -8,6 +8,7 @@ SMODS.Atlas{
 SMODS.Back{
     key = "InfectedDeck",
     atlas = "InfectedDeck",
+    unlocked = false,
     pos = {x = 0, y = 0},
     apply = function(self,back)
         G.E_MANAGER:add_event(Event({
@@ -21,6 +22,20 @@ SMODS.Back{
                 return true
             end
         }))
+    end,
+    check_for_unlock = function(self, args)
+        if args.type == "hand_contents" then
+            local tally = 0
+            for i = 1, #args.cards do
+                if SMODS.has_enhancement(args.cards[i], "m_CGN_Disease") then
+                    tally = tally + 1
+                    if tally == 5 then
+                        return true
+                    end
+                end
+            end
+        end
+        return false
     end
 }
 

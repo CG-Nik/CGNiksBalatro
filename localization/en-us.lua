@@ -427,17 +427,22 @@ return {
 			},
 		},
 		["Back"] = {
-			["b_CGN_OopsAllSixesDeck"] = {
-				["name"] = "Oops! All 6s Deck",
-				["text"] = {
-					"All {C:attention}5s{} and {C:attention}7s{} are instead {C:attention}6s{}",
-				},
-			},
 			["b_CGN_InfectedDeck"] = {
 				["name"] = "Infected Deck",
 				["text"] = {
 					"{C:attention}Aces{} and {C:attention}2s{}",
 					"start out as {C:attention}Disease Cards{}",
+				},
+				["unlock"] = {
+					"Play a {C:attention}hand{}",
+					"that contains {C:attention}5{}",
+					"{C:attention}Disease Cards{}"
+				}
+			},
+			["b_CGN_OopsAllSixesDeck"] = {
+				["name"] = "Oops! All 6s Deck",
+				["text"] = {
+					"All {C:attention}5s{} and {C:attention}7s{} are instead {C:attention}6s{}",
 				},
 			},
 			["b_CGN_InverseTealDeck"] = {
