@@ -7,7 +7,7 @@ SMODS.Atlas{
 
 SMODS.Booster {
     key = "NeonArcanaPack_1",
-    weight = 0.25,
+    weight = 0.125,
     kind = "Arcana",
     atlas = "NeonArcanaPack",
     cost = 8,
@@ -70,7 +70,7 @@ SMODS.Booster {
 
 SMODS.Booster {
     key = "NeonArcanaPack_2",
-    weight = 0.25,
+    weight = 0.125,
     kind = "Arcana",
     atlas = "NeonArcanaPack",
     cost = 8,
@@ -133,7 +133,7 @@ SMODS.Booster {
 
 SMODS.Booster {
     key = "NeonArcanaPack_3",
-    weight = 0.25,
+    weight = 0.125,
     kind = "Arcana",
     atlas = "NeonArcanaPack",
     cost = 8,
@@ -196,7 +196,7 @@ SMODS.Booster {
 
 SMODS.Booster {
     key = "NeonArcanaPack_4",
-    weight = 0.25,
+    weight = 0.125,
     kind = "Arcana",
     atlas = "NeonArcanaPack",
     cost = 8,
@@ -266,7 +266,7 @@ SMODS.Atlas{
 
 SMODS.Booster {
     key = "NeonCelestialPack_1",
-    weight = 0.25,
+    weight = 0.125,
     kind = "Celestial",
     atlas = "NeonCelestialPack",
     cost = 8,
@@ -348,7 +348,7 @@ SMODS.Booster {
 
 SMODS.Booster {
     key = "NeonCelestialPack_2",
-    weight = 0.25,
+    weight = 0.125,
     kind = "Celestial",
     atlas = "NeonCelestialPack",
     cost = 8,
@@ -430,7 +430,7 @@ SMODS.Booster {
 
 SMODS.Booster {
     key = "NeonCelestialPack_3",
-    weight = 0.25,
+    weight = 0.125,
     kind = "Celestial",
     atlas = "NeonCelestialPack",
     cost = 8,
@@ -512,7 +512,7 @@ SMODS.Booster {
 
 SMODS.Booster {
     key = "NeonCelestialPack_4",
-    weight = 0.25,
+    weight = 0.125,
     kind = "Celestial",
     atlas = "NeonCelestialPack",
     cost = 8,
