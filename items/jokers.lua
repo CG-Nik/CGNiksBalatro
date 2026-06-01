@@ -1601,11 +1601,11 @@ SMODS.Joker{
     attributes = {
         "chips"
     },
-    cost = 7,
+    cost = 4,
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
-    rarity = 2,
+    rarity = 1,
     config = { extra = {
         min = 0,
         max = 95
