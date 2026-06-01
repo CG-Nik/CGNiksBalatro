@@ -1124,9 +1124,7 @@ SMODS.Joker{
     end,
     load = function(self, card, card_table, other_card)
         local eval = function() return card.ability.extra.handsPlayed + 1 >= card.ability.extra.handsToUpgrade end
-        if eval() then
-            juice_card_until(card, eval, true)
-        end
+        juice_card_until(card, eval, true)
     end,
     calculate = function(self,card,context)
         if context.joker_main then
@@ -1240,9 +1238,7 @@ SMODS.Joker{
     end,
     load = function(self, card, card_table, other_card)
         local eval = function() return card.ability.extra.handsLeft == "Complete!" end
-        if eval() then
-            juice_card_until(card, eval, true)
-        end
+        juice_card_until(card, eval, true)
     end,
     calculate = function(self,card,context)
         if context.end_of_round and context.game_over == false and context.main_eval and context.beat_boss then
