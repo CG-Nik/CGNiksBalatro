@@ -585,6 +585,14 @@ return {
                     "be used immediately",
 				},
 			},
+			["p_CGN_NeonStandardPack"] = {
+				["name"] = "Neon Standard Pack",
+				["text"] = {
+					"Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2#{C:attention} Playing{} cards to",
+                    "add to your deck",
+				},
+			},
 		}
 	}
 }

@@ -591,3 +591,218 @@ SMODS.Booster {
         return _card
     end
 }
+
+SMODS.Atlas{
+    key = "NeonStandardPack",
+    path = "NeonStandardPack.png",
+    px = 71,
+    py = 95
+}
+
+SMODS.Booster {
+    key = "NeonStandardPack_1",
+    weight = 0.125,
+    kind = "Standard",
+    atlas = "NeonStandardPack",
+    cost = 8,
+    pos = { x = 0, y = 0 },
+    config = { extra = 3, choose = 3 },
+    group_key = "k_standard_pack",
+    loc_vars = function(self, info_queue, card)
+        local cfg = (card and card.ability) or self.config
+        return {
+            vars = {
+                math.min(cfg.choose + (G.GAME.modifiers.booster_choice_mod or 0),
+                    math.max(1, cfg.extra + (G.GAME.modifiers.booster_size_mod or 0))),
+                math.max(1, cfg.extra + (G.GAME.modifiers.booster_size_mod or 0)) },
+            key = self.key:sub(1, -3),
+        }
+    end,
+    ease_background_colour = function(self)
+        ease_background_colour_blind(G.STATES.STANDARD_PACK)
+    end,
+    particles = function(self)
+        G.booster_pack_sparkles = Particles(1, 1, 0, 0, {
+            timer = 0.015/3,
+            scale = 0.3/2,
+            initialize = true,
+            lifespan = 3*2,
+            speed = 0.2*1.25,
+            padding = -1,
+            attach = G.ROOM_ATTACH,
+            colours = { G.C.BLACK, G.C.RED },
+            fill = true
+        })
+        G.booster_pack_sparkles.fade_alpha = 1
+        G.booster_pack_sparkles:fade(1, 0)
+    end,
+    create_card = function(self, card, i)
+        local _edition = SMODS.poll_edition { key = "CGN_NeonStandardPack_Edition_" .. G.GAME.round_resets.ante, mod = 2, no_negative = true }
+        local _seal = SMODS.poll_seal({ mod = 10 })
+        return {
+            set = "Playing Card",
+            edition = _edition,
+            seal = _seal,
+            area = G.pack_cards,
+            skip_materialize = true,
+            soulable = true,
+            key_append = "CGN_NeonStandardPack"
+        }
+    end,
+}
+
+SMODS.Booster {
+    key = "NeonStandardPack_2",
+    weight = 0.125,
+    kind = "Standard",
+    atlas = "NeonStandardPack",
+    cost = 8,
+    pos = { x = 1, y = 0 },
+    config = { extra = 3, choose = 3 },
+    group_key = "k_standard_pack",
+    loc_vars = function(self, info_queue, card)
+        local cfg = (card and card.ability) or self.config
+        return {
+            vars = {
+                math.min(cfg.choose + (G.GAME.modifiers.booster_choice_mod or 0),
+                    math.max(1, cfg.extra + (G.GAME.modifiers.booster_size_mod or 0))),
+                math.max(1, cfg.extra + (G.GAME.modifiers.booster_size_mod or 0)) },
+            key = self.key:sub(1, -3),
+        }
+    end,
+    ease_background_colour = function(self)
+        ease_background_colour_blind(G.STATES.STANDARD_PACK)
+    end,
+    particles = function(self)
+        G.booster_pack_sparkles = Particles(1, 1, 0, 0, {
+            timer = 0.015/3,
+            scale = 0.3/2,
+            initialize = true,
+            lifespan = 3*2,
+            speed = 0.2*1.25,
+            padding = -1,
+            attach = G.ROOM_ATTACH,
+            colours = { G.C.BLACK, G.C.RED },
+            fill = true
+        })
+        G.booster_pack_sparkles.fade_alpha = 1
+        G.booster_pack_sparkles:fade(1, 0)
+    end,
+    create_card = function(self, card, i)
+        local _edition = SMODS.poll_edition { key = "CGN_NeonStandardPack_Edition_" .. G.GAME.round_resets.ante, mod = 2, no_negative = true }
+        local _seal = SMODS.poll_seal({ mod = 10 })
+        return {
+            set = "Playing Card",
+            edition = _edition,
+            seal = _seal,
+            area = G.pack_cards,
+            skip_materialize = true,
+            soulable = true,
+            key_append = "CGN_NeonStandardPack"
+        }
+    end,
+}
+
+SMODS.Booster {
+    key = "NeonStandardPack_3",
+    weight = 0.125,
+    kind = "Standard",
+    atlas = "NeonStandardPack",
+    cost = 8,
+    pos = { x = 2, y = 0 },
+    config = { extra = 3, choose = 3 },
+    group_key = "k_standard_pack",
+    loc_vars = function(self, info_queue, card)
+        local cfg = (card and card.ability) or self.config
+        return {
+            vars = {
+                math.min(cfg.choose + (G.GAME.modifiers.booster_choice_mod or 0),
+                    math.max(1, cfg.extra + (G.GAME.modifiers.booster_size_mod or 0))),
+                math.max(1, cfg.extra + (G.GAME.modifiers.booster_size_mod or 0)) },
+            key = self.key:sub(1, -3),
+        }
+    end,
+    ease_background_colour = function(self)
+        ease_background_colour_blind(G.STATES.STANDARD_PACK)
+    end,
+    particles = function(self)
+        G.booster_pack_sparkles = Particles(1, 1, 0, 0, {
+            timer = 0.015/3,
+            scale = 0.3/2,
+            initialize = true,
+            lifespan = 3*2,
+            speed = 0.2*1.25,
+            padding = -1,
+            attach = G.ROOM_ATTACH,
+            colours = { G.C.BLACK, G.C.RED },
+            fill = true
+        })
+        G.booster_pack_sparkles.fade_alpha = 1
+        G.booster_pack_sparkles:fade(1, 0)
+    end,
+    create_card = function(self, card, i)
+        local _edition = SMODS.poll_edition { key = "CGN_NeonStandardPack_Edition_" .. G.GAME.round_resets.ante, mod = 2, no_negative = true }
+        local _seal = SMODS.poll_seal({ mod = 10 })
+        return {
+            set = "Playing Card",
+            edition = _edition,
+            seal = _seal,
+            area = G.pack_cards,
+            skip_materialize = true,
+            soulable = true,
+            key_append = "CGN_NeonStandardPack"
+        }
+    end,
+}
+
+SMODS.Booster {
+    key = "NeonStandardPack_4",
+    weight = 0.125,
+    kind = "Standard",
+    atlas = "NeonStandardPack",
+    cost = 8,
+    pos = { x = 3, y = 0 },
+    config = { extra = 3, choose = 3 },
+    group_key = "k_standard_pack",
+    loc_vars = function(self, info_queue, card)
+        local cfg = (card and card.ability) or self.config
+        return {
+            vars = {
+                math.min(cfg.choose + (G.GAME.modifiers.booster_choice_mod or 0),
+                    math.max(1, cfg.extra + (G.GAME.modifiers.booster_size_mod or 0))),
+                math.max(1, cfg.extra + (G.GAME.modifiers.booster_size_mod or 0)) },
+            key = self.key:sub(1, -3),
+        }
+    end,
+    ease_background_colour = function(self)
+        ease_background_colour_blind(G.STATES.STANDARD_PACK)
+    end,
+    particles = function(self)
+        G.booster_pack_sparkles = Particles(1, 1, 0, 0, {
+            timer = 0.015/3,
+            scale = 0.3/2,
+            initialize = true,
+            lifespan = 3*2,
+            speed = 0.2*1.25,
+            padding = -1,
+            attach = G.ROOM_ATTACH,
+            colours = { G.C.BLACK, G.C.RED },
+            fill = true
+        })
+        G.booster_pack_sparkles.fade_alpha = 1
+        G.booster_pack_sparkles:fade(1, 0)
+    end,
+    create_card = function(self, card, i)
+        local _edition = SMODS.poll_edition { key = "CGN_NeonStandardPack_Edition_" .. G.GAME.round_resets.ante, mod = 2, no_negative = true }
+        local _seal = SMODS.poll_seal({ mod = 10 })
+        return {
+            set = "Playing Card",
+            edition = _edition,
+            seal = _seal,
+            area = G.pack_cards,
+            skip_materialize = true,
+            soulable = true,
+            key_append = "CGN_NeonStandardPack"
+        }
+    end,
+}
