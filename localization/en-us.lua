@@ -569,11 +569,19 @@ return {
 			},
 		},
 		["Other"] = {
-			["p_CGN_ArcanaNeon"] = {
+			["p_CGN_NeonArcanaPack"] = {
 				["name"] = "Neon Arcana Pack",
 				["text"] = {
 					"Choose {C:attention}#1#{} of up to",
                     "{C:attention}#2#{C:tarot} Tarot{} cards to",
+                    "be used immediately",
+				},
+			},
+			["p_CGN_NeonCelestialPack"] = {
+				["name"] = "Neon Celestial Pack",
+				["text"] = {
+					"Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2#{C:planet} Planet{} cards to",
                     "be used immediately",
 				},
 			},
