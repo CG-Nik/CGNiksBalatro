@@ -10,7 +10,7 @@ SMODS.ConsumableType{
 
 SMODS.Atlas{
     key = "JokersLua",
-    path = "LuaCardPlaceholder.png",
+    path = "JokersLua.png",
     px = 71,
     py = 95
 }
@@ -42,7 +42,7 @@ SMODS.Consumable{
 
 SMODS.Atlas{
     key = "PokerHandsLua",
-    path = "LuaCardPlaceholder.png",
+    path = "PokerHandsLua.png",
     px = 71,
     py = 95
 }
