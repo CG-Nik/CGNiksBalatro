@@ -9,6 +9,8 @@ CardSleeves.Sleeve {
     key = "InfectedSleeve",
     atlas = "InfectedSleeve",
     pos = {x = 0, y = 0},
+    unlocked = false,
+    unlock_condition = { deck = "b_CGN_InfectedDeck", stake = "stake_white" },
     loc_vars = function(self)
         local key, vars
         if self.get_current_deck_key() == "b_CGN_InfectedDeck" then
@@ -60,6 +62,8 @@ CardSleeves.Sleeve {
     key = "OopsAllSixesSleeve",
     atlas = "OopsAllSixesSleeve",
     pos = {x = 0, y = 0},
+    unlocked = false,
+    unlock_condition = { deck = "b_CGN_OopsAllSixesDeck", stake = "stake_white" },
     config = {
         extra = {
             numeratorMod = 3,
@@ -118,6 +122,8 @@ CardSleeves.Sleeve {
     key = "InverseTealSleeve",
     atlas = "InverseTealSleeve",
     pos = {x = 0, y = 0},
+    unlocked = false,
+    unlock_condition = { deck = "b_CGN_InverseTealDeck", stake = "stake_white" },
     config = {
         extra = {
             permaMult = 1
@@ -175,6 +181,8 @@ CardSleeves.Sleeve {
     key = "PirateSleeve",
     atlas = "PirateSleeve",
     pos = {x = 0, y = 0},
+    unlocked = false,
+    unlock_condition = { deck = "b_CGN_PirateDeck", stake = "stake_white" },
     config = {
         ante_scaling = 1.5,
         extra = {
@@ -229,6 +237,8 @@ CardSleeves.Sleeve {
     key = "TheseusSleeve",
     atlas = "TheseusSleeve",
     pos = {x = 0, y = 0},
+    unlocked = false,
+    unlock_condition = { deck = "b_CGN_TheseusDeck", stake = "stake_white" },
     config = {
         extra = {
             cardsAdded = 4,
