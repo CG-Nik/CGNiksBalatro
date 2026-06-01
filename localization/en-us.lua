@@ -637,6 +637,29 @@ return {
 					"{C:planet}Levels up{} a {C:attention}random{}",
 					"{C:attention}Poker Hand{} by {C:attention}#1#{} levels"
 				}
+			},
+			["c_CGN_EnhancementsLua"] = {
+				["name"] = "enhancements.lua",
+				["text"] = {
+					"Adds the same random {C:attention}Enhancement{}",
+					"to up to {C:attention}#1#{}",
+					"selected {C:attention}Playing Cards{}"
+				}
+			},
+			["c_CGN_EditionsLua"] = {
+				["name"] = "editions.lua",
+				["text"] = {
+					"Adds a random {C:attention}Edition{}",
+					"to {C:attention}#1#{} selected uneditioned {C:attention}Joker{}"
+				}
+			},
+			["c_CGN_SealsLua"] = {
+				["name"] = "seals.lua",
+				["text"] = {
+					"Adds the same random {C:attention}Seal{}",
+					"to up to {C:attention}#1#{}",
+					"selected {C:attention}Playing Cards{}"
+				}
 			}
 		}
 	},

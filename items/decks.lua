@@ -158,7 +158,7 @@ SMODS.Back{
             for i = 1,self.config.extra.cardsAdded do
                 local addCard = {set="Enhanced",area=G.deck,no_edition=true}
                 if G.GAME.selected_sleeve == "sleeve_CGN_TheseusSleeve" then
-                    addCard = {set="Enhanced",area=G.deck,edition=SMODS.poll_edition({no_negative=true,guaranteed=true}),seal=SMODS.poll_seal({guaranteed=true})}
+                    addCard = {set="Enhanced",area=G.deck,edition=SMODS.poll_edition({key="CGN_TheseusDeck",no_negative=true,guaranteed=true}),seal=SMODS.poll_seal({key="CGN_TheseusDeck",guaranteed=true})}
                 end
                 local newCard = SMODS.add_card(addCard)
                 table.insert(newCards,newCard)
