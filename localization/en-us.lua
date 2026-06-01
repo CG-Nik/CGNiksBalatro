@@ -569,7 +569,7 @@ return {
 			},
 		},
 		["Other"] = {
-			["undiscovered_CGN_Lua"] = {
+			["undiscovered_cgn_lua"] = {
 				["name"] = "Not Discovered",
 				["text"] = {
 					"Purchase or use",
@@ -620,21 +620,28 @@ return {
 		},
 		["CGN_Lua"] = {
 			["c_CGN_JokersLua"] = {
-				["name"] = "Jokers.lua",
+				["name"] = "jokers.lua",
 				["text"] = {
 					"Creates a random",
 					"{C:dark_edition}Negative{} {C:attention}Eternal{} {C:attention}Joker{} card"
+				}
+			},
+			["c_CGN_PokerHandsLua"] = {
+				["name"] = "pokerHands.lua",
+				["text"] = {
+					"{C:planet}Levels up{} a {C:attention}random{}",
+					"{C:attention}Poker Hand{} by {C:attention}#1#{} levels"
 				}
 			}
 		}
 	},
 	["misc"] = {
 		["dictionary"] = {
-			["b_CGN_Lua_cards"] = "Lua Cards",
-			["k_CGN_Lua"] = "Lua"
+			["b_cgn_lua_cards"] = "Lua Cards",
+			["k_cgn_lua"] = "Lua"
 		},
 		["labels"] = {
-			["CGN_Lua"] = "Lua"
+			["cgn_lua"] = "Lua"
 		}
 	},
 }

@@ -8,6 +8,7 @@ SMODS.Atlas{
 SMODS.Enhancement{
     key = "Disease",
     atlas = "Disease",
+    discovered = true,
     pos = {x = 0, y = 0},
     config = { bonus = 15,
         mult = 2,
@@ -17,9 +18,6 @@ SMODS.Enhancement{
         return {vars = {card.ability.bonus,
         card.ability.mult
     }}
-    end,
-    calculate = function(self,card,context)
-        
     end,
     generate_ui = function(self, info_queue, card, desc_nodes, specific_vars, full_UI_table)
         if specific_vars and specific_vars.nominal_chips and not self.replace_base_card then

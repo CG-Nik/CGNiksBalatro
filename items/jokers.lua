@@ -2807,6 +2807,9 @@ SMODS.Joker{
         end
     end,
     update = function(self,card,dt)
+        if not card.config.center.discovered then
+            return
+        end
         if G.SETTINGS.reduced_motion then
             card.children.center.current_animation.FPS = 1
         else
