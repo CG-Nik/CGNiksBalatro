@@ -1,9 +1,0 @@
-{
-    "Lua.workspace.library": [
-        "c:\\Users\\Nikolai\\.vscode\\extensions\\erthugames.advr-modding-tools-0.1.810\\lua-definitions\\library",
-        "c:\\Users\\Nikolai\\.vscode\\extensions\\erthugames.advr-modding-tools-0.1.950\\lua-definitions\\library",
-        "C:\\Users\\Nikolai\\AppData\\Roaming\\Balatro\\Mods\\smods-main",
-        "C:\\Users\\Nikolai\\AppData\\Roaming\\Balatro\\Mods\\lovely\\dump",
-        "c:\\Users\\Nikolai\\.vscode\\extensions\\erthugames.advr-modding-tools-1.101.0\\lua-definitions\\library"
-    ]
-}
