@@ -1989,7 +1989,7 @@ SMODS.Joker{
     perishable_compat = true,
     rarity = 1,
     config = { extra = {
-        chips = 50
+        chips = 40
     }
     },
     loc_vars = function(self,info_queue,card)
