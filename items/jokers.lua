@@ -1123,8 +1123,10 @@ SMODS.Joker{
         }}
     end,
     load = function(self, card, card_table, other_card)
-        local eval = function() return card.ability.extra.handsPlayed ~= 0 end
-        juice_card_until(card, eval, true)
+        local eval = function() return card.ability.extra.handsPlayed + 1 >= card.ability.extra.handsToUpgrade end
+        if eval() then
+            juice_card_until(card, eval, true)
+        end
     end,
     calculate = function(self,card,context)
         if context.joker_main then
@@ -1149,7 +1151,7 @@ SMODS.Joker{
             if card.ability.extra.handsPlayed + 1 >= card.ability.extra.handsToUpgrade then
                 G.E_MANAGER:add_event(Event({
                     func = function()
-                        local eval = function() return card.ability.extra.handsPlayed ~= 0 end
+                        local eval = function() return card.ability.extra.handsPlayed + 1 >= card.ability.extra.handsToUpgrade end
                         juice_card_until(card, eval, true)
                         return true
                     end
@@ -1238,7 +1240,9 @@ SMODS.Joker{
     end,
     load = function(self, card, card_table, other_card)
         local eval = function() return card.ability.extra.handsLeft == "Complete!" end
-        juice_card_until(card, eval, true)
+        if eval() then
+            juice_card_until(card, eval, true)
+        end
     end,
     calculate = function(self,card,context)
         if context.end_of_round and context.game_over == false and context.main_eval and context.beat_boss then
