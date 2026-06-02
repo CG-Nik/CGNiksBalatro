@@ -66,18 +66,15 @@ CardSleeves.Sleeve {
     unlock_condition = { deck = "b_CGN_OopsAllSixesDeck", stake = "stake_white" },
     config = {
         extra = {
-            numeratorMod = 3,
-            simplifiedMod = 0
+            probMod = 1.5
         }
     },
     loc_vars = function(self)
         local key, vars
         if self.get_current_deck_key() == "b_CGN_OopsAllSixesDeck" then
             key = self.key .. "_alt"
-            self.config.extra.simplifiedMod = self.config.extra.numeratorMod / 2
             vars = {
-                self.config.extra.numeratorMod,
-                self.config.extra.simplifiedMod
+                self.config.extra.probMod
             }
         else
             key = self.key
@@ -104,7 +101,7 @@ CardSleeves.Sleeve {
     calculate = function(self,sleeve,context)
         if context.mod_probability and self.get_current_deck_key() == "b_CGN_OopsAllSixesDeck" then
             return {
-                numerator = context.numerator * self.config.extra.numeratorMod,
+                numerator = context.numerator * self.config.extra.probMod * 2,
                 denominator = context.denominator * 2
             }
         end

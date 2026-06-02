@@ -25,11 +25,11 @@ SMODS.Back{
     end,
     check_for_unlock = function(self, args)
         if args.type == "hand_contents" then
-            local tally = 0
+            local diseaseCards = 0
             for i = 1, #args.cards do
                 if SMODS.has_enhancement(args.cards[i], "m_CGN_Disease") then
-                    tally = tally + 1
-                    if tally == 5 then
+                    diseaseCards = diseaseCards + 1
+                    if diseaseCards >= 5 then
                         return true
                     end
                 end
@@ -49,6 +49,7 @@ SMODS.Atlas{
 SMODS.Back{
     key = "OopsAllSixesDeck",
     atlas = "OopsAllSixesDeck",
+    unlocked = false,
     pos = {x = 0, y = 0},
     apply = function(self,back)
         G.E_MANAGER:add_event(Event({
@@ -62,6 +63,18 @@ SMODS.Back{
                 return true
             end
         }))
+    end,
+    check_for_unlock = function(self, args)
+        if args.type == "modify_deck" then
+            local sixes = 0
+            for i,v in ipairs(G.playing_cards or {}) do
+                if v:get_id() == 6 then sixes = sixes + 1 end
+                if sixes >= 16 then
+                    return true
+                end
+            end
+        end
+        return false
     end
 }
 
@@ -75,6 +88,7 @@ SMODS.Atlas{
 SMODS.Back{
     key = "InverseTealDeck",
     atlas = "InverseTealDeck",
+    unlocked = false,
     pos = {x = 0, y = 0},
     apply = function(self,back)
         G.E_MANAGER:add_event(Event({
@@ -87,6 +101,20 @@ SMODS.Back{
                 return true
             end
         }))
+    end,
+    check_for_unlock = function(self, args)
+        if args.type == "hand_contents" then
+            local bonusCards = 0
+            for i = 1, #args.cards do
+                if SMODS.has_enhancement(args.cards[i], "m_bonus") then
+                    bonusCards = bonusCards + 1
+                    if bonusCards >= 5 then
+                        return true
+                    end
+                end
+            end
+        end
+        return false
     end
 }
 
@@ -100,6 +128,7 @@ SMODS.Atlas{
 SMODS.Back{
     key = "PirateDeck",
     atlas = "PirateDeck",
+    unlocked = false,
     pos = {x = 0, y = 0},
     config = {
         ante_scaling = 1.5,
@@ -119,6 +148,9 @@ SMODS.Back{
                 dollars = self.config.extra.dollars
             }
         end
+    end,
+    check_for_unlock = function(self,args)
+        return args.type == "money" and G.GAME.dollars <= -20
     end
 }
 
@@ -132,6 +164,7 @@ SMODS.Atlas{
 SMODS.Back{
     key = "TheseusDeck",
     atlas = "TheseusDeck",
+    unlocked = false,
     pos = {x = 0, y = 0},
     config = {
         extra = {
@@ -172,5 +205,14 @@ SMODS.Back{
                 end
             }
         end
+    end,
+    check_for_unlock = function(self, args)
+        if args.type == "modify_deck" then
+            local table = G.playing_cards or {}
+            if #table >= 80 then
+                return true
+            end
+        end
+        return false
     end
 }

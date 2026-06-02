@@ -290,6 +290,9 @@ return {
 					"{C:inactive}(Max of {C:money}$#1#{C:inactive}){}",
 					"{C:inactive}(Currently {C:money}$#2#{C:inactive}){}"
 				},
+				["unlock"] = {
+                    "{E:1,s:1.3}?????{}",
+                },
 			},
 			["j_CGN_OldTV"] = {
 				["name"] = "Old TV",
@@ -444,6 +447,10 @@ return {
 				["text"] = {
 					"All {C:attention}5s{} and {C:attention}7s{} are instead {C:attention}6s{}",
 				},
+				["unlock"] = {
+					"Have at least {C:attention}16{} {C:attention}6s{}",
+					"in your {C:attention}full deck{} at once"
+				}
 			},
 			["b_CGN_InverseTealDeck"] = {
 				["name"] = "Inverse Teal Deck",
@@ -451,6 +458,11 @@ return {
 					"{C:attention}Iniital{} playing cards have extra {C:chips}chips{}",
 					"equal to double their {C:attention}rank{}"
 				},
+				["unlock"] = {
+					"Play a {C:attention}hand{}",
+					"that contains {C:attention}5{}",
+					"{C:attention}Bonus Cards{}"
+				}
 			},
 			["b_CGN_PirateDeck"] = {
 				["name"] = "Pirate Deck",
@@ -458,6 +470,9 @@ return {
 					"Earn {C:money}$#2#{} after defeating a {C:attention}Boss Blind{}",
 					"{C:red}X#1#{} base Blind size"
 				},
+				["unlock"] = {
+					"Have {C:money}$-20{} or less"
+				}
 			},
 			["b_CGN_TheseusDeck"] = {
 				["name"] = "Theseus Deck",
@@ -466,6 +481,10 @@ return {
 					"{C:attention}#2#{} random cards in your deck are destroyed and",
 					"{C:attention}#1#{} random enhanced cards are added to your deck{}"
 				},
+				["unlock"] = {
+					"Have {C:attention}80{} or more {C:attention}Playing Cards{}",
+					"in your {C:attention}full deck{} at once"
+				}
 			},
 		},
 		["Sleeve"] = {

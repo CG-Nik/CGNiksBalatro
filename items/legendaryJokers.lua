@@ -8,6 +8,7 @@ SMODS.Atlas{
 SMODS.Joker{
     key = "Sommers",
     atlas = "Sommers",
+    unlocked = false,
     pos = {x = 0, y = 0},
     soul_pos = {x = 1, y = 0},
     attributes = {
@@ -40,9 +41,6 @@ SMODS.Joker{
             card.ability.extra.cap,
             card.ability.extra.current
         }}
-    end,
-    calculate = function(self,card,context)
-        
     end,
     calc_dollar_bonus = function(self,card)
         local sellValuesCombined = 0
