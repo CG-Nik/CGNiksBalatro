@@ -679,6 +679,24 @@ return {
 					"to up to {C:attention}#1#{}",
 					"selected {C:attention}Playing Cards{}"
 				}
+			},
+			["c_CGN_SuitsLua"] = {
+				["name"] = "suits.lua",
+				["text"] = {
+					"Converts the {C:attention}suit{} of",
+					"up to {C:attention}#1#{} selected {C:attention}Playing Cards{}",
+					"into the {C:attention}suit{} of the",
+					"{C:attention}leftmost{} selected {C:attention}Playing Card{}"
+				}
+			},
+			["c_CGN_RanksLua"] = {
+				["name"] = "ranks.lua",
+				["text"] = {
+					"Converts the {C:attention}rank{} of",
+					"up to {C:attention}#1#{} selected {C:attention}Playing Cards{}",
+					"into the {C:attention}rank{} of the",
+					"{C:attention}leftmost{} selected {C:attention}Playing Card{}"
+				}
 			}
 		}
 	},

@@ -9,6 +9,20 @@ SMODS.ConsumableType{
 }
 
 SMODS.Atlas{
+    key = "UndiscoveredLuaCard",
+    path = "UndiscoveredLuaCard.png",
+    px = 71,
+    py = 95
+}
+
+SMODS.UndiscoveredSprite{
+    key = "CGN_Lua",
+    atlas = "UndiscoveredLuaCard",
+    pos = {x = 0, y = 0},
+    overlay_pos = {x = 1, y = 0}
+}
+
+SMODS.Atlas{
     key = "JokersLua",
     path = "JokersLua.png",
     px = 71,
@@ -260,6 +274,174 @@ SMODS.Consumable{
                 func = function()
                     G.hand.highlighted[i]:juice_up(0.3, 0.3)
                     G.hand.highlighted[i]:set_seal(seal, nil, true)
+                    return true
+                end
+            }))
+        end
+        G.E_MANAGER:add_event(Event({
+            trigger = "after",
+            delay = 0.2,
+            func = function()
+                G.hand:unhighlight_all()
+                return true
+            end
+        }))
+        delay(0.5)
+    end
+}
+
+SMODS.Atlas{
+    key = "SuitsLua",
+    path = "LuaCardPlaceholder.png",
+    px = 71,
+    py = 95
+}
+
+SMODS.Consumable{
+    key = "SuitsLua",
+    set = "CGN_Lua",
+    atlas = "SuitsLua",
+    pos = {x = 0, y = 0},
+    cost = 4,
+    config = {
+        max_highlighted = 4
+    },
+    loc_vars = function(self,info_queue,card)
+        return {vars = {card.ability.max_highlighted}}
+    end,
+    use = function(self, card, area, copier)
+        G.E_MANAGER:add_event(Event({
+            trigger = "after",
+            delay = 0.4,
+            func = function()
+                play_sound("timpani",2,1)
+                card:juice_up(0.3, 0.5)
+                return true
+            end
+        }))
+        for i = 1, #G.hand.highlighted do
+            local percent = 1.15 - (i - 0.999) / (#G.hand.highlighted - 0.998) * 0.3
+            G.E_MANAGER:add_event(Event({
+                trigger = "after",
+                delay = 0.15,
+                func = function()
+                    G.hand.highlighted[i]:flip()
+                    play_sound("card1", percent)
+                    G.hand.highlighted[i]:juice_up(0.3, 0.3)
+                    return true
+                end
+            }))
+        end
+        delay(0.2)
+        local leftmost = G.hand.highlighted[1]
+        for i = 1, #G.hand.highlighted do
+            if G.hand.highlighted[i].T.x < leftmost.T.x then
+                leftmost = G.hand.highlighted[i]
+            end
+        end
+        for i = 1, #G.hand.highlighted do
+            G.E_MANAGER:add_event(Event({
+                trigger = "after",
+                delay = 0.1,
+                func = function()
+                    assert(SMODS.change_base(G.hand.highlighted[i], leftmost.base.suit))
+                    return true
+                end
+            }))
+        end
+        for i = 1, #G.hand.highlighted do
+            local percent = 0.85 + (i - 0.999) / (#G.hand.highlighted - 0.998) * 0.3
+            G.E_MANAGER:add_event(Event({
+                trigger = "after",
+                delay = 0.15,
+                func = function()
+                    G.hand.highlighted[i]:flip()
+                    play_sound("timpani", percent, 0.6)
+                    G.hand.highlighted[i]:juice_up(0.3, 0.3)
+                    return true
+                end
+            }))
+        end
+        G.E_MANAGER:add_event(Event({
+            trigger = "after",
+            delay = 0.2,
+            func = function()
+                G.hand:unhighlight_all()
+                return true
+            end
+        }))
+        delay(0.5)
+    end
+}
+
+SMODS.Atlas{
+    key = "RanksLua",
+    path = "LuaCardPlaceholder.png",
+    px = 71,
+    py = 95
+}
+
+SMODS.Consumable{
+    key = "RanksLua",
+    set = "CGN_Lua",
+    atlas = "RanksLua",
+    pos = {x = 0, y = 0},
+    cost = 4,
+    config = {
+        max_highlighted = 3
+    },
+    loc_vars = function(self,info_queue,card)
+        return {vars = {card.ability.max_highlighted}}
+    end,
+    use = function(self, card, area, copier)
+        G.E_MANAGER:add_event(Event({
+            trigger = "after",
+            delay = 0.4,
+            func = function()
+                play_sound("timpani",2,1)
+                card:juice_up(0.3, 0.5)
+                return true
+            end
+        }))
+        for i = 1, #G.hand.highlighted do
+            local percent = 1.15 - (i - 0.999) / (#G.hand.highlighted - 0.998) * 0.3
+            G.E_MANAGER:add_event(Event({
+                trigger = "after",
+                delay = 0.15,
+                func = function()
+                    G.hand.highlighted[i]:flip()
+                    play_sound("card1", percent)
+                    G.hand.highlighted[i]:juice_up(0.3, 0.3)
+                    return true
+                end
+            }))
+        end
+        delay(0.2)
+        local leftmost = G.hand.highlighted[1]
+        for i = 1, #G.hand.highlighted do
+            if G.hand.highlighted[i].T.x < leftmost.T.x then
+                leftmost = G.hand.highlighted[i]
+            end
+        end
+        for i = 1, #G.hand.highlighted do
+            G.E_MANAGER:add_event(Event({
+                trigger = "after",
+                delay = 0.1,
+                func = function()
+                    assert(SMODS.change_base(G.hand.highlighted[i], nil, leftmost.base.value))
+                    return true
+                end
+            }))
+        end
+        for i = 1, #G.hand.highlighted do
+            local percent = 0.85 + (i - 0.999) / (#G.hand.highlighted - 0.998) * 0.3
+            G.E_MANAGER:add_event(Event({
+                trigger = "after",
+                delay = 0.15,
+                func = function()
+                    G.hand.highlighted[i]:flip()
+                    play_sound("timpani", percent, 0.6)
+                    G.hand.highlighted[i]:juice_up(0.3, 0.3)
                     return true
                 end
             }))
