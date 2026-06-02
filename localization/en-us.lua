@@ -697,6 +697,26 @@ return {
 					"into the {C:attention}rank{} of the",
 					"{C:attention}leftmost{} selected {C:attention}Playing Card{}"
 				}
+			},
+			["c_CGN_ShopLua"] = {
+				["name"] = "shop.lua",
+				["text"] = {
+					"Makes {C:attention}#1#{} selected",
+					"shop item or Booster Pack {C:attention}free{}"
+				}
+			},
+			["c_CGN_BlindsLua"] = {
+				["name"] = "blinds.lua",
+				["text"] = {
+					"{C:red}Disables{} the current {C:blind}Boss Blind{}"
+				}
+			},
+			["c_CGN_TagsLua"] = {
+				["name"] = "tags.lua",
+				["text"] = {
+					"Creates a free",
+					"{C:attention}#1#{}, {C:attention}#2#{}, or {C:attention}#3#{}"
+				}
 			}
 		}
 	},

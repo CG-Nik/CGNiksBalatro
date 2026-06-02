@@ -40,14 +40,14 @@ SMODS.Consumable{
             trigger = "after",
             delay = 0.4,
             func = function()
-                play_sound("timpani")
+                play_sound("timpani",2,1)
                 local newCard = SMODS.add_card({ set = "Joker", edition = "e_negative", key_append = "CGN_JokersLua" })
                 newCard:add_sticker("eternal", true)
                 card:juice_up(0.3, 0.5)
                 return true
             end
         }))
-        delay(0.6)
+        delay(0.5)
     end,
     can_use = function(self, card)
         return G.jokers and #G.jokers.cards <= G.jokers.config.card_limit
@@ -76,6 +76,15 @@ SMODS.Consumable{
         return {vars = {card.ability.extra.levels}}
     end,
     use = function(self, card, area, copier)
+        G.E_MANAGER:add_event(Event({
+            trigger = "after",
+            delay = 0.4,
+            func = function()
+                play_sound("timpani",2,1)
+                card:juice_up(0.3, 0.5)
+                return true
+            end
+        }))
         local pokerHands = {}
         for k, v in pairs(G.GAME.hands) do
             if v.visible then
@@ -85,6 +94,7 @@ SMODS.Consumable{
         local randomPokerHand = pseudorandom_element(pokerHands,"CGN_PokerHandsLua")
 
         SMODS.upgrade_poker_hands({hands = randomPokerHand, level_up = card.ability.extra.levels, from = card})
+        delay(0.5)
     end,
     can_use = function(self, card)
         return true
@@ -232,7 +242,7 @@ SMODS.Consumable{
                 allUneditioned = false
             end
         end
-        return (selectedJokers and allUneditioned)
+        return (G.jokers and selectedJokers and allUneditioned)
     end
 }
 
@@ -455,5 +465,169 @@ SMODS.Consumable{
             end
         }))
         delay(0.5)
+    end
+}
+
+SMODS.Atlas{
+    key = "ShopLua",
+    path = "LuaCardPlaceholder.png",
+    px = 71,
+    py = 95
+}
+
+SMODS.Consumable{
+    key = "ShopLua",
+    set = "CGN_Lua",
+    atlas = "ShopLua",
+    pos = {x = 0, y = 0},
+    cost = 4,
+    config = {
+        extra = {
+            max_highlighted = 1
+        }
+    },
+    loc_vars = function(self,info_queue,card)
+        return {vars = {card.ability.extra.max_highlighted}}
+    end,
+    use = function(self, card, area, copier)
+        G.E_MANAGER:add_event(Event({
+            trigger = "after",
+            delay = 0.4,
+            func = function()
+                play_sound("timpani",2,1)
+                card:juice_up(0.3, 0.5)
+                return true
+            end
+        }))
+        for i = 1, #G.shop_jokers.highlighted do
+            G.E_MANAGER:add_event(Event({
+                trigger = "after",
+                delay = 0.1,
+                func = function()
+                    G.shop_jokers.highlighted[i].ability.couponed = true
+                    G.shop_jokers.highlighted[i]:set_cost()
+                    return true
+                end
+            }))
+        end
+        for i = 1, #G.shop_booster.highlighted do
+            G.E_MANAGER:add_event(Event({
+                trigger = "after",
+                delay = 0.1,
+                func = function()
+                    G.shop_booster.highlighted[i].ability.couponed = true
+                    G.shop_booster.highlighted[i]:set_cost()
+                    return true
+                end
+            }))
+        end
+        G.E_MANAGER:add_event(Event({
+            trigger = "after",
+            delay = 0.2,
+            func = function()
+                G.shop_jokers:unhighlight_all()
+                G.shop_booster:unhighlight_all()
+                return true
+            end
+        }))
+        delay(0.5)
+    end,
+    can_use = function(self, card)
+        local areasExist = G.shop_jokers and G.shop_booster
+        if not areasExist then
+            return false
+        end
+        local selection = (#G.shop_jokers.highlighted + #G.shop_booster.highlighted) <= card.ability.extra.max_highlighted and (#G.shop_jokers.highlighted + #G.shop_booster.highlighted) > 0
+        if not selection then
+            return false
+        end
+        local allCardsUncouponed = true
+        for i,v in ipairs(G.shop_jokers.highlighted) do
+            if v.ability.couponed then
+                allCardsUncouponed = false
+                break
+            end
+        end
+        for i,v in ipairs(G.shop_booster.highlighted) do
+            if v.ability.couponed then
+                allCardsUncouponed = false
+                break
+            end
+        end
+        return (areasExist and selection and allCardsUncouponed)
+    end
+}
+
+SMODS.Atlas{
+    key = "BlindsLua",
+    path = "LuaCardPlaceholder.png",
+    px = 71,
+    py = 95
+}
+
+SMODS.Consumable{
+    key = "BlindsLua",
+    set = "CGN_Lua",
+    atlas = "BlindsLua",
+    pos = {x = 0, y = 0},
+    cost = 4,
+    use = function(self, card, area, copier)
+        G.E_MANAGER:add_event(Event({
+            trigger = "after",
+            delay = 0.4,
+            func = function()
+                play_sound("timpani",2,1)
+                SMODS.calculate_effect({message=localize("ph_boss_disabled"),colour=G.C.SECONDARY_SET.CGN_Lua,func = function() G.GAME.blind:disable() end},card)
+                return true
+            end
+        }))
+        delay(0.5)
+    end,
+    can_use = function(self, card)
+        return G.GAME.blind and ((not G.GAME.blind.disabled) and (G.GAME.blind.boss))
+    end
+}
+
+SMODS.Atlas{
+    key = "TagsLua",
+    path = "LuaCardPlaceholder.png",
+    px = 71,
+    py = 95
+}
+
+SMODS.Consumable{
+    key = "TagsLua",
+    set = "CGN_Lua",
+    atlas = "TagsLua",
+    pos = {x = 0, y = 0},
+    cost = 4,
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue+1] = { key = "tag_charm", set = "Tag" }
+        info_queue[#info_queue+1] = { key = "tag_meteor", set = "Tag" }
+        info_queue[#info_queue+1] = { key = "tag_ethereal", set = "Tag" }
+        return {vars = {
+            localize({ type = "name_text", set = "Tag", key = "tag_charm" }),
+            localize({ type = "name_text", set = "Tag", key = "tag_meteor" }),
+            localize({ type = "name_text", set = "Tag", key = "tag_ethereal" })
+        }}
+    end,
+    use = function(self, card, area, copier)
+        local tagList = {"tag_charm","tag_meteor","tag_ethereal"}
+        local tagKey = pseudorandom_element(tagList, pseudoseed("CGN_TagsLua"))
+        G.E_MANAGER:add_event(Event({
+            trigger = "after",
+            delay = 0.4,
+            func = function()
+                play_sound("timpani",2,1)
+                add_tag({ key = tagKey })
+                play_sound("generic1", 0.9 + math.random() * 0.1, 0.8)
+                play_sound("holo1", 1.2 + math.random() * 0.1, 0.4)
+                return true
+            end
+        }))
+        delay(0.5)
+    end,
+    can_use = function(self, card)
+        return true
     end
 }
