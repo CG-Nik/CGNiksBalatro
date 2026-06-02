@@ -714,6 +714,36 @@ return {
 			["c_CGN_TagsLua"] = {
 				["name"] = "tags.lua",
 				["text"] = {
+					"Does nothing...?"
+				}
+			},
+			["c_CGN_PlanetsLua"] = {
+				["name"] = "planets.lua",
+				["text"] = {
+					"Does nothing...?"
+				}
+			},
+			["c_CGN_TarotsLua"] = {
+				["name"] = "tarots.lua",
+				["text"] = {
+					"Does nothing...?"
+				}
+			},
+			["c_CGN_SpectralsLua"] = {
+				["name"] = "spectrals.lua",
+				["text"] = {
+					"Does nothing...?"
+				}
+			},
+			["c_CGN_VouchersLua"] = {
+				["name"] = "vouchers.lua",
+				["text"] = {
+					"Does nothing...?"
+				}
+			},
+			["c_CGN_BoostersLua"] = {
+				["name"] = "boosters.lua",
+				["text"] = {
 					"Creates a free",
 					"{C:attention}#1#{}, {C:attention}#2#{}, or {C:attention}#3#{}"
 				}

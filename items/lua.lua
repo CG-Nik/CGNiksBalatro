@@ -601,6 +601,111 @@ SMODS.Consumable{
     atlas = "TagsLua",
     pos = {x = 0, y = 0},
     cost = 4,
+    use = function(self, card, area, copier)
+        
+    end,
+    can_use = function(self, card)
+        return true
+    end
+}
+
+SMODS.Atlas{
+    key = "PlanetsLua",
+    path = "LuaCardPlaceholder.png",
+    px = 71,
+    py = 95
+}
+
+SMODS.Consumable{
+    key = "PlanetsLua",
+    set = "CGN_Lua",
+    atlas = "PlanetsLua",
+    pos = {x = 0, y = 0},
+    cost = 4,
+    use = function(self, card, area, copier)
+        
+    end,
+    can_use = function(self, card)
+        return true
+    end
+}
+
+SMODS.Atlas{
+    key = "TarotsLua",
+    path = "LuaCardPlaceholder.png",
+    px = 71,
+    py = 95
+}
+
+SMODS.Consumable{
+    key = "TarotsLua",
+    set = "CGN_Lua",
+    atlas = "TarotsLua",
+    pos = {x = 0, y = 0},
+    cost = 4,
+    use = function(self, card, area, copier)
+        
+    end,
+    can_use = function(self, card)
+        return true
+    end
+}
+
+SMODS.Atlas{
+    key = "SpectralsLua",
+    path = "LuaCardPlaceholder.png",
+    px = 71,
+    py = 95
+}
+
+SMODS.Consumable{
+    key = "SpectralsLua",
+    set = "CGN_Lua",
+    atlas = "SpectralsLua",
+    pos = {x = 0, y = 0},
+    cost = 4,
+    use = function(self, card, area, copier)
+        
+    end,
+    can_use = function(self, card)
+        return true
+    end
+}
+
+SMODS.Atlas{
+    key = "VouchersLua",
+    path = "LuaCardPlaceholder.png",
+    px = 71,
+    py = 95
+}
+
+SMODS.Consumable{
+    key = "VouchersLua",
+    set = "CGN_Lua",
+    atlas = "VouchersLua",
+    pos = {x = 0, y = 0},
+    cost = 4,
+    use = function(self, card, area, copier)
+        
+    end,
+    can_use = function(self, card)
+        return true
+    end
+}
+
+SMODS.Atlas{
+    key = "BoostersLua",
+    path = "LuaCardPlaceholder.png",
+    px = 71,
+    py = 95
+}
+
+SMODS.Consumable{
+    key = "BoostersLua",
+    set = "CGN_Lua",
+    atlas = "BoostersLua",
+    pos = {x = 0, y = 0},
+    cost = 4,
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue+1] = { key = "tag_charm", set = "Tag" }
         info_queue[#info_queue+1] = { key = "tag_meteor", set = "Tag" }
