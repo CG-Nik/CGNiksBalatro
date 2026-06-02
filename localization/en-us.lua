@@ -669,7 +669,7 @@ return {
 				["name"] = "editions.lua",
 				["text"] = {
 					"Adds a random {C:attention}Edition{}",
-					"to {C:attention}#1#{} selected uneditioned {C:attention}Joker{}"
+					"to {C:attention}rightmost{} uneditioned {C:attention}Joker{}"
 				}
 			},
 			["c_CGN_SealsLua"] = {
@@ -714,7 +714,8 @@ return {
 			["c_CGN_TagsLua"] = {
 				["name"] = "tags.lua",
 				["text"] = {
-					"Does nothing...?"
+					"Creates the {C:attention}Small Blind's{} tag {C:inactive}(Currently {C:attention}#1#{C:inactive}){} when {C:attention}used{}",
+					"Creates the {C:attention}Big Blind's{} tag {C:inactive}(Currently {C:attention}#2#{C:inactive}){} when {C:attention}sold{}"
 				}
 			},
 			["c_CGN_PlanetsLua"] = {

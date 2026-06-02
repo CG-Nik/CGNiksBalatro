@@ -2185,9 +2185,9 @@ SMODS.Joker{
     }
     },
     loc_vars = function(self,info_queue,card)
-        info_queue[#info_queue+1] = { key = "tag_charm", set = "Tag" }
-        info_queue[#info_queue+1] = { key = "tag_meteor", set = "Tag" }
-        info_queue[#info_queue+1] = { key = "tag_ethereal", set = "Tag" }
+        info_queue[#info_queue+1] = G.P_TAGS["tag_charm"]
+        info_queue[#info_queue+1] = G.P_TAGS["tag_meteor"]
+        info_queue[#info_queue+1] = G.P_TAGS["tag_ethereal"]
         local num,denom = SMODS.get_probability_vars(card, 1, card.ability.extra.odds)
         return {vars = {
             localize({ type = "name_text", set = "Tag", key = "tag_charm" }),

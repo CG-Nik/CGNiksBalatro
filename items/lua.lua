@@ -41,7 +41,22 @@ SMODS.Consumable{
             delay = 0.4,
             func = function()
                 play_sound("timpani",2,1)
-                local newCard = SMODS.add_card({ set = "Joker", edition = "e_negative", key_append = "CGN_JokersLua" })
+                local newCardKey = SMODS.poll_object({type="Joker",seed="CGN_JokersLua",guaranteed=true,filter=function(pool)
+                    local allUnavailable = true
+                    for i,v in ipairs(pool) do
+                        local center = G.P_CENTERS[v.key]
+                        if not center or not center.eternal_compat then
+                            v.key = "UNAVAILABLE"
+                        else
+                            allUnavailable = false
+                        end
+                    end
+                    if allUnavailable then
+                        pool[#pool+1] = {key="j_joker",type="Joker"}
+                    end
+                    return pool
+                end})
+                local newCard = SMODS.add_card({ key = newCardKey, set = "Joker", edition = "e_negative", key_append = "CGN_JokersLua" })
                 newCard:add_sticker("eternal", true)
                 card:juice_up(0.3, 0.5)
                 return true
@@ -193,37 +208,36 @@ SMODS.Consumable{
     atlas = "EditionsLua",
     pos = {x = 0, y = 0},
     cost = 4,
-    config = {
-        extra = {
-            max_highlighted = 1
-        }
-    },
-    loc_vars = function(self,info_queue,card)
-        return {vars = {card.ability.extra.max_highlighted}}
-    end,
     use = function(self, card, area, copier)
         local edition = SMODS.poll_edition({key="CGN_EditionsLua",guaranteed=true})
+        local rightmost = nil
         G.E_MANAGER:add_event(Event({
             trigger = "after",
             delay = 0.4,
             func = function()
                 play_sound("timpani",2,1)
                 card:juice_up(0.3, 0.5)
+                for i = #G.jokers.cards,1,-1 do
+                    if not G.jokers.cards[i].edition then
+                        rightmost = G.jokers.cards[i]
+                        break
+                    end
+                end
                 return true
             end
         }))
         delay(0.2)
-        for i = 1, #G.jokers.highlighted do
-            G.E_MANAGER:add_event(Event({
-                trigger = "after",
-                delay = 0.1,
-                func = function()
-                    G.jokers.highlighted[i]:juice_up(0.3, 0.3)
-                    G.jokers.highlighted[i]:set_edition(edition, true)
-                    return true
+        G.E_MANAGER:add_event(Event({
+            trigger = "after",
+            delay = 0.1,
+            func = function()
+                if rightmost then
+                    rightmost:juice_up(0.3, 0.3)
+                    rightmost:set_edition(edition, true)
                 end
-            }))
-        end
+                return true
+            end
+        }))
         G.E_MANAGER:add_event(Event({
             trigger = "after",
             delay = 0.2,
@@ -235,14 +249,14 @@ SMODS.Consumable{
         delay(0.5)
     end,
     can_use = function(self,card)
-        local selectedJokers = #G.jokers.highlighted <= card.ability.extra.max_highlighted and #G.jokers.highlighted > 0
-        local allUneditioned = true
-        for i,v in ipairs(G.jokers.highlighted) do
-            if v.edition then
-                allUneditioned = false
+        local anyUneditioned = false
+        for i = #G.jokers.cards,1,-1 do
+            if not G.jokers.cards[i].edition then
+                anyUneditioned = true
+                break
             end
         end
-        return (G.jokers and selectedJokers and allUneditioned)
+        return (G.jokers and anyUneditioned)
     end
 }
 
@@ -601,8 +615,52 @@ SMODS.Consumable{
     atlas = "TagsLua",
     pos = {x = 0, y = 0},
     cost = 4,
+    loc_vars = function(self, info_queue, card)
+        if not G.GAME.round_resets.blind_tags then
+            return {vars = {"None","None"}}
+        end
+        local small = G.GAME.round_resets.blind_tags.Small
+        local big = G.GAME.round_resets.blind_tags.Big
+        info_queue[#info_queue+1] = G.P_TAGS[small]
+        info_queue[#info_queue+1] = G.P_TAGS[big]
+        return {vars = {
+            localize({ type = "name_text", set = "Tag", key = small }),
+            localize({ type = "name_text", set = "Tag", key = big })
+        }}
+    end,
     use = function(self, card, area, copier)
-        
+        G.E_MANAGER:add_event(Event({
+            trigger = "after",
+            delay = 0.4,
+            func = function()
+                play_sound("timpani",2,1)
+                card:juice_up(0.3,0.5)
+                local small = G.GAME.round_resets.blind_tags.Small
+                add_tag({ key = small })
+                play_sound("generic1", 0.9 + math.random() * 0.1, 0.8)
+                play_sound("holo1", 1.2 + math.random() * 0.1, 0.4)
+                return true
+            end
+        }))
+        delay(0.5)
+    end,
+    calculate = function(self, card, context)
+        if context.selling_self then
+            G.E_MANAGER:add_event(Event({
+                trigger = "after",
+                delay = 0.4,
+                func = function()
+                    play_sound("timpani",2,1)
+                    card:juice_up(0.3,0.5)
+                    local big = G.GAME.round_resets.blind_tags.Big
+                    add_tag({ key = big })
+                    play_sound("generic1", 0.9 + math.random() * 0.1, 0.8)
+                    play_sound("holo1", 1.2 + math.random() * 0.1, 0.4)
+                    return true
+                end
+            }))
+            delay(0.5)
+        end
     end,
     can_use = function(self, card)
         return true
@@ -707,9 +765,9 @@ SMODS.Consumable{
     pos = {x = 0, y = 0},
     cost = 4,
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue+1] = { key = "tag_charm", set = "Tag" }
-        info_queue[#info_queue+1] = { key = "tag_meteor", set = "Tag" }
-        info_queue[#info_queue+1] = { key = "tag_ethereal", set = "Tag" }
+        info_queue[#info_queue+1] = G.P_TAGS["tag_charm"]
+        info_queue[#info_queue+1] = G.P_TAGS["tag_meteor"]
+        info_queue[#info_queue+1] = G.P_TAGS["tag_ethereal"]
         return {vars = {
             localize({ type = "name_text", set = "Tag", key = "tag_charm" }),
             localize({ type = "name_text", set = "Tag", key = "tag_meteor" }),
@@ -724,6 +782,7 @@ SMODS.Consumable{
             delay = 0.4,
             func = function()
                 play_sound("timpani",2,1)
+                card:juice_up(0.3,0.5)
                 add_tag({ key = tagKey })
                 play_sound("generic1", 0.9 + math.random() * 0.1, 0.8)
                 play_sound("holo1", 1.2 + math.random() * 0.1, 0.4)
