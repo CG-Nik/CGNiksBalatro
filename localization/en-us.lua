@@ -6,7 +6,7 @@ return {
 				["text"] = {
 					"A {C:chips}Balatro{} mod including a {C:chips}v{}{C:mult}a{}{C:attention}r{}{C:inactive}i{}{C:tarot}e{}{C:planet}t{}{C:spectral}y{} of {C:attention}content{}, with intention to be {C:attention}balanced{}.",
 					" ",
-					"{C:attention}Special thanks{} to {C:hearts}N'{} and {C:hearts}all of the people who help modders{} in the {C:chips}Balatro{} {C:enhanced}Discord{}."
+					"{C:attention}Thanks{} to {C:hearts}N'{} and {C:hearts}all of the people who help modders{} in the {C:chips}Balatro{} {C:enhanced}Discord{}."
 				},
 			}
 		},
