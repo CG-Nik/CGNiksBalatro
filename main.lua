@@ -1,10 +1,3 @@
-SMODS.Atlas{
-    key = "modicon",
-    path = "modicon.png",
-    px = 32,
-    py = 32
-}
-
 CGNik = SMODS.current_mod
 CGNik.path = SMODS.current_mod.path
 CGNik.config = SMODS.current_mod.config
