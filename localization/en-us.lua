@@ -721,7 +721,8 @@ return {
 			["c_CGN_PlanetsLua"] = {
 				["name"] = "planets.lua",
 				["text"] = {
-					"Does nothing...?"
+					"Fills all {C:attention}empty Consumable slots{}",
+					"with {C:attention}random{} {C:planet}Planet Cards{}"
 				}
 			},
 			["c_CGN_TarotsLua"] = {

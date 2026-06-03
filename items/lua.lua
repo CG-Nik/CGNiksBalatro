@@ -35,6 +35,12 @@ SMODS.Consumable{
     atlas = "JokersLua",
     pos = {x = 0, y = 0},
     cost = 4,
+    loc_vars = function(self,info_queue,card)
+        info_queue[#info_queue + 1] = { key = "eternal", set = "Other" }
+        if not card.edition or (card.edition and not card.edition.negative) then
+            info_queue[#info_queue + 1] = G.P_CENTERS["e_negative"]
+        end
+    end,
     use = function(self, card, area, copier)
         G.E_MANAGER:add_event(Event({
             trigger = "after",
@@ -681,10 +687,42 @@ SMODS.Consumable{
     pos = {x = 0, y = 0},
     cost = 4,
     use = function(self, card, area, copier)
-        
+        G.E_MANAGER:add_event(Event({
+            trigger = "after",
+            delay = 0.4,
+            func = function()
+                play_sound("timpani",2,1)
+                card:juice_up(0.3, 0.5)
+                return true
+            end
+        }))
+        local extra = -1
+        if not card.edition or (card.edition and not card.edition.negative) then
+            extra = 0
+        end
+        sendDebugMessage("Use: "..tostring(extra),"CGN_PlanetsLua_Debug")
+        local slotsEmpty = (G.consumeables.config.card_limit) - (#G.consumeables.cards - extra)
+        for i = 1, slotsEmpty do
+            local percent = 0.85 + (i - 0.999) / (slotsEmpty - 0.998) * 0.3
+            G.E_MANAGER:add_event(Event({
+                trigger = "after",
+                delay = 0.15,
+                func = function()
+                    play_sound("timpani", percent, 0.6)
+                    SMODS.add_card({ set = "Planet", soulable = false, key_append = "CGN_PlanetsLua" })
+                    return true
+                end
+            }))
+        end
+        delay(0.5)
     end,
     can_use = function(self, card)
-        return true
+        local extra = 0
+        if card.area == G.consumeables and (not card.edition or (card.edition and not card.edition.negative)) then
+            extra = 1
+        end
+        sendDebugMessage("CanUse: "..tostring(extra),"CGN_PlanetsLua_Debug")
+        return G.consumeables and #G.consumeables.cards - extra < G.consumeables.config.card_limit
     end
 }
 

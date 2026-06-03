@@ -1511,7 +1511,11 @@ SMODS.Joker{
         end
 
         if context.selling_self and #G.jokers.cards + G.GAME.joker_buffer - 1 < G.jokers.config.card_limit then
-            local jokerCount = math.min(card.ability.extra.jokers_to_create, G.jokers.config.card_limit - (#G.jokers.cards + G.GAME.joker_buffer - 1))
+            local extra = 0
+            if not card.edition or (card.edition and not card.edition.negative) then
+                extra = 1
+            end
+            local jokerCount = math.min(card.ability.extra.jokers_to_create, G.jokers.config.card_limit - (#G.jokers.cards + G.GAME.joker_buffer - extra))
             G.GAME.joker_buffer = G.GAME.joker_buffer + jokerCount
             local cardToMessage = card
             if context.blueprint then
