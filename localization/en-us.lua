@@ -761,6 +761,24 @@ return {
 					"{C:attention}#1#{}, {C:attention}#2#{}, or {C:attention}#3#{}"
 				}
 			}
+		},
+		["Voucher"] = {
+			["v_CGN_MainLua"] = {
+				["name"] = "main.lua",
+				["text"] = {
+					"{C:cgn_lua}Lua{} cards",
+                    "can appear",
+                    "in the {C:attention}shop{}",
+				}
+			},
+			["v_CGN_ConfigLua"] = {
+				["name"] = "config.lua",
+				["text"] = {
+					"{C:cgn_lua}Lua{} cards appear",
+                    "{C:attention}#1#X{} more frequently",
+                    "in the {C:attention}shop{}",
+				}
+			}
 		}
 	},
 	["misc"] = {

@@ -20,7 +20,8 @@ local folders = {
             "modifiers",
             "luaCards",
             "consumables",
-            "boosters"
+            "boosters",
+            "vouchers"
         }
     }
 }
