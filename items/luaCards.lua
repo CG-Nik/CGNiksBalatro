@@ -1,11 +1,10 @@
 SMODS.ConsumableType{
     key = "CGN_Lua",
     default = "CGN_JokersLua",
-    collection_rows = { 5, 5 },
+    collection_rows = { 4, 4 },
     shop_rate = 0,
     primary_colour = HEX("0019a0"),
-    secondary_colour = HEX("0028c8"),
-    select_card = "consumeables"
+    secondary_colour = HEX("0028c8")
 }
 
 SMODS.Atlas{
@@ -501,6 +500,7 @@ SMODS.Consumable{
     atlas = "ShopLua",
     pos = {x = 0, y = 0},
     cost = 4,
+    select_card = "consumeables",
     config = {
         extra = {
             max_highlighted = 1
@@ -591,6 +591,7 @@ SMODS.Consumable{
     atlas = "BlindsLua",
     pos = {x = 0, y = 0},
     cost = 4,
+    select_card = "consumeables",
     use = function(self, card, area, copier)
         G.E_MANAGER:add_event(Event({
             trigger = "after",
@@ -621,6 +622,7 @@ SMODS.Consumable{
     atlas = "TagsLua",
     pos = {x = 0, y = 0},
     cost = 4,
+    select_card = "consumeables",
     loc_vars = function(self, info_queue, card)
         if not G.GAME.round_resets.blind_tags then
             return {vars = {"None","None"}}
@@ -697,10 +699,9 @@ SMODS.Consumable{
             end
         }))
         local extra = -1
-        if not card.edition or (card.edition and not card.edition.negative) then
+        if (not card.edition or (card.edition and not card.edition.negative)) then
             extra = 0
         end
-        sendDebugMessage("Use: "..tostring(extra),"CGN_PlanetsLua_Debug")
         local slotsEmpty = (G.consumeables.config.card_limit) - (#G.consumeables.cards - extra)
         for i = 1, slotsEmpty do
             local percent = 0.85 + (i - 0.999) / (slotsEmpty - 0.998) * 0.3
@@ -721,7 +722,6 @@ SMODS.Consumable{
         if card.area == G.consumeables and (not card.edition or (card.edition and not card.edition.negative)) then
             extra = 1
         end
-        sendDebugMessage("CanUse: "..tostring(extra),"CGN_PlanetsLua_Debug")
         return G.consumeables and #G.consumeables.cards - extra < G.consumeables.config.card_limit
     end
 }
@@ -740,10 +740,40 @@ SMODS.Consumable{
     pos = {x = 0, y = 0},
     cost = 4,
     use = function(self, card, area, copier)
-        
+        G.E_MANAGER:add_event(Event({
+            trigger = "after",
+            delay = 0.4,
+            func = function()
+                play_sound("timpani",2,1)
+                card:juice_up(0.3, 0.5)
+                return true
+            end
+        }))
+        local extra = -1
+        if (not card.edition or (card.edition and not card.edition.negative)) then
+            extra = 0
+        end
+        local slotsEmpty = (G.consumeables.config.card_limit) - (#G.consumeables.cards - extra)
+        for i = 1, slotsEmpty do
+            local percent = 0.85 + (i - 0.999) / (slotsEmpty - 0.998) * 0.3
+            G.E_MANAGER:add_event(Event({
+                trigger = "after",
+                delay = 0.15,
+                func = function()
+                    play_sound("timpani", percent, 0.6)
+                    SMODS.add_card({ set = "Tarot", soulable = false, key_append = "CGN_TarotsLua" })
+                    return true
+                end
+            }))
+        end
+        delay(0.5)
     end,
     can_use = function(self, card)
-        return true
+        local extra = 0
+        if card.area == G.consumeables and (not card.edition or (card.edition and not card.edition.negative)) then
+            extra = 1
+        end
+        return G.consumeables and #G.consumeables.cards - extra < G.consumeables.config.card_limit
     end
 }
 
@@ -761,10 +791,91 @@ SMODS.Consumable{
     pos = {x = 0, y = 0},
     cost = 4,
     use = function(self, card, area, copier)
-        
+        G.E_MANAGER:add_event(Event({
+            trigger = "after",
+            delay = 0.4,
+            func = function()
+                play_sound("timpani",2,1)
+                card:juice_up(0.3, 0.5)
+                return true
+            end
+        }))
+        local extra = -1
+        if (not card.edition or (card.edition and not card.edition.negative)) then
+            extra = 0
+        end
+        local slotsEmpty = (G.consumeables.config.card_limit) - (#G.consumeables.cards - extra)
+        for i = 1, slotsEmpty do
+            local percent = 0.85 + (i - 0.999) / (slotsEmpty - 0.998) * 0.3
+            G.E_MANAGER:add_event(Event({
+                trigger = "after",
+                delay = 0.15,
+                func = function()
+                    play_sound("timpani", percent, 0.6)
+                    SMODS.add_card({ set = "Spectral", soulable = false, key_append = "CGN_SpectralsLua" })
+                    return true
+                end
+            }))
+        end
+        delay(0.5)
     end,
     can_use = function(self, card)
-        return true
+        local extra = 0
+        if card.area == G.consumeables and (not card.edition or (card.edition and not card.edition.negative)) then
+            extra = 1
+        end
+        return G.consumeables and #G.consumeables.cards - extra < G.consumeables.config.card_limit
+    end
+}
+
+SMODS.Atlas{
+    key = "LuaCardsLua",
+    path = "LuaCardPlaceholder.png",
+    px = 71,
+    py = 95
+}
+
+SMODS.Consumable{
+    key = "LuaCardsLua",
+    set = "CGN_Lua",
+    atlas = "LuaCardsLua",
+    pos = {x = 0, y = 0},
+    cost = 4,
+    use = function(self, card, area, copier)
+        G.E_MANAGER:add_event(Event({
+            trigger = "after",
+            delay = 0.4,
+            func = function()
+                play_sound("timpani",2,1)
+                card:juice_up(0.3, 0.5)
+                return true
+            end
+        }))
+        local extra = -1
+        if (not card.edition or (card.edition and not card.edition.negative)) then
+            extra = 0
+        end
+        local slotsEmpty = (G.consumeables.config.card_limit) - (#G.consumeables.cards - extra)
+        for i = 1, slotsEmpty do
+            local percent = 0.85 + (i - 0.999) / (slotsEmpty - 0.998) * 0.3
+            G.E_MANAGER:add_event(Event({
+                trigger = "after",
+                delay = 0.15,
+                func = function()
+                    play_sound("timpani", percent, 0.6)
+                    SMODS.add_card({ set = "CGN_Lua", soulable = false, key_append = "CGN_LuaCardsLua" })
+                    return true
+                end
+            }))
+        end
+        delay(0.5)
+    end,
+    can_use = function(self, card)
+        local extra = 0
+        if card.area == G.consumeables and (not card.edition or (card.edition and not card.edition.negative)) then
+            extra = 1
+        end
+        return G.consumeables and #G.consumeables.cards - extra < G.consumeables.config.card_limit
     end
 }
 
@@ -779,13 +890,25 @@ SMODS.Consumable{
     key = "VouchersLua",
     set = "CGN_Lua",
     atlas = "VouchersLua",
+    select_card = "consumeables",
     pos = {x = 0, y = 0},
     cost = 4,
     use = function(self, card, area, copier)
-        
+        G.E_MANAGER:add_event(Event({
+            trigger = "after",
+            delay = 0.4,
+            func = function()
+                play_sound("timpani",2,1)
+                card:juice_up(0.3, 0.5)
+                local voucher = SMODS.add_voucher_to_shop()
+                voucher.from_tag = true
+                return true
+            end
+        }))
+        delay(0.5)
     end,
     can_use = function(self, card)
-        return true
+        return G.STATE == G.STATES.SHOP
     end
 }
 

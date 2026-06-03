@@ -638,7 +638,7 @@ return {
 				["text"] = {
 					"Choose {C:attention}#1#{} of up to",
                     "{C:attention}#2#{C:spectral} Spectral{} cards to",
-                    "add to your deck",
+                    "be used immediately",
 				},
 			},
 		},
@@ -722,25 +722,36 @@ return {
 				["name"] = "planets.lua",
 				["text"] = {
 					"Fills all {C:attention}empty Consumable slots{}",
-					"with {C:attention}random{} {C:planet}Planet Cards{}"
+					"with {C:attention}random{} {C:planet}Planet{} Cards"
 				}
 			},
 			["c_CGN_TarotsLua"] = {
 				["name"] = "tarots.lua",
 				["text"] = {
-					"Does nothing...?"
+					"Fills all {C:attention}empty Consumable slots{}",
+					"with {C:attention}random{} {C:tarot}Tarot{} Cards"
 				}
 			},
 			["c_CGN_SpectralsLua"] = {
 				["name"] = "spectrals.lua",
 				["text"] = {
-					"Does nothing...?"
+					"Fills all {C:attention}empty Consumable slots{}",
+					"with {C:attention}random{} {C:spectral}Spectral{} Cards"
+				}
+			},
+			["c_CGN_LuaCardsLua"] = {
+				["name"] = "luaCards.lua",
+				["text"] = {
+					"Fills all {C:attention}empty Consumable slots{}",
+					"with {C:attention}random{} {C:cgn_lua}Lua{} Cards"
 				}
 			},
 			["c_CGN_VouchersLua"] = {
 				["name"] = "vouchers.lua",
 				["text"] = {
-					"Does nothing...?"
+					"Adds a {C:attention}voucher{}",
+					"to the {C:attention}shop{}",
+					"for the rest of the {C:attention}Ante{}"
 				}
 			},
 			["c_CGN_BoostersLua"] = {

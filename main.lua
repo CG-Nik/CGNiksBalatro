@@ -18,7 +18,7 @@ local folders = {
             "legendaryJokers",
             "decks",
             "modifiers",
-            "lua",
+            "luaCards",
             "consumables",
             "boosters"
         }
