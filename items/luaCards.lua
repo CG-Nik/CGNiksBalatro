@@ -489,7 +489,7 @@ SMODS.Consumable{
 
 SMODS.Atlas{
     key = "ShopLua",
-    path = "LuaCardPlaceholder.png",
+    path = "ShopLua.png",
     px = 71,
     py = 95
 }
@@ -580,7 +580,7 @@ SMODS.Consumable{
 
 SMODS.Atlas{
     key = "BlindsLua",
-    path = "LuaCardPlaceholder.png",
+    path = "BlindsLua.png",
     px = 71,
     py = 95
 }
@@ -611,7 +611,7 @@ SMODS.Consumable{
 
 SMODS.Atlas{
     key = "TagsLua",
-    path = "LuaCardPlaceholder.png",
+    path = "TagsLua.png",
     px = 71,
     py = 95
 }
@@ -677,7 +677,7 @@ SMODS.Consumable{
 
 SMODS.Atlas{
     key = "PlanetsLua",
-    path = "LuaCardPlaceholder.png",
+    path = "PlanetsLua.png",
     px = 71,
     py = 95
 }
