@@ -830,7 +830,7 @@ SMODS.Consumable{
 
 SMODS.Atlas{
     key = "LuaCardsLua",
-    path = "LuaCardPlaceholder.png",
+    path = "LuaCardsLua.png",
     px = 71,
     py = 95
 }
