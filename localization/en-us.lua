@@ -505,7 +505,7 @@ return {
 			["sleeve_CGN_OopsAllSixesSleeve_alt"] = {
 				["name"] = "Oops! All 6s Sleeve",
 				["text"] = {
-					"{C:green}X#2#{} all {C:attention}listed{} {C:green}probabilities{}",
+					"{C:green}X#1#{} all {C:attention}listed{} {C:green}probabilities{}",
 				},
 			},
 			["sleeve_CGN_InverseTealSleeve"] = {
