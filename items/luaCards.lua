@@ -7,6 +7,14 @@ SMODS.ConsumableType{
     secondary_colour = HEX("0028c8")
 }
 
+local lua_digital_hallucinations_compat = {
+	colour = HEX("0019a0"),
+	loc_key = "CGN_plus_lua",
+	create = function()
+		SMODS.add_card({ set = "CGN_Lua", edition = "e_negative", key_append = "diha" })
+	end,
+}
+
 SMODS.Atlas{
     key = "UndiscoveredLuaCard",
     path = "UndiscoveredLuaCard.png",
@@ -746,7 +754,7 @@ SMODS.Consumable{
 
 SMODS.Atlas{
     key = "TarotsLua",
-    path = "LuaCardPlaceholder.png",
+    path = "TarotsLua.png",
     px = 71,
     py = 95
 }
@@ -804,7 +812,7 @@ SMODS.Consumable{
 
 SMODS.Atlas{
     key = "SpectralsLua",
-    path = "LuaCardPlaceholder.png",
+    path = "SpectralsLua.png",
     px = 71,
     py = 95
 }
@@ -920,7 +928,7 @@ SMODS.Consumable{
 
 SMODS.Atlas{
     key = "VouchersLua",
-    path = "LuaCardPlaceholder.png",
+    path = "VouchersLua.png",
     px = 71,
     py = 95
 }
@@ -952,7 +960,7 @@ SMODS.Consumable{
 
 SMODS.Atlas{
     key = "BoostersLua",
-    path = "LuaCardPlaceholder.png",
+    path = "BoostersLua.png",
     px = 71,
     py = 95
 }

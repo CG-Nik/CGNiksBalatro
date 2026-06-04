@@ -778,7 +778,8 @@ return {
 	["misc"] = {
 		["dictionary"] = {
 			["b_cgn_lua_cards"] = "Lua Cards",
-			["k_cgn_lua"] = "Lua"
+			["k_cgn_lua"] = "Lua",
+			["CGN_plus_lua"] = "+1 Lua"
 		},
 		["labels"] = {
 			["cgn_lua"] = "Lua"
