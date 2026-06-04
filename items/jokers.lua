@@ -1795,43 +1795,6 @@ SMODS.Joker{
 }
 
 SMODS.Atlas{
-    key = "Pi",
-    path = "Pi.png",
-    px = 71,
-    py = 95
-}
-
-SMODS.Joker{
-    key = "Pi",
-    atlas = "Pi",
-    pos = {x = 0, y = 0},
-    attributes = {
-        "xchips",
-    },
-    cost = 7,
-    blueprint_compat = true,
-    eternal_compat = true,
-    perishable_compat = true,
-    rarity = 3,
-    config = { extra = {
-        chips = 3.14
-    }
-    },
-    loc_vars = function(self,info_queue,card)
-        return {vars = {
-            card.ability.extra.chips
-        }}
-    end,
-    calculate = function(self,card,context)
-        if context.joker_main then
-            return {
-                xchips = card.ability.extra.chips
-            }
-        end
-    end
-}
-
-SMODS.Atlas{
     key = "StainedGlass",
     path = "StainedGlass.png",
     px = 71,
@@ -2309,7 +2272,7 @@ SMODS.Joker{
                 end,
                 no_message = true
             })
-            function setSprite()
+            local function setSprite()
                 local c = card.ability.extra
                 local pos = math.floor((9*(c.payout/c.resetValue))+0.5)
                 card.children.center:set_sprite_pos({x = pos, y = 0})
@@ -2878,7 +2841,7 @@ SMODS.Joker{
     rarity = 2,
     config = { extra = {
         chips = 0,
-        scaling = 3
+        scaling = 2
     }
     },
     loc_vars = function(self,info_queue,card)

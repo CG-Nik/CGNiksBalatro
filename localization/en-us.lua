@@ -314,12 +314,6 @@ return {
 					"{C:spades}#2#{} card in played hand",
 				},
 			},
-			["j_CGN_Pi"] = {
-				["name"] = "Pi",
-				["text"] = {
-					"{X:chips,C:white}X#1#{} Chips",
-				},
-			},
 			["j_CGN_BluePaint"] = {
 				["name"] = "Blue Paint",
 				["text"] = {
@@ -702,7 +696,8 @@ return {
 				["name"] = "shop.lua",
 				["text"] = {
 					"Makes {C:attention}#1#{} selected",
-					"shop item or Booster Pack {C:attention}free{}"
+					"shop item or Booster Pack {C:attention}free{}",
+					"{C:inactive}(Cannot make {C:attention}shop.lua{C:inactive} cards free){}"
 				}
 			},
 			["c_CGN_BlindsLua"] = {
@@ -750,8 +745,7 @@ return {
 				["name"] = "vouchers.lua",
 				["text"] = {
 					"Adds a {C:attention}voucher{}",
-					"to the {C:attention}shop{}",
-					"for the rest of the {C:attention}Ante{}"
+					"to the {C:attention}shop{}"
 				}
 			},
 			["c_CGN_BoostersLua"] = {
