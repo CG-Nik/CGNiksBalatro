@@ -30,6 +30,115 @@ SMODS.UndiscoveredSprite{
 }
 
 SMODS.Atlas{
+    key = "LuaPack",
+    path = "LuaPack.png",
+    px = 71,
+    py = 95
+}
+
+SMODS.Booster {
+    key = "LuaPack_2",
+    weight = 0.3,
+    kind = "CGN_Lua",
+    atlas = "LuaPack",
+    cost = 4,
+    pos = { x = 1, y = 0 },
+    config = { extra = 2, choose = 1 },
+    group_key = "k_CGN_LuaPack",
+    draw_hand = true,
+    cry_digital_hallucinations = lua_digital_hallucinations_compat,
+    loc_vars = function(self, info_queue, card)
+        local cfg = (card and card.ability) or self.config
+        return {
+            vars = {
+                math.min(cfg.choose + (G.GAME.modifiers.booster_choice_mod or 0),
+                    math.max(1, cfg.extra + (G.GAME.modifiers.booster_size_mod or 0))),
+                math.max(1, cfg.extra + (G.GAME.modifiers.booster_size_mod or 0)) },
+            key = self.key:sub(1, -3),
+        }
+    end,
+    ease_background_colour = function(self)
+        ease_colour(G.C.DYN_UI.MAIN, G.C.SET.CGN_Lua)
+		ease_background_colour({new_colour = G.C.SECONDARY_SET.CGN_Lua, special_colour = G.C.BLACK, contrast = 2})
+    end,
+    particles = function(self)
+        G.booster_pack_sparkles = Particles(1, 1, 0, 0, {
+            timer = 0.015,
+            scale = 0.1,
+            initialize = true,
+            lifespan = 3,
+            speed = 0.2,
+            padding = -1,
+            attach = G.ROOM_ATTACH,
+            colours = { G.C.WHITE, G.C.SET.CGN_Lua, G.C.SECONDARY_SET.CGN_Lua },
+            fill = true
+        })
+        G.booster_pack_sparkles.fade_alpha = 1
+        G.booster_pack_sparkles:fade(1, 0)
+    end,
+    create_card = function(self, card, i)
+        return {
+            set = "CGN_Lua",
+            area = G.pack_cards,
+            skip_materialize = true,
+            soulable = true,
+            key_append = "CGN_LuaPack"
+        }
+    end,
+}
+
+SMODS.Booster {
+    key = "LuaPack_1",
+    weight = 0.3,
+    kind = "CGN_Lua",
+    atlas = "LuaPack",
+    cost = 4,
+    pos = { x = 0, y = 0 },
+    config = { extra = 2, choose = 1 },
+    group_key = "k_CGN_LuaPack",
+    draw_hand = true,
+    cry_digital_hallucinations = lua_digital_hallucinations_compat,
+    loc_vars = function(self, info_queue, card)
+        local cfg = (card and card.ability) or self.config
+        return {
+            vars = {
+                math.min(cfg.choose + (G.GAME.modifiers.booster_choice_mod or 0),
+                    math.max(1, cfg.extra + (G.GAME.modifiers.booster_size_mod or 0))),
+                math.max(1, cfg.extra + (G.GAME.modifiers.booster_size_mod or 0)) },
+            key = self.key:sub(1, -3),
+        }
+    end,
+    ease_background_colour = function(self)
+        ease_colour(G.C.DYN_UI.MAIN, G.C.SET.CGN_Lua)
+		ease_background_colour({new_colour = G.C.SECONDARY_SET.CGN_Lua, special_colour = G.C.BLACK, contrast = 2})
+    end,
+    particles = function(self)
+        G.booster_pack_sparkles = Particles(1, 1, 0, 0, {
+            timer = 0.015,
+            scale = 0.1,
+            initialize = true,
+            lifespan = 3,
+            speed = 0.2,
+            padding = -1,
+            attach = G.ROOM_ATTACH,
+            colours = { G.C.WHITE, G.C.SET.CGN_Lua, G.C.SECONDARY_SET.CGN_Lua },
+            fill = true
+        })
+        G.booster_pack_sparkles.fade_alpha = 1
+        G.booster_pack_sparkles:fade(1, 0)
+    end,
+    create_card = function(self, card, i)
+        return {
+            set = "CGN_Lua",
+            area = G.pack_cards,
+            skip_materialize = true,
+            soulable = true,
+            key_append = "CGN_LuaPack"
+        }
+    end,
+}
+
+SMODS.Atlas{
     key = "JokersLua",
     path = "JokersLua.png",
     px = 71,
@@ -648,8 +757,7 @@ SMODS.Consumable{
         end
         local small = G.GAME.round_resets.blind_tags.Small
         local big = G.GAME.round_resets.blind_tags.Big
-        info_queue[#info_queue+1] = G.P_TAGS[small]
-        info_queue[#info_queue+1] = G.P_TAGS[big]
+        -- this doesn't have an info_queue because info_queue'ing a tag is incredibly broken for some reason
         return {vars = {
             localize({ type = "name_text", set = "Tag", key = small }),
             localize({ type = "name_text", set = "Tag", key = big })

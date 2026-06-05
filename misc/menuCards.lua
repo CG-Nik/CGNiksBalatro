@@ -1,8 +1,5 @@
 CGNik.splashText = function(card)
     local messages = {
-        { -- Crossmods
-            {"CGNik's Balatro has Card Sleeves crossmod content!",G.C.FILTER}
-        },
         { -- Text Colors
             {"Mult!",G.C.MULT},
             {"Chips!",G.C.CHIPS},

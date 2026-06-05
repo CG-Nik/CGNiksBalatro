@@ -635,6 +635,14 @@ return {
                     "be used immediately",
 				},
 			},
+			["p_CGN_LuaPack"] = {
+				["name"] = "Lua Pack",
+				["text"] = {
+					"Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2#{C:cgn_lua} Lua{} cards to",
+                    "be used immediately or added to consumables",
+				},
+			},
 		},
 		["CGN_Lua"] = {
 			["c_CGN_JokersLua"] = {
@@ -779,7 +787,8 @@ return {
 		["dictionary"] = {
 			["b_cgn_lua_cards"] = "Lua Cards",
 			["k_cgn_lua"] = "Lua",
-			["CGN_plus_lua"] = "+1 Lua"
+			["CGN_plus_lua"] = "+1 Lua",
+			["k_CGN_LuaPack"] = "Lua Pack"
 		},
 		["labels"] = {
 			["cgn_lua"] = "Lua"
