@@ -667,6 +667,30 @@ return {
                     "be used immediately or added to consumables",
 				},
 			},
+			["p_CGN_JumboLuaPack"] = {
+				["name"] = "Jumbo Lua Pack",
+				["text"] = {
+					"Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2#{C:cgn_lua} Lua{} cards to",
+                    "be used immediately or added to consumables",
+				},
+			},
+			["p_CGN_MegaLuaPack"] = {
+				["name"] = "Mega Lua Pack",
+				["text"] = {
+					"Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2#{C:cgn_lua} Lua{} cards to",
+                    "be used immediately or added to consumables",
+				},
+			},
+			["p_CGN_NeonLuaPack"] = {
+				["name"] = "Neon Lua Pack",
+				["text"] = {
+					"Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2#{C:cgn_lua} Lua{} cards to",
+                    "be used immediately or added to consumables",
+				},
+			},
 		},
 		["CGN_Lua"] = {
 			["c_CGN_JokersLua"] = {
