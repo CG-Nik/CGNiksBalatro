@@ -216,3 +216,38 @@ SMODS.Back{
         return false
     end
 }
+
+SMODS.Atlas{
+    key = "DecksLua",
+    path = "DecksLua.png",
+    px = 71,
+    py = 95
+}
+
+SMODS.Back{
+    key = "DecksLua",
+    atlas = "DecksLua",
+    unlocked = false,
+    pos = {x = 0, y = 0},
+    config = {
+        voucher = "v_CGN_MainLua",
+        consumables = {
+            "c_CGN_LuaCardsLua"
+        }
+    },
+    loc_vars = function(self, info_queue, back)
+        return { vars = {
+            localize({type = "name_text", key = self.config.voucher, set = "Voucher"}),
+            localize({type = "name_text", key = self.config.consumables[1], set = "CGN_Lua"})
+        }}
+    end,
+    check_for_unlock = function(self,args)
+        if args.type == "discard_custom" then
+            local eval = evaluate_poker_hand(args.cards)
+            if next(eval["Flush Five"]) then
+                return true
+            end
+        end
+        return false
+    end
+}

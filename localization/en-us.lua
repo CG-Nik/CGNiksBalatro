@@ -480,6 +480,16 @@ return {
 					"in your {C:attention}full deck{} at once"
 				}
 			},
+			["b_CGN_DecksLua"] = {
+				["name"] = "decks.lua",
+				["text"] = {
+					"Start run with the {C:attention}#1#{} voucher",
+					"and {C:attention}1{} copy of {C:cgn_lua}#2#{}"
+				},
+				["unlock"] = {
+					"Discard a {C:attention}Flush Five{}"
+				}
+			},
 		},
 		["Sleeve"] = {
 			["sleeve_CGN_InfectedSleeve"] = {
@@ -553,6 +563,20 @@ return {
 				["name"] = "Theseus Sleeve",
 				["text"] = {
 					"Added cards also have a random {C:attention}edition{} and {C:attention}seal{}"
+				},
+			},
+			["sleeve_CGN_SleevesLua"] = {
+				["name"] = "sleeves.lua",
+				["text"] = {
+					"Start run with the {C:attention}#1#{} voucher",
+					"and {C:attention}1{} copy of {C:cgn_lua}#2#{}"
+				},
+			},
+			["sleeve_CGN_SleevesLua_alt"] = {
+				["name"] = "sleeves.lua",
+				["text"] = {
+					"Start run with the {C:attention}#1#{} voucher",
+					"and an additional copy of {C:cgn_lua}#2#{}"
 				},
 			},
 		},

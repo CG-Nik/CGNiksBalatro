@@ -287,3 +287,43 @@ CardSleeves.Sleeve {
         end
     end
 }
+
+SMODS.Atlas{
+    key = "SleevesLua",
+    path = "SleevesLua.png",
+    px = 73,
+    py = 95
+}
+
+CardSleeves.Sleeve {
+    key = "SleevesLua",
+    atlas = "SleevesLua",
+    pos = {x = 0, y = 0},
+    unlocked = false,
+    unlock_condition = { deck = "b_CGN_DecksLua", stake = "stake_white" },
+    config = {
+        voucher = "v_CGN_MainLua",
+        consumables = {
+            "c_CGN_LuaCardsLua"
+        }
+    },
+    loc_vars = function(self)
+        local key, vars
+        if self.get_current_deck_key() == "b_CGN_DecksLua" then
+            key = self.key .. "_alt"
+            self.config.voucher = "v_CGN_ConfigLua"
+            self.config.consumables = {"c_CGN_LuaCardsLua"}
+            vars = {
+                localize({type = "name_text", key = self.config.voucher, set = "Voucher"}),
+                localize({type = "name_text", key = self.config.consumables[1], set = "CGN_Lua"})
+            }
+        else
+            key = self.key
+            vars = {
+                localize({type = "name_text", key = self.config.voucher, set = "Voucher"}),
+                localize({type = "name_text", key = self.config.consumables[1], set = "CGN_Lua"})
+            }
+        end
+        return { key = key, vars = vars }
+    end
+}
