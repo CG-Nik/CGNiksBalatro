@@ -1,6 +1,6 @@
 SMODS.Atlas{
     key = "Apparition",
-    path = "SpectralPlaceholder.png",
+    path = "Apparition.png",
     px = 71,
     py = 95
 }
