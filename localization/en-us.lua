@@ -88,8 +88,8 @@ return {
 			["j_CGN_ShadowIllusion"] = {
 				["name"] = "Shadow Illusion",
 				["text"] = {
-					"{X:mult,C:white}X#1#{} Mult if scoring hand",
-					"contains more than one {C:attention}suit{}",
+					"{C:chips}+#1#{} Chips if scoring hand",
+					"contains {C:attention}three{} or more {C:attention}suits{}",
 					"{s:0.5} {}",
 					"{C:inactive,s:0.75}\"Squares J and K are the same color.\"",
 				},
@@ -839,9 +839,9 @@ return {
                 ["name"] = "Neon Tag",
                 ["text"] = {
                     "Gives a free",
-                    "{C:tarot}Mega Arcana Pack{}, {C:planet}Mega Celestial Pack{}",
-					"{C:attention}Mega Standard Pack{}, {C:attention}Mega Buffoon Pack{}",
-					"{C:spectral}Mega Spectral Pack{}, or {C:cgn_lua}Mega Lua Pack{}"
+                    "{C:tarot}Neon Arcana Pack{}, {C:planet}Neon Celestial Pack{}",
+					"{C:attention}Neon Standard Pack{}, {C:attention}Neon Buffoon Pack{}",
+					"{C:spectral}Neon Spectral Pack{}, or {C:cgn_lua}Neon Lua Pack{}"
                 },
             },
 		}

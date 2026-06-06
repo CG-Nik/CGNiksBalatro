@@ -493,12 +493,12 @@ SMODS.Joker{
     perishable_compat = true,
     rarity = 1,
     config = { extra = {
-        mult = 2
+        chips = 100
     }
     },
     loc_vars = function(self,info_queue,card)
         return {vars = {
-            card.ability.extra.mult,
+            card.ability.extra.chips,
         }}
     end,
     calculate = function(self,card,context)
@@ -516,10 +516,10 @@ SMODS.Joker{
                 end
             end
 
-            if suitNum > 1 then
+            if suitNum >= 3 then
                 return
                 {
-                    Xmult = card.ability.extra.mult
+                    chips = card.ability.extra.chips
                 }
             end
         end
@@ -2261,7 +2261,7 @@ SMODS.Joker{
             if card.ability.extra.payout == 0 then
                 SMODS.calculate_effect({message=localize("k_reset"),colour = G.C.FILTER,func = setSprite()}, card)
             else
-                SMODS.calculate_effect({message="+$"..card.ability.extra.scaling,colour = G.C.MONEY,func = setSprite()}, card)
+                SMODS.calculate_effect({message="+$"..card.ability.extra.scaling,colour = G.C.FILTER,func = setSprite()}, card)
             end
         end
     end,
