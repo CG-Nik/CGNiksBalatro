@@ -242,11 +242,8 @@ return {
 			["j_CGN_UraniumRod"] = {
 				["name"] = "Uranium Rod",
 				["text"] = {
-					"This Joker gains {X:mult,C:white}X#2#{} Mult after playing a hand",
-					"{X:mult,C:white}XMult{} resets after defeating a {C:attention}Boss Blind{}",
-					"{C:inactive}(Currently {}{X:mult,C:white}X#1#{}{C:inactive} Mult){}",
-					"{s:0.5} {}",
-					"{B:1,C:white,s:0.75,E:1}Idea: gamer9ts",
+					"{X:mult,C:white}X#1#{} Mult",
+					"{C:money}$#2#{}"
 				},
 			},
 			["j_CGN_TrashCan"] = {

@@ -326,9 +326,7 @@ SMODS.Joker{
     pos = {x = 0, y = 0},
     attributes = {
         "xmult",
-        "reset",
-        "hands",
-        "scaling"
+        "economy"
     },
     cost = 9,
     blueprint_compat = true,
@@ -336,34 +334,17 @@ SMODS.Joker{
     perishable_compat = false,
     rarity = 3,
     config = { extra = {
-        mult = 0,
-        scaling = 0.5
+        mult = 3,
+        dollars = -2
     }},
     loc_vars = function(self,info_queue,card)
-        return {vars = {card.ability.extra.mult,card.ability.extra.scaling,card.ability.extra.hands_played,colours={G.C.DARK_EDITION}}}
+        return {vars = {card.ability.extra.mult,card.ability.extra.dollars}}
     end,
     calculate = function(self,card,context)
         if context.joker_main then
             return {
-                Xmult = card.ability.extra.mult
-            }
-        end
-
-        if context.after and not context.blueprint then
-            SMODS.scale_card(card, {
-                ref_table = card.ability.extra,
-                ref_value = "mult",
-                scalar_value = "scaling",
-                message_key = "a_xmult",
-                message_colour = G.C.FILTER
-            })
-        end
-
-        if context.end_of_round and context.game_over == false and context.main_eval and context.beat_boss and not context.blueprint then
-            card.ability.extra.mult = 0
-            return {
-                message = localize("k_reset"),
-                colour = G.C.FILTER
+                Xmult = card.ability.extra.mult,
+                dollars = card.ability.extra.dollars
             }
         end
     end
