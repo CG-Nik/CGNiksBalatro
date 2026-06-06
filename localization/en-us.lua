@@ -601,8 +601,15 @@ return {
 			["c_CGN_Sol"] = {
 				["name"] = "Sol",
 				["text"] = {
-					"{C:planet}Levels up{} {C:attention}most played poker hand#1#{} by {C:attention}1{} level",
-					"{C:inactive}(Currently {C:attention}#2#{C:inactive}){}"
+					"{C:planet}Levels up{} {C:attention}most played poker hand#1#{} by {C:attention}#2#{} level",
+					"{C:inactive}(Currently {C:attention}#3#{C:inactive}){}"
+				},
+			},
+			["c_CGN_Europa"] = {
+				["name"] = "Europa",
+				["text"] = {
+					"{C:planet}Levels up{} {C:attention}least played poker hand#1#{} by {C:attention}#2#{} levels",
+					"{C:inactive}(Currently {C:attention}#3#{C:inactive}){}"
 				},
 			}
 		},
