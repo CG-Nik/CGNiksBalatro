@@ -597,6 +597,15 @@ return {
 				},
 			},
 		},
+		["Planet"] = {
+			["c_CGN_Sol"] = {
+				["name"] = "Sol",
+				["text"] = {
+					"{C:planet}Levels up{} {C:attention}most played poker hand#1#{} by {C:attention}1{} level",
+					"{C:inactive}(Currently {C:attention}#2#{C:inactive}){}"
+				},
+			}
+		},
 		["Enhanced"] = {
 			["m_CGN_Disease"] = {
 				["name"] = "Disease Card",

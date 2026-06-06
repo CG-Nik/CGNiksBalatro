@@ -19,10 +19,11 @@ local folders = {
             "decks",
             "modifiers",
             "luaCards",
-            "consumables",
+            "tarots",
             "boosters",
             "vouchers",
-            "tags"
+            "tags",
+            "planets"
         }
     }
 }
