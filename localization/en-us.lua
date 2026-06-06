@@ -601,7 +601,8 @@ return {
 			["c_CGN_Sol"] = {
 				["name"] = "Sol",
 				["text"] = {
-					"{C:planet}Levels up{} {C:attention}most played poker hand#1#{} by {C:attention}#2#{} level",
+					"{C:green}#4# in #5#{} chance to {C:planet}level up{}",
+					"{C:attention}most played poker hand#1#{} by {C:attention}#2#{} level",
 					"{C:inactive}(Currently {C:attention}#3#{C:inactive}){}"
 				},
 			},
