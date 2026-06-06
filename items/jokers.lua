@@ -1683,47 +1683,6 @@ SMODS.Joker{
 }
 
 SMODS.Atlas{
-    key = "Cashback",
-    path = "Cashback.png",
-    px = 71,
-    py = 95
-}
-
-SMODS.Joker{
-    key = "Cashback",
-    atlas = "Cashback",
-    pos = {x = 0, y = 0},
-    attributes = {
-        "economy",
-        "chance",
-        "reroll"
-    },
-    cost = 6,
-    blueprint_compat = true,
-    eternal_compat = true,
-    perishable_compat = true,
-    rarity = 2,
-    config = { extra = {
-        dollars = 5,
-        odds = 2
-    }
-    },
-    loc_vars = function(self,info_queue,card)
-        local num,denom = SMODS.get_probability_vars(card, 1, card.ability.extra.odds)
-        return {vars = {card.ability.extra.dollars,num,denom}}
-    end,
-    calculate = function(self,card,context)
-        if context.reroll_shop then
-            if SMODS.pseudorandom_probability(card, "CGN_Cashback", 1, card.ability.extra.odds) then
-                return {
-                    dollars = card.ability.extra.dollars
-                }
-            end
-        end
-    end
-}
-
-SMODS.Atlas{
     key = "TarotStencil",
     path = "TarotStencil.png",
     px = 71,
@@ -1744,7 +1703,7 @@ SMODS.Joker{
     perishable_compat = true,
     rarity = 3,
     config = { extra = {
-        scaling = 1,
+        scaling = 0.75,
         mult = 1
     }
     },

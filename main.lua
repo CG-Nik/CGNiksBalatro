@@ -18,12 +18,13 @@ local folders = {
             "legendaryJokers",
             "decks",
             "modifiers",
-            "luaCards",
-            "tarots",
             "boosters",
             "vouchers",
             "tags",
-            "planets"
+            "tarots",
+            "planets",
+            "spectrals",
+            "luaCards"
         }
     }
 }

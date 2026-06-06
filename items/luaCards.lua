@@ -45,7 +45,7 @@ SMODS.Consumable{
             trigger = "after",
             delay = 0.4,
             func = function()
-                play_sound("timpani",2,1)
+                play_sound("tarot1")
                 local newCardKey = SMODS.poll_object({type="Joker",seed="CGN_JokersLua",guaranteed=true,filter=function(pool)
                     local allUnavailable = true
                     for i,v in ipairs(pool) do
@@ -100,7 +100,7 @@ SMODS.Consumable{
             trigger = "after",
             delay = 0.4,
             func = function()
-                play_sound("timpani",2,1)
+                play_sound("tarot1")
                 card:juice_up(0.3, 0.5)
                 return true
             end
@@ -146,7 +146,7 @@ SMODS.Consumable{
             trigger = "after",
             delay = 0.4,
             func = function()
-                play_sound("timpani",2,1)
+                play_sound("tarot1")
                 card:juice_up(0.3, 0.5)
                 return true
             end
@@ -182,7 +182,7 @@ SMODS.Consumable{
                 delay = 0.15,
                 func = function()
                     G.hand.highlighted[i]:flip()
-                    play_sound("timpani", percent, 0.6)
+                    play_sound("tarot2", percent, 0.6)
                     G.hand.highlighted[i]:juice_up(0.3, 0.3)
                     return true
                 end
@@ -220,7 +220,7 @@ SMODS.Consumable{
             trigger = "after",
             delay = 0.4,
             func = function()
-                play_sound("timpani",2,1)
+                play_sound("tarot1")
                 card:juice_up(0.3, 0.5)
                 for i = #G.jokers.cards,1,-1 do
                     if not G.jokers.cards[i].edition then
@@ -290,7 +290,7 @@ SMODS.Consumable{
             trigger = "after",
             delay = 0.4,
             func = function()
-                play_sound("timpani",2,1)
+                play_sound("tarot1")
                 card:juice_up(0.3, 0.5)
                 return true
             end
@@ -343,7 +343,7 @@ SMODS.Consumable{
             trigger = "after",
             delay = 0.4,
             func = function()
-                play_sound("timpani",2,1)
+                play_sound("tarot1")
                 card:juice_up(0.3, 0.5)
                 return true
             end
@@ -385,7 +385,7 @@ SMODS.Consumable{
                 delay = 0.15,
                 func = function()
                     G.hand.highlighted[i]:flip()
-                    play_sound("timpani", percent, 0.6)
+                    play_sound("tarot2", percent, 0.6)
                     G.hand.highlighted[i]:juice_up(0.3, 0.3)
                     return true
                 end
@@ -427,7 +427,7 @@ SMODS.Consumable{
             trigger = "after",
             delay = 0.4,
             func = function()
-                play_sound("timpani",2,1)
+                play_sound("tarot1")
                 card:juice_up(0.3, 0.5)
                 return true
             end
@@ -469,7 +469,7 @@ SMODS.Consumable{
                 delay = 0.15,
                 func = function()
                     G.hand.highlighted[i]:flip()
-                    play_sound("timpani", percent, 0.6)
+                    play_sound("tarot2", percent, 0.6)
                     G.hand.highlighted[i]:juice_up(0.3, 0.3)
                     return true
                 end
@@ -514,7 +514,7 @@ SMODS.Consumable{
             trigger = "after",
             delay = 0.4,
             func = function()
-                play_sound("timpani",2,1)
+                play_sound("tarot1")
                 card:juice_up(0.3, 0.5)
                 return true
             end
@@ -608,7 +608,7 @@ SMODS.Consumable{
             trigger = "after",
             delay = 0.4,
             func = function()
-                play_sound("timpani",2,1)
+                play_sound("tarot1")
                 SMODS.calculate_effect({message=localize("ph_boss_disabled"),colour=G.C.SECONDARY_SET.CGN_Lua,func = function() G.GAME.blind:disable() end},card)
                 return true
             end
@@ -651,7 +651,7 @@ SMODS.Consumable{
             trigger = "after",
             delay = 0.4,
             func = function()
-                play_sound("timpani",2,1)
+                play_sound("tarot1")
                 card:juice_up(0.3,0.5)
                 local small = G.GAME.round_resets.blind_tags.Small
                 add_tag({ key = small })
@@ -668,7 +668,7 @@ SMODS.Consumable{
                 trigger = "after",
                 delay = 0.4,
                 func = function()
-                    play_sound("timpani",2,1)
+                    play_sound("tarot1")
                     card:juice_up(0.3,0.5)
                     local big = G.GAME.round_resets.blind_tags.Big
                     add_tag({ key = big })
@@ -703,7 +703,7 @@ SMODS.Consumable{
             trigger = "after",
             delay = 0.4,
             func = function()
-                play_sound("timpani",2,1)
+                play_sound("tarot1")
                 card:juice_up(0.3, 0.5)
                 G.E_MANAGER:add_event(Event({
                     func = function()
@@ -714,7 +714,7 @@ SMODS.Consumable{
                                 local slotsEmpty = (G.consumeables.config.card_limit - #G.consumeables.cards)
                                 for i = 1, slotsEmpty do
                                     local percent = 0.85 + (i - 0.999) / (slotsEmpty - 0.998) * 0.3
-                                    play_sound("timpani", percent, 0.6)
+                                    play_sound("tarot2", percent, 0.6)
                                     G.E_MANAGER:add_event(Event({
                                         func = function()
                                             SMODS.add_card({ set = "Planet", soulable = false, key_append = "CGN_PlanetsLua" })
@@ -761,7 +761,7 @@ SMODS.Consumable{
             trigger = "after",
             delay = 0.4,
             func = function()
-                play_sound("timpani",2,1)
+                play_sound("tarot1")
                 card:juice_up(0.3, 0.5)
                 G.E_MANAGER:add_event(Event({
                     func = function()
@@ -772,7 +772,7 @@ SMODS.Consumable{
                                 local slotsEmpty = (G.consumeables.config.card_limit - #G.consumeables.cards)
                                 for i = 1, slotsEmpty do
                                     local percent = 0.85 + (i - 0.999) / (slotsEmpty - 0.998) * 0.3
-                                    play_sound("timpani", percent, 0.6)
+                                    play_sound("tarot2", percent, 0.6)
                                     G.E_MANAGER:add_event(Event({
                                         func = function()
                                             SMODS.add_card({ set = "Tarot", soulable = false, key_append = "CGN_TarotsLua" })
@@ -819,7 +819,7 @@ SMODS.Consumable{
             trigger = "after",
             delay = 0.4,
             func = function()
-                play_sound("timpani",2,1)
+                play_sound("tarot1")
                 card:juice_up(0.3, 0.5)
                 G.E_MANAGER:add_event(Event({
                     func = function()
@@ -830,7 +830,7 @@ SMODS.Consumable{
                                 local slotsEmpty = (G.consumeables.config.card_limit - #G.consumeables.cards)
                                 for i = 1, slotsEmpty do
                                     local percent = 0.85 + (i - 0.999) / (slotsEmpty - 0.998) * 0.3
-                                    play_sound("timpani", percent, 0.6)
+                                    play_sound("tarot2", percent, 0.6)
                                     G.E_MANAGER:add_event(Event({
                                         func = function()
                                             SMODS.add_card({ set = "Spectral", soulable = false, key_append = "CGN_SpectralsLua" })
@@ -877,7 +877,7 @@ SMODS.Consumable{
             trigger = "after",
             delay = 0.4,
             func = function()
-                play_sound("timpani",2,1)
+                play_sound("tarot1")
                 card:juice_up(0.3, 0.5)
                 G.E_MANAGER:add_event(Event({
                     func = function()
@@ -888,7 +888,7 @@ SMODS.Consumable{
                                 local slotsEmpty = (G.consumeables.config.card_limit - #G.consumeables.cards)
                                 for i = 1, slotsEmpty do
                                     local percent = 0.85 + (i - 0.999) / (slotsEmpty - 0.998) * 0.3
-                                    play_sound("timpani", percent, 0.6)
+                                    play_sound("tarot2", percent, 0.6)
                                     G.E_MANAGER:add_event(Event({
                                         func = function()
                                             SMODS.add_card({ set = "CGN_Lua", soulable = false, key_append = "CGN_LuaCardsLua" })
@@ -936,7 +936,7 @@ SMODS.Consumable{
             trigger = "after",
             delay = 0.4,
             func = function()
-                play_sound("timpani",2,1)
+                play_sound("tarot1")
                 card:juice_up(0.3, 0.5)
                 SMODS.add_voucher_to_shop(nil, true)
                 return true
@@ -979,7 +979,7 @@ SMODS.Consumable{
             trigger = "after",
             delay = 0.4,
             func = function()
-                play_sound("timpani",2,1)
+                play_sound("tarot1")
                 card:juice_up(0.3,0.5)
                 add_tag({ key = tagKey })
                 play_sound("generic1", 0.9 + math.random() * 0.1, 0.8)
