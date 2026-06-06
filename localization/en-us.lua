@@ -614,6 +614,140 @@ return {
 				},
 			}
 		},
+		["Spectral"] = {
+			["c_CGN_Apparition"] = {
+				["name"] = "Apparition",
+				["text"] = {
+					"Creates {C:attention}#1#{} {C:dark_edition}Negative{} {C:tarot}Tarot{} cards"
+				},
+			},
+			["c_CGN_Hallucination"] = {
+				["name"] = "Hallucination",
+				["text"] = {
+					"Creates {C:attention}#1#{} {C:dark_edition}Negative{} {C:planet}Planet{} cards"
+				},
+			}
+		},
+		["CGN_Lua"] = {
+			["c_CGN_JokersLua"] = {
+				["name"] = "jokers.lua",
+				["text"] = {
+					"Creates a random",
+					"{C:dark_edition}Negative{} {C:attention}Eternal{} {C:attention}Joker{} card"
+				}
+			},
+			["c_CGN_PokerHandsLua"] = {
+				["name"] = "pokerHands.lua",
+				["text"] = {
+					"{C:planet}Levels up{} a {C:attention}random{}",
+					"{C:attention}Poker Hand{} by {C:attention}#1#{} levels"
+				}
+			},
+			["c_CGN_EnhancementsLua"] = {
+				["name"] = "enhancements.lua",
+				["text"] = {
+					"Adds the same random {C:attention}Enhancement{}",
+					"to up to {C:attention}#1#{}",
+					"selected {C:attention}Playing Cards{}"
+				}
+			},
+			["c_CGN_EditionsLua"] = {
+				["name"] = "editions.lua",
+				["text"] = {
+					"Adds a random {C:attention}Edition{}",
+					"to {C:attention}rightmost{} uneditioned {C:attention}Joker{}"
+				}
+			},
+			["c_CGN_SealsLua"] = {
+				["name"] = "seals.lua",
+				["text"] = {
+					"Adds the same random {C:attention}Seal{}",
+					"to up to {C:attention}#1#{}",
+					"selected {C:attention}Playing Cards{}"
+				}
+			},
+			["c_CGN_SuitsLua"] = {
+				["name"] = "suits.lua",
+				["text"] = {
+					"Converts the {C:attention}suit{} of",
+					"up to {C:attention}#1#{} selected {C:attention}Playing Cards{}",
+					"into the {C:attention}suit{} of the",
+					"{C:attention}leftmost{} selected {C:attention}Playing Card{}"
+				}
+			},
+			["c_CGN_RanksLua"] = {
+				["name"] = "ranks.lua",
+				["text"] = {
+					"Converts the {C:attention}rank{} of",
+					"up to {C:attention}#1#{} selected {C:attention}Playing Cards{}",
+					"into the {C:attention}rank{} of the",
+					"{C:attention}leftmost{} selected {C:attention}Playing Card{}"
+				}
+			},
+			["c_CGN_ShopLua"] = {
+				["name"] = "shop.lua",
+				["text"] = {
+					"Makes {C:attention}#1#{} selected",
+					"shop item or Booster Pack {C:attention}free{}",
+					"{C:inactive}(Cannot make {C:attention}shop.lua{C:inactive} cards free){}"
+				}
+			},
+			["c_CGN_BlindsLua"] = {
+				["name"] = "blinds.lua",
+				["text"] = {
+					"{C:red}Disables{} the current {C:blind}Boss Blind{}"
+				}
+			},
+			["c_CGN_TagsLua"] = {
+				["name"] = "tags.lua",
+				["text"] = {
+					"Creates the {C:attention}Small Blind's{} tag {C:inactive}(Currently {C:attention}#1#{C:inactive}){} when {C:attention}used{}",
+					"Creates the {C:attention}Big Blind's{} tag {C:inactive}(Currently {C:attention}#2#{C:inactive}){} when {C:attention}sold{}"
+				}
+			},
+			["c_CGN_PlanetsLua"] = {
+				["name"] = "planets.lua",
+				["text"] = {
+					"Fills all {C:attention}empty Consumable slots{}",
+					"with {C:attention}random{} {C:planet}Planet{} cards"
+				}
+			},
+			["c_CGN_TarotsLua"] = {
+				["name"] = "tarots.lua",
+				["text"] = {
+					"Fills all {C:attention}empty Consumable slots{}",
+					"with {C:attention}random{} {C:tarot}Tarot{} cards"
+				}
+			},
+			["c_CGN_SpectralsLua"] = {
+				["name"] = "spectrals.lua",
+				["text"] = {
+					"Fills all {C:attention}empty Consumable slots{}",
+					"with {C:attention}random{} {C:spectral}Spectral{} cards"
+				}
+			},
+			["c_CGN_LuaCardsLua"] = {
+				["name"] = "luaCards.lua",
+				["text"] = {
+					"Fills all {C:attention}empty Consumable slots{}",
+					"with {C:attention}random{} {C:cgn_lua}Lua{} cards"
+				}
+			},
+			["c_CGN_VouchersLua"] = {
+				["name"] = "vouchers.lua",
+				["text"] = {
+					"Adds a {C:attention}voucher{}",
+					"to the {C:attention}shop{}"
+				}
+			},
+			["c_CGN_BoostersLua"] = {
+				["name"] = "boosters.lua",
+				["text"] = {
+					"Creates a free",
+					"{C:attention}#1#{}, {C:attention}#2#{}, or {C:attention}#3#{}"
+				}
+			}
+		},
 		["Enhanced"] = {
 			["m_CGN_Disease"] = {
 				["name"] = "Disease Card",
@@ -705,126 +839,6 @@ return {
                     "be used immediately or added to consumables",
 				},
 			},
-		},
-		["CGN_Lua"] = {
-			["c_CGN_JokersLua"] = {
-				["name"] = "jokers.lua",
-				["text"] = {
-					"Creates a random",
-					"{C:dark_edition}Negative{} {C:attention}Eternal{} {C:attention}Joker{} card"
-				}
-			},
-			["c_CGN_PokerHandsLua"] = {
-				["name"] = "pokerHands.lua",
-				["text"] = {
-					"{C:planet}Levels up{} a {C:attention}random{}",
-					"{C:attention}Poker Hand{} by {C:attention}#1#{} levels"
-				}
-			},
-			["c_CGN_EnhancementsLua"] = {
-				["name"] = "enhancements.lua",
-				["text"] = {
-					"Adds the same random {C:attention}Enhancement{}",
-					"to up to {C:attention}#1#{}",
-					"selected {C:attention}Playing Cards{}"
-				}
-			},
-			["c_CGN_EditionsLua"] = {
-				["name"] = "editions.lua",
-				["text"] = {
-					"Adds a random {C:attention}Edition{}",
-					"to {C:attention}rightmost{} uneditioned {C:attention}Joker{}"
-				}
-			},
-			["c_CGN_SealsLua"] = {
-				["name"] = "seals.lua",
-				["text"] = {
-					"Adds the same random {C:attention}Seal{}",
-					"to up to {C:attention}#1#{}",
-					"selected {C:attention}Playing Cards{}"
-				}
-			},
-			["c_CGN_SuitsLua"] = {
-				["name"] = "suits.lua",
-				["text"] = {
-					"Converts the {C:attention}suit{} of",
-					"up to {C:attention}#1#{} selected {C:attention}Playing Cards{}",
-					"into the {C:attention}suit{} of the",
-					"{C:attention}leftmost{} selected {C:attention}Playing Card{}"
-				}
-			},
-			["c_CGN_RanksLua"] = {
-				["name"] = "ranks.lua",
-				["text"] = {
-					"Converts the {C:attention}rank{} of",
-					"up to {C:attention}#1#{} selected {C:attention}Playing Cards{}",
-					"into the {C:attention}rank{} of the",
-					"{C:attention}leftmost{} selected {C:attention}Playing Card{}"
-				}
-			},
-			["c_CGN_ShopLua"] = {
-				["name"] = "shop.lua",
-				["text"] = {
-					"Makes {C:attention}#1#{} selected",
-					"shop item or Booster Pack {C:attention}free{}",
-					"{C:inactive}(Cannot make {C:attention}shop.lua{C:inactive} cards free){}"
-				}
-			},
-			["c_CGN_BlindsLua"] = {
-				["name"] = "blinds.lua",
-				["text"] = {
-					"{C:red}Disables{} the current {C:blind}Boss Blind{}"
-				}
-			},
-			["c_CGN_TagsLua"] = {
-				["name"] = "tags.lua",
-				["text"] = {
-					"Creates the {C:attention}Small Blind's{} tag {C:inactive}(Currently {C:attention}#1#{C:inactive}){} when {C:attention}used{}",
-					"Creates the {C:attention}Big Blind's{} tag {C:inactive}(Currently {C:attention}#2#{C:inactive}){} when {C:attention}sold{}"
-				}
-			},
-			["c_CGN_PlanetsLua"] = {
-				["name"] = "planets.lua",
-				["text"] = {
-					"Fills all {C:attention}empty Consumable slots{}",
-					"with {C:attention}random{} {C:planet}Planet{} Cards"
-				}
-			},
-			["c_CGN_TarotsLua"] = {
-				["name"] = "tarots.lua",
-				["text"] = {
-					"Fills all {C:attention}empty Consumable slots{}",
-					"with {C:attention}random{} {C:tarot}Tarot{} Cards"
-				}
-			},
-			["c_CGN_SpectralsLua"] = {
-				["name"] = "spectrals.lua",
-				["text"] = {
-					"Fills all {C:attention}empty Consumable slots{}",
-					"with {C:attention}random{} {C:spectral}Spectral{} Cards"
-				}
-			},
-			["c_CGN_LuaCardsLua"] = {
-				["name"] = "luaCards.lua",
-				["text"] = {
-					"Fills all {C:attention}empty Consumable slots{}",
-					"with {C:attention}random{} {C:cgn_lua}Lua{} Cards"
-				}
-			},
-			["c_CGN_VouchersLua"] = {
-				["name"] = "vouchers.lua",
-				["text"] = {
-					"Adds a {C:attention}voucher{}",
-					"to the {C:attention}shop{}"
-				}
-			},
-			["c_CGN_BoostersLua"] = {
-				["name"] = "boosters.lua",
-				["text"] = {
-					"Creates a free",
-					"{C:attention}#1#{}, {C:attention}#2#{}, or {C:attention}#3#{}"
-				}
-			}
 		},
 		["Voucher"] = {
 			["v_CGN_MainLua"] = {
