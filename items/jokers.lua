@@ -2502,11 +2502,11 @@ SMODS.Joker{
         "joker",
         "generation"
     },
-    cost = 6,
+    cost = 7,
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
-    rarity = 1,
+    rarity = 2,
     calculate = function(self,card,context)
         if context.open_booster then
             local jokerCount = math.min(1, G.jokers.config.card_limit - (#G.jokers.cards + G.GAME.joker_buffer))
@@ -2519,7 +2519,7 @@ SMODS.Joker{
             G.E_MANAGER:add_event(Event({
                 func = function()
                     for i = 1,jokerCount do
-                        SMODS.add_card({set = "Joker", area = G.jokers, rarity = "Common", key_append = "CGN_BirthCertificate"})
+                        SMODS.add_card({set = "Joker", area = G.jokers, rarity = "Common", edition = SMODS.poll_edition({guaranteed=true}), key_append = "CGN_BirthCertificate"})
                         G.GAME.joker_buffer = 0
                     end
                     return true

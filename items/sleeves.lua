@@ -319,6 +319,8 @@ CardSleeves.Sleeve {
             }
         else
             key = self.key
+            self.config.voucher = "v_CGN_MainLua"
+            self.config.consumables = {"c_CGN_LuaCardsLua"}
             vars = {
                 localize({type = "name_text", key = self.config.voucher, set = "Voucher"}),
                 localize({type = "name_text", key = self.config.consumables[1], set = "CGN_Lua"})

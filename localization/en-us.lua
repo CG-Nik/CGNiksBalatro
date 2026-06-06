@@ -364,7 +364,7 @@ return {
 				["name"] = "Birth Certificate",
 				["text"] = {
 					"When a {C:attention}Booster Pack{} is opened,",
-					"creates a {C:common}Common{} {C:attention}Joker{}",
+					"creates a {C:attention}editioned{} {C:common}Common{} {C:attention}Joker{}",
 					"{C:inactive}(Must have room){}"
 				}
 			},

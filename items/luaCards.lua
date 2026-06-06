@@ -197,6 +197,173 @@ SMODS.Booster {
 }
 
 SMODS.Atlas{
+    key = "MegaLuaPack",
+    path = "MegaLuaPack.png",
+    px = 71,
+    py = 95
+}
+
+SMODS.Booster {
+    key = "MegaLuaPack_1",
+    weight = 0.07,
+    kind = "CGN_Lua",
+    atlas = "MegaLuaPack",
+    cost = 8,
+    pos = { x = 0, y = 0 },
+    config = { extra = 4, choose = 2 },
+    group_key = "k_CGN_LuaPack",
+    draw_hand = true,
+    cry_digital_hallucinations = lua_digital_hallucinations_compat,
+    loc_vars = function(self, info_queue, card)
+        local cfg = (card and card.ability) or self.config
+        return {
+            vars = {
+                math.min(cfg.choose + (G.GAME.modifiers.booster_choice_mod or 0),
+                    math.max(1, cfg.extra + (G.GAME.modifiers.booster_size_mod or 0))),
+                math.max(1, cfg.extra + (G.GAME.modifiers.booster_size_mod or 0)) },
+            key = self.key:sub(1, -3),
+        }
+    end,
+    ease_background_colour = function(self)
+        ease_colour(G.C.DYN_UI.MAIN, G.C.SET.CGN_Lua)
+		ease_background_colour({new_colour = G.C.SECONDARY_SET.CGN_Lua, special_colour = G.C.BLACK, contrast = 2})
+    end,
+    particles = function(self)
+        G.booster_pack_sparkles = Particles(1, 1, 0, 0, {
+            timer = 0.015,
+            scale = 0.1,
+            initialize = true,
+            lifespan = 3,
+            speed = 0.2,
+            padding = -1,
+            attach = G.ROOM_ATTACH,
+            colours = { G.C.WHITE, G.C.SET.CGN_Lua, G.C.SECONDARY_SET.CGN_Lua },
+            fill = true
+        })
+        G.booster_pack_sparkles.fade_alpha = 1
+        G.booster_pack_sparkles:fade(1, 0)
+    end,
+    create_card = function(self, card, i)
+        return {
+            set = "CGN_Lua",
+            area = G.pack_cards,
+            skip_materialize = true,
+            soulable = true,
+            key_append = "CGN_MegaLuaPack"
+        }
+    end,
+}
+
+SMODS.Atlas{
+    key = "NeonLuaPack",
+    path = "NeonLuaPack.png",
+    px = 71,
+    py = 95
+}
+
+SMODS.Booster {
+    key = "NeonLuaPack_1",
+    weight = 0.07,
+    kind = "CGN_Lua",
+    atlas = "NeonLuaPack",
+    cost = 8,
+    pos = { x = 0, y = 0 },
+    config = { extra = 3, choose = 3 },
+    group_key = "k_CGN_LuaPack",
+    draw_hand = true,
+    cry_digital_hallucinations = lua_digital_hallucinations_compat,
+    loc_vars = function(self, info_queue, card)
+        local cfg = (card and card.ability) or self.config
+        return {
+            vars = {
+                math.min(cfg.choose + (G.GAME.modifiers.booster_choice_mod or 0),
+                    math.max(1, cfg.extra + (G.GAME.modifiers.booster_size_mod or 0))),
+                math.max(1, cfg.extra + (G.GAME.modifiers.booster_size_mod or 0)) },
+            key = self.key:sub(1, -3),
+        }
+    end,
+    ease_background_colour = function(self)
+        ease_colour(G.C.DYN_UI.MAIN, G.C.SET.CGN_Lua)
+		ease_background_colour({new_colour = G.C.SECONDARY_SET.CGN_Lua, special_colour = G.C.BLACK, contrast = 2})
+    end,
+    particles = function(self)
+        G.booster_pack_sparkles = Particles(1, 1, 0, 0, {
+            timer = 0.015/3,
+            scale = 0.1/2,
+            initialize = true,
+            lifespan = 3*2,
+            speed = 0.2*1.25,
+            padding = -1,
+            attach = G.ROOM_ATTACH,
+            colours = { G.C.WHITE, G.C.SET.CGN_Lua, G.C.SECONDARY_SET.CGN_Lua },
+            fill = true
+        })
+        G.booster_pack_sparkles.fade_alpha = 1
+        G.booster_pack_sparkles:fade(1, 0)
+    end,
+    create_card = function(self, card, i)
+        return {
+            set = "CGN_Lua",
+            area = G.pack_cards,
+            skip_materialize = true,
+            soulable = true,
+            key_append = "CGN_NeonLuaPack"
+        }
+    end,
+}
+
+SMODS.Booster {
+    key = "NeonLuaPack_2",
+    weight = 0.07,
+    kind = "CGN_Lua",
+    atlas = "NeonLuaPack",
+    cost = 8,
+    pos = { x = 1, y = 0 },
+    config = { extra = 3, choose = 3 },
+    group_key = "k_CGN_LuaPack",
+    draw_hand = true,
+    cry_digital_hallucinations = lua_digital_hallucinations_compat,
+    loc_vars = function(self, info_queue, card)
+        local cfg = (card and card.ability) or self.config
+        return {
+            vars = {
+                math.min(cfg.choose + (G.GAME.modifiers.booster_choice_mod or 0),
+                    math.max(1, cfg.extra + (G.GAME.modifiers.booster_size_mod or 0))),
+                math.max(1, cfg.extra + (G.GAME.modifiers.booster_size_mod or 0)) },
+            key = self.key:sub(1, -3),
+        }
+    end,
+    ease_background_colour = function(self)
+        ease_colour(G.C.DYN_UI.MAIN, G.C.SET.CGN_Lua)
+		ease_background_colour({new_colour = G.C.SECONDARY_SET.CGN_Lua, special_colour = G.C.BLACK, contrast = 2})
+    end,
+    particles = function(self)
+        G.booster_pack_sparkles = Particles(1, 1, 0, 0, {
+            timer = 0.015/3,
+            scale = 0.1/2,
+            initialize = true,
+            lifespan = 3*2,
+            speed = 0.2*1.25,
+            padding = -1,
+            attach = G.ROOM_ATTACH,
+            colours = { G.C.WHITE, G.C.SET.CGN_Lua, G.C.SECONDARY_SET.CGN_Lua },
+            fill = true
+        })
+        G.booster_pack_sparkles.fade_alpha = 1
+        G.booster_pack_sparkles:fade(1, 0)
+    end,
+    create_card = function(self, card, i)
+        return {
+            set = "CGN_Lua",
+            area = G.pack_cards,
+            skip_materialize = true,
+            soulable = true,
+            key_append = "CGN_NeonLuaPack"
+        }
+    end,
+}
+
+SMODS.Atlas{
     key = "JokersLua",
     path = "JokersLua.png",
     px = 71,
