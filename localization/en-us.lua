@@ -829,6 +829,24 @@ return {
                     "in the {C:attention}shop{}",
 				}
 			}
+		},
+		["Tag"] = {
+			["tag_CGN_FunctionTag"] = {
+                ["name"] = "Function Tag",
+                ["text"] = {
+                    "Gives a free",
+                    "{C:cgn_lua}Mega Lua Pack{}",
+                },
+            },
+			["tag_CGN_NeonTag"] = {
+                ["name"] = "Neon Tag",
+                ["text"] = {
+                    "Gives a free",
+                    "{C:tarot}Mega Arcana Pack{}, {C:planet}Mega Celestial Pack{}",
+					"{C:attention}Mega Standard Pack{}, {C:attention}Mega Buffoon Pack{}",
+					"{C:spectral}Mega Spectral Pack{}, or {C:cgn_lua}Mega Lua Pack{}"
+                },
+            },
 		}
 	},
 	["misc"] = {

@@ -21,7 +21,8 @@ local folders = {
             "luaCards",
             "consumables",
             "boosters",
-            "vouchers"
+            "vouchers",
+            "tags"
         }
     }
 }
