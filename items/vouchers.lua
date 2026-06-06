@@ -30,6 +30,7 @@ SMODS.Voucher {
     key = "ConfigLua",
     atlas = "ConfigLua",
     pos = { x = 0, y = 0 },
+    requires = { "v_CGN_MainLua" },
     config = { extra = { rate = 2.154, display = 2 } }, -- at this rate, assuming no other modifications happen, it's very close to 2X as likely
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra.display } }
