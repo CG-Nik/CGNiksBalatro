@@ -661,7 +661,7 @@ return {
 			["c_CGN_EditionsLua"] = {
 				["name"] = "editions.lua",
 				["text"] = {
-					"Adds a random {C:attention}Edition{}",
+					"{C:green}#1# in #2#{} chance to add a random {C:attention}Edition{}",
 					"to {C:attention}rightmost{} uneditioned {C:attention}Joker{}"
 				}
 			},

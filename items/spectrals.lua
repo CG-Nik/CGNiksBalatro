@@ -114,7 +114,7 @@ SMODS.Consumable{
 
 SMODS.Atlas{
     key = "Fortune",
-    path = "SpectralPlaceholder.png",
+    path = "Fortune.png",
     px = 71,
     py = 95
 }
@@ -128,8 +128,8 @@ SMODS.Consumable{
     config = {
         max_highlighted = 2,
         extra = {
-            permaChips = 30,
-            permaMult = 4
+            permaChips = 15,
+            permaMult = 2
         }
     },
     loc_vars = function(self,info_queue,card)

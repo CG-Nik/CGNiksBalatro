@@ -135,7 +135,7 @@ SMODS.Consumable{
     pos = {x = 0, y = 0},
     cost = 4,
     config = {
-        max_highlighted = 3
+        max_highlighted = 4
     },
     loc_vars = function(self,info_queue,card)
         return {vars = {card.ability.max_highlighted}}
@@ -213,45 +213,92 @@ SMODS.Consumable{
     atlas = "EditionsLua",
     pos = {x = 0, y = 0},
     cost = 4,
+    config = {
+        extra = {
+            odds = 4
+        }
+    },
+    loc_vars = function(self, info_queue, card)
+        local num,denom = SMODS.get_probability_vars(card, 3, card.ability.extra.odds)
+        return {
+            vars = {
+                num,
+                denom
+            }
+        }
+    end,
     use = function(self, card, area, copier)
-        local edition = SMODS.poll_edition({key="CGN_EditionsLua",guaranteed=true})
-        local rightmost = nil
-        G.E_MANAGER:add_event(Event({
-            trigger = "after",
-            delay = 0.4,
-            func = function()
-                play_sound("tarot1")
-                card:juice_up(0.3, 0.5)
-                for i = #G.jokers.cards,1,-1 do
-                    if not G.jokers.cards[i].edition then
-                        rightmost = G.jokers.cards[i]
-                        break
+        if SMODS.pseudorandom_probability(card, "CGN_EditionsLua", 1, card.ability.extra.odds) then
+            local edition = SMODS.poll_edition({key="CGN_EditionsLua",guaranteed=true})
+            local rightmost = nil
+            G.E_MANAGER:add_event(Event({
+                trigger = "after",
+                delay = 0.4,
+                func = function()
+                    play_sound("tarot1")
+                    card:juice_up(0.3, 0.5)
+                    for i = #G.jokers.cards,1,-1 do
+                        if not G.jokers.cards[i].edition then
+                            rightmost = G.jokers.cards[i]
+                            break
+                        end
                     end
+                    return true
                 end
-                return true
-            end
-        }))
-        delay(0.2)
-        G.E_MANAGER:add_event(Event({
-            trigger = "after",
-            delay = 0.1,
-            func = function()
-                if rightmost then
-                    rightmost:juice_up(0.3, 0.3)
-                    rightmost:set_edition(edition, true)
+            }))
+            delay(0.2)
+            G.E_MANAGER:add_event(Event({
+                trigger = "after",
+                delay = 0.1,
+                func = function()
+                    if rightmost then
+                        rightmost:juice_up(0.3, 0.3)
+                        rightmost:set_edition(edition, true)
+                    end
+                    return true
                 end
-                return true
-            end
-        }))
-        G.E_MANAGER:add_event(Event({
-            trigger = "after",
-            delay = 0.2,
-            func = function()
-                G.jokers:unhighlight_all()
-                return true
-            end
-        }))
-        delay(0.5)
+            }))
+            G.E_MANAGER:add_event(Event({
+                trigger = "after",
+                delay = 0.2,
+                func = function()
+                    G.jokers:unhighlight_all()
+                    return true
+                end
+            }))
+            delay(0.5)
+        else
+            G.E_MANAGER:add_event(Event({
+                trigger = "after",
+                delay = 0.4,
+                func = function()
+                    attention_text({
+                        text = localize("k_nope_ex"),
+                        scale = 1.3,
+                        hold = 1.4,
+                        major = card,
+                        backdrop_colour = G.C.SECONDARY_SET.CGN_Lua,
+                        align = (G.STATE == G.STATES.TAROT_PACK or G.STATE == G.STATES.SPECTRAL_PACK or G.STATE == G.STATES.SMODS_BOOSTER_OPENED) and
+                            "tm" or "cm",
+                        offset = { x = 0, y = (G.STATE == G.STATES.TAROT_PACK or G.STATE == G.STATES.SPECTRAL_PACK or G.STATE == G.STATES.SMODS_BOOSTER_OPENED) and -0.2 or 0 },
+                        silent = true
+                    })
+                    G.E_MANAGER:add_event(Event({
+                        trigger = "after",
+                        delay = 0.06 * G.SETTINGS.GAMESPEED,
+                        blockable = false,
+                        blocking = false,
+                        func = function()
+                            play_sound("tarot2", 0.76, 0.4)
+                            return true
+                        end
+                    }))
+                    play_sound("tarot2", 1, 0.4)
+                    card:juice_up(0.3, 0.5)
+                    return true
+                end
+            }))
+        end
     end,
     can_use = function(self,card)
         local anyUneditioned = false
