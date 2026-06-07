@@ -764,6 +764,15 @@ return {
 					"{C:attention}#4#{} rounds this has been held",
 					"{C:inactive}(Currently {C:attention}#1#{C:inactive}, {}[{C:attention}#2#{C:inactive}#3#{}]{C:inactive})",
 				},
+			},
+			["c_CGN_Royal"] = {
+				["name"] = "Royal",
+				["text"] = {
+					"Converts {C:attention}leftmost{} cards held in hand into the",
+					"{C:attention}same{} random {C:attention}suit{}, converting {C:attention}#5#{} cards for every",
+					"{C:attention}#4#{} rounds this has been held",
+					"{C:inactive}(Currently {C:attention}#1#{C:inactive} ({C:attention}#6#{C:inactive} cards), {}[{C:attention}#2#{C:inactive}#3#{}]{C:inactive})",
+				},
 			}
 		},
 		["Enhanced"] = {

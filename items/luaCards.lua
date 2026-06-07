@@ -254,6 +254,7 @@ SMODS.Consumable{
                     if rightmost then
                         rightmost:juice_up(0.3, 0.3)
                         rightmost:set_edition(edition, true)
+                        check_for_unlock({type = "have_edition"})
                     end
                     return true
                 end

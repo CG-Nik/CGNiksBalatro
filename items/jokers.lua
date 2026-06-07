@@ -2339,6 +2339,7 @@ SMODS.Joker{
             for i,v in ipairs(G.jokers.cards) do
                 if not v.edition then
                     v:set_edition("e_foil",false)
+                    check_for_unlock({type = "have_edition"})
                     SMODS.calculate_effect({message="Foiled!",colour=G.C.DARK_EDITION},cardToMessage)
                     break
                 end
@@ -2379,6 +2380,7 @@ SMODS.Joker{
             for i,v in ipairs(G.jokers.cards) do
                 if not v.edition then
                     v:set_edition("e_holo",false)
+                    check_for_unlock({type = "have_edition"})
                     SMODS.calculate_effect({message="Holographed!",colour=G.C.DARK_EDITION},cardToMessage)
                     break
                 end
@@ -2419,6 +2421,7 @@ SMODS.Joker{
             for i,v in ipairs(G.jokers.cards) do
                 if not v.edition then
                     v:set_edition("e_polychrome",false)
+                    check_for_unlock({type = "have_edition"})
                     SMODS.calculate_effect({message="Polychromed!",colour=G.C.DARK_EDITION},cardToMessage)
                     break
                 end
