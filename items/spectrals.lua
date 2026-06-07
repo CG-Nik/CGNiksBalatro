@@ -111,3 +111,66 @@ SMODS.Consumable{
         return G.consumeables and ((#G.consumeables.cards - slotsTaken) <= G.consumeables.config.card_limit)
     end
 }
+
+SMODS.Atlas{
+    key = "Fortune",
+    path = "SpectralPlaceholder.png",
+    px = 71,
+    py = 95
+}
+
+SMODS.Consumable{
+    key = "Fortune",
+    set = "Spectral",
+    atlas = "Fortune",
+    pos = {x = 0, y = 0},
+    cost = 4,
+    config = {
+        max_highlighted = 2,
+        extra = {
+            permaChips = 30,
+            permaMult = 4
+        }
+    },
+    loc_vars = function(self,info_queue,card)
+        return { vars = {
+            card.ability.max_highlighted,
+            card.ability.extra.permaChips,
+            card.ability.extra.permaMult
+        }}
+    end,
+    use = function(self, card, area, copier)
+        G.E_MANAGER:add_event(Event({
+            trigger = "after",
+            delay = 0.4,
+            func = function()
+                play_sound("tarot1")
+                card:juice_up(0.3, 0.5)
+                return true
+            end
+        }))
+        for i = 1, #G.hand.highlighted do
+            local percent = 0.85 + (i - 0.999) / (#G.hand.highlighted - 0.998) * 0.3
+            G.E_MANAGER:add_event(Event({
+                trigger = "after",
+                delay = 0.15,
+                func = function()
+                    play_sound("tarot2", percent, 0.6)
+                    G.hand.highlighted[i]:juice_up(0.3, 0.3)
+                    G.hand.highlighted[i].ability.perma_bonus = (G.hand.highlighted[i].ability.perma_bonus or 0) + card.ability.extra.permaChips
+                    G.hand.highlighted[i].ability.perma_mult = (G.hand.highlighted[i].ability.perma_mult or 0) + card.ability.extra.permaMult
+                    return true
+                end
+            }))
+        end
+        G.E_MANAGER:add_event(Event({
+            trigger = "after",
+            delay = 0.2,
+            func = function()
+                G.hand:unhighlight_all()
+                return true
+            end
+        }))
+        delay(0.5)
+    end
+}

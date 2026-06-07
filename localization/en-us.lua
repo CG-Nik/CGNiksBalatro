@@ -626,6 +626,13 @@ return {
 				["text"] = {
 					"Creates {C:attention}#1#{} {C:dark_edition}Negative{} {C:planet}Planet{} cards"
 				},
+			},
+			["c_CGN_Fortune"] = {
+				["name"] = "Fortune",
+				["text"] = {
+					"Permanently adds {C:chips}+#2#{} extra chips",
+					"and {C:mult}+#3#{} extra mult to up to {C:attention}#1#{} selected cards"
+				},
 			}
 		},
 		["CGN_Lua"] = {
