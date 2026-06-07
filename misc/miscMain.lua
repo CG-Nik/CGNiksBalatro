@@ -5,7 +5,12 @@ SMODS.current_mod.config_tab = function()
         {n = G.UIT.C, config = {
             r = 0.1, minw = 6, minh = 4, align = "tm", padding = 0.1, colour = G.C.BLACK, no_fill = true
         }, nodes = {
-            create_toggle{ col = true, label = "Splash Text (requires restart)", scale = 0.85, w = 0, shadow = true, ref_table = CGNik.config, ref_value = "splashText" }
+            {n = G.UIT.R, config = {align = "cm",padding = 0.1}, nodes = {
+                create_toggle{ col = true, label = "Splash Text (requires restart)", scale = 0.85, w = 0, shadow = true, ref_table = CGNik.config, ref_value = "splashText" }
+            }},
+            {n = G.UIT.R, config = {align = "cm",padding = 0.1}, nodes = {
+                create_toggle{ col = true, label = "Crossmod Content (requires restart)", scale = 0.85, w = 0, shadow = true, ref_table = CGNik.config, ref_value = "crossMod" }
+            }}
         }}
 	}}
 end

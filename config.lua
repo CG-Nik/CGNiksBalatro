@@ -1,3 +1,4 @@
 return {
-    ["splashText"] = true
+    ["splashText"] = true,
+    ["crossMod"] = true
 }

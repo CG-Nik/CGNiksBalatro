@@ -33,8 +33,14 @@ if JokerDisplay then
     table.insert(folders[1][2],"jokerDisplay")
 end
 
-if CardSleeves then
-    table.insert(folders[2][2],"sleeves")
+if CGNik.config.crossMod then
+    if CardSleeves then
+        table.insert(folders[2][2],"sleeves")
+    end
+
+    if FLUFF and mf_config["Colour Cards"] then
+        table.insert(folders[2][2],"colours")
+    end
 end
 
 for i,v in ipairs(folders) do

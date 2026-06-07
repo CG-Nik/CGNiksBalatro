@@ -755,6 +755,17 @@ return {
 				}
 			}
 		},
+		["Colour"] = {
+			["c_CGN_Blua"] = {
+				["name"] = "Blua",
+				["text"] = {
+					"Creates a random {C:dark_edition}Negative{}",
+					"{C:cgn_lua}Lua{} card for every",
+					"{C:attention}#4#{} rounds this has been held",
+					"{C:inactive}(Currently {C:attention}#1#{C:inactive}, {}[{C:attention}#2#{C:inactive}#3#{}]{C:inactive})",
+				},
+			}
+		},
 		["Enhanced"] = {
 			["m_CGN_Disease"] = {
 				["name"] = "Disease Card",
