@@ -30,9 +30,10 @@ SMODS.Joker{
         if G.jokers then
             for i,v in ipairs(G.jokers.cards) do
                 if v.ability.set == "Joker" then
-                    sellValuesCombined = math.min(card.ability.extra.cap, sellValuesCombined + math.floor(v.sell_cost / 2))
+                    sellValuesCombined = sellValuesCombined + (v.sell_cost / 2)
                 end
             end
+            sellValuesCombined = math.max(0,math.min(card.ability.extra.cap,math.floor(sellValuesCombined)))
         end
 
         card.ability.extra.current = sellValuesCombined
@@ -47,9 +48,10 @@ SMODS.Joker{
         if G.jokers then
             for i,v in ipairs(G.jokers.cards) do
                 if v.ability.set == "Joker" then
-                    sellValuesCombined = math.min(card.ability.extra.cap, sellValuesCombined + math.floor(v.sell_cost / 2))
+                    sellValuesCombined = sellValuesCombined + (v.sell_cost / 2)
                 end
             end
+            sellValuesCombined = math.max(0,math.min(card.ability.extra.cap,math.floor(sellValuesCombined)))
         end
 
         return sellValuesCombined
