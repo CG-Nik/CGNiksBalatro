@@ -10,7 +10,7 @@ Cryptid: This mod has compatibility with Digital Hallucinations.
 
 Thanks to the people who help modders in the Balatro discord.  
 Special thanks to N' for making Vanilla Remade, which is an incredibly useful resource for making Balatro mods, and La Ginger for creating a very useful consumable template.  
-This mod includes crossmod content with Card Sleeves and More Fluff. The sprites for these crossmod additions use sprites from their original mods as a basis, and I'd like to credit the artists of those original sprites (Card Sleeves: Sable, More Fluff: ???).  
+This mod includes crossmod content with Card Sleeves and More Fluff. The sprites for these crossmod additions use sprites from their original mods as a basis, and I'd like to credit the artists of those original sprites (Card Sleeves: Sable, More Fluff: Multi).  
 
 ## Notices
 
