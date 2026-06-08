@@ -16,15 +16,15 @@ FLUFF.Colour{
 }
 
 SMODS.Atlas{
-    key = "Royal",
-    path = "Royal.png",
+    key = "Purple",
+    path = "Purple.png",
     px = 71,
     py = 95
 }
 
 FLUFF.Colour{
-    key = "Royal",
-    atlas = "Royal",
+    key = "Purple",
+    atlas = "Purple",
     pos = { x = 0, y = 0 },
     config = {
         upgrade_rounds = 2,

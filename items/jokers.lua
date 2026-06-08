@@ -2804,7 +2804,7 @@ SMODS.Joker{
 
 SMODS.Atlas{
     key = "TireBillionaire",
-    path = "JokerPlaceholder.png",
+    path = "TireBillionaire.png",
     px = 71,
     py = 95
 }
@@ -2845,7 +2845,7 @@ SMODS.Joker{
 
 SMODS.Atlas{
     key = "IntegratedDevelopmentEnvironment",
-    path = "JokerPlaceholder.png",
+    path = "IntegratedDevelopmentEnvironment.png",
     px = 71,
     py = 95
 }
