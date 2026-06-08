@@ -1,10 +1,14 @@
 A Balatro mod that adds a variety of random content that I felt like adding, with intention for the content added to be balanced.
 
-## Crossmods
+## Crossmod Content
 
 Card Sleeves: This mod adds Sleeves.  
 More Fluff: This mod adds Colour Cards.  
-Cryptid: This mod has compatibility with Digital Hallucinations.  
+
+## Crossmod Compatibility
+
+This mod attempts to maintain compatibility with as many mods as reasonably possible.  
+If you find an issue with this mod when paired with another mod, feel free to ping me in the Discord thread or open an issue on Github.  
 
 ## Credits/Thanks
 
