@@ -2801,3 +2801,103 @@ SMODS.Joker{
         end
     end
 }
+
+SMODS.Atlas{
+    key = "TireBillionaire",
+    path = "JokerPlaceholder.png",
+    px = 71,
+    py = 95
+}
+
+SMODS.Joker{
+    key = "TireBillionaire",
+    atlas = "TireBillionaire",
+    pos = {x = 0, y = 0},
+    attributes = {
+        "discard",
+        "modify_card"
+    },
+    cost = 6,
+    blueprint_compat = true,
+    eternal_compat = true,
+    perishable_compat = true,
+    rarity = 2,
+    config = { extra = {
+        modify_rank = 1
+    }
+    },
+    loc_vars = function(self,info_queue,card)
+        return {vars = {
+            card.ability.extra.decrease
+        }}
+    end,
+    calculate = function(self,card,context)
+        if context.discard and not context.other_card.debuff and #context.full_hand == 1 then
+            assert(SMODS.modify_rank(context.other_card, -card.ability.extra.modify_rank))
+            local newRank = localize(context.other_card.base.value,"ranks")
+            return {
+                message = "Decrease! ("..newRank..")",
+                colour = G.C.FILTER
+            }
+        end
+    end
+}
+
+SMODS.Atlas{
+    key = "IntegratedDevelopmentEnvironment",
+    path = "JokerPlaceholder.png",
+    px = 71,
+    py = 95
+}
+
+SMODS.Joker{
+    key = "IntegratedDevelopmentEnvironment",
+    atlas = "IntegratedDevelopmentEnvironment",
+    pos = {x = 0, y = 0},
+    attributes = {
+        "reroll",
+        "chance",
+        "generation",
+        "CGN_Lua"
+    },
+    cost = 7,
+    blueprint_compat = true,
+    eternal_compat = true,
+    perishable_compat = true,
+    rarity = 3,
+    config = { extra = {
+        odds = 3
+    }
+    },
+    loc_vars = function(self,info_queue,card)
+        local num,denom = SMODS.get_probability_vars(card, 1, card.ability.extra.odds)
+        return {vars = {num,denom}}
+    end,
+    calculate = function(self,card,context)
+        if context.reroll_shop and SMODS.pseudorandom_probability(card, "CGN_IntegratedDevelopmentEnvironment", 1, card.ability.extra.odds)
+        and #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
+            G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
+            G.E_MANAGER:add_event(Event({
+                func = (function()
+                    G.E_MANAGER:add_event(Event({
+                        func = function()
+                            SMODS.add_card {
+                                set = "CGN_Lua",
+                                key_append = "CGN_IntegratedDevelopmentEnvironment"
+                            }
+                            G.GAME.consumeable_buffer = 0
+                            return true
+                        end
+                    }))
+                    local cardToMessage = card
+                    if context.blueprint then
+                        cardToMessage = context.blueprint_card
+                    end
+                    SMODS.calculate_effect({ message = localize("CGN_plus_lua"), colour = G.C.SECONDARY_SET.CGN_Lua },cardToMessage)
+                    return true
+                end)
+            }))
+            return nil, true
+        end
+    end
+}

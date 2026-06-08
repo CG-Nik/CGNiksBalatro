@@ -419,6 +419,21 @@ return {
 					"{C:inactive}(Currently {C:chips}+#1#{C:inactive} Chips){}",
 				},
 			},
+			["j_CGN_TireBillionaire"] = {
+				["name"] = "Tire Billionaire",
+				["text"] = {
+					"When a {C:attention}single{} card is discarded",
+					"its {C:attention}rank{} is {C:attention}decreased{} by {C:attention}1{}"
+				},
+			},
+			["j_CGN_IntegratedDevelopmentEnvironment"] = {
+				["name"] = "Integrated Development Environment",
+				["text"] = {
+					"{C:green}#1# in #2#{} chance to",
+					"create a {C:cgn_lua}Lua{} card",
+					"when shop is {C:attention}rerolled{}"
+				},
+			}
 		},
 		["Back"] = {
 			["b_CGN_InfectedDeck"] = {

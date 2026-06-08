@@ -228,7 +228,7 @@ SMODS.Consumable{
         }
     end,
     use = function(self, card, area, copier)
-        if SMODS.pseudorandom_probability(card, "CGN_EditionsLua", 1, card.ability.extra.odds) then
+        if SMODS.pseudorandom_probability(card, "CGN_EditionsLua", 3, card.ability.extra.odds) then
             local edition = SMODS.poll_edition({key="CGN_EditionsLua",guaranteed=true})
             local rightmost = nil
             G.E_MANAGER:add_event(Event({
@@ -701,8 +701,12 @@ SMODS.Consumable{
             func = function()
                 play_sound("tarot1")
                 card:juice_up(0.3,0.5)
-                local small = G.GAME.round_resets.blind_tags.Small
-                add_tag({ key = small })
+                local key = G.GAME.round_resets.blind_tags.Small
+                --if tag.ability and tag.ability.orbital_hand then
+                --    G.orbital_hand = tag.ability.orbital_hand
+                --end
+                add_tag({ key = key })
+                --G.orbital_hand = nil
                 play_sound("generic1", 0.9 + math.random() * 0.1, 0.8)
                 play_sound("holo1", 1.2 + math.random() * 0.1, 0.4)
                 return true
@@ -718,8 +722,12 @@ SMODS.Consumable{
                 func = function()
                     play_sound("tarot1")
                     card:juice_up(0.3,0.5)
-                    local big = G.GAME.round_resets.blind_tags.Big
-                    add_tag({ key = big })
+                    local key = G.GAME.round_resets.blind_tags.Big
+                    --if tag.ability and tag.ability.orbital_hand then
+                    --    G.orbital_hand = tag.ability.orbital_hand
+                    --end
+                    add_tag({ key = key })
+                    --G.orbital_hand = nil
                     play_sound("generic1", 0.9 + math.random() * 0.1, 0.8)
                     play_sound("holo1", 1.2 + math.random() * 0.1, 0.4)
                     return true
