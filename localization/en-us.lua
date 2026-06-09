@@ -440,6 +440,13 @@ return {
 					"Creates a {C:cgn_lua}Lua{} card",
 					"when a {C:attention}Booster Pack{} is {C:attention}skipped{}"
 				},
+			},
+			["j_CGN_Nope"] = {
+				["name"] = "Nope!",
+				["text"] = {
+					"Earn {C:money}$#1#{} when a",
+					"{C:green}listed probability{} {C:red}fails{}"
+				},
 			}
 		},
 		["Back"] = {

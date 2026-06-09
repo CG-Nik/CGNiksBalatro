@@ -2814,7 +2814,7 @@ SMODS.Joker{
 
 SMODS.Atlas{
     key = "AbandonedJoker",
-    path = "JokerPlaceholder.png",
+    path = "AbandonedJoker.png",
     px = 71,
     py = 95
 }
@@ -2856,6 +2856,42 @@ SMODS.Joker{
                 end)
             }))
             return nil, true
+        end
+    end
+}
+
+SMODS.Atlas{
+    key = "Nope",
+    path = "Nope.png",
+    px = 71,
+    py = 95
+}
+
+SMODS.Joker{
+    key = "Nope",
+    atlas = "Nope",
+    pos = {x = 0, y = 0},
+    soul_pos = {x = 1, y = 0},
+    attributes = {
+        "economy"
+    },
+    cost = 6,
+    blueprint_compat = true,
+    eternal_compat = true,
+    perishable_compat = true,
+    rarity = 2,
+    config = { extra = {
+        dollars = 3
+    }
+    },
+    loc_vars = function(self,info_queue,card)
+        return {vars = {card.ability.extra.dollars}}
+    end,
+    calculate = function(self,card,context)
+        if context.pseudorandom_result and context.result == false then
+            return {
+                dollars = card.ability.extra.dollars
+            }
         end
     end
 }
