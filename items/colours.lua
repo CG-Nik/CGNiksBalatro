@@ -91,5 +91,5 @@ FLUFF.Colour{
     end,
     can_use = function(self, card)
         return G.hand and #G.hand.cards >= 1
-    end,
+    end
 }

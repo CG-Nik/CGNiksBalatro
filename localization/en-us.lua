@@ -779,21 +779,21 @@ return {
 		},
 		["Colour"] = {
 			["c_CGN_Blua"] = {
-				["name"] = "Blua",
+				["name"] = "{E:mf_colour_title}Blua{}",
 				["text"] = {
 					"Creates a random {C:dark_edition}Negative{}",
 					"{C:cgn_lua}Lua{} card for every",
 					"{C:attention}#4#{} rounds this has been held",
-					"{C:inactive}(Currently {C:attention}#1#{C:inactive}, {}[{C:attention}#2#{C:inactive}#3#{}]{C:inactive})",
+					"{C:inactive}(Currently {C:attention}#1#{C:inactive}, {}[{C:attention,f:mf_emoji}#2#{C:inactive,f:mf_emoji}#3#{}]{C:inactive})"
 				},
 			},
-			["c_CGN_Royal"] = {
-				["name"] = "Royal",
+			["c_CGN_Purple"] = {
+				["name"] = "{E:mf_colour_title}Purple{}",
 				["text"] = {
 					"Converts {C:attention}leftmost{} cards held in hand into the",
 					"{C:attention}same{} random {C:attention}suit{}, converting {C:attention}#5#{} cards for every",
 					"{C:attention}#4#{} rounds this has been held",
-					"{C:inactive}(Currently {C:attention}#1#{C:inactive} ({C:attention}#6#{C:inactive} cards), {}[{C:attention}#2#{C:inactive}#3#{}]{C:inactive})",
+					"{C:inactive}(Currently {C:attention}#1#{C:inactive} ({C:attention}#6#{C:inactive} cards), {}[{C:attention,f:mf_emoji}#2#{C:inactive,f:mf_emoji}#3#{}]{C:inactive})"
 				},
 			}
 		},

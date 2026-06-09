@@ -38,7 +38,7 @@ if CGNik.config.crossMod then
         table.insert(folders[2][2],"sleeves")
     end
 
-    if FLUFF and mf_config["Colour Cards"] then
+    if FLUFF then
         table.insert(folders[2][2],"colours")
     end
 end
