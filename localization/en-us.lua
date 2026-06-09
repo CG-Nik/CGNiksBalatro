@@ -809,7 +809,7 @@ return {
 		},
 		["Other"] = {
 			["undiscovered_cgn_lua"] = {
-				["name"] = "Not Discovered",
+				["name"] = "undiscovered.lua",
 				["text"] = {
 					"Purchase or use",
                     "this card in an",
