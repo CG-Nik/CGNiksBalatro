@@ -702,11 +702,7 @@ SMODS.Consumable{
                 play_sound("tarot1")
                 card:juice_up(0.3,0.5)
                 local key = G.GAME.round_resets.blind_tags.Small
-                --if tag.ability and tag.ability.orbital_hand then
-                --    G.orbital_hand = tag.ability.orbital_hand
-                --end
-                add_tag({ key = key })
-                --G.orbital_hand = nil
+                add_tag({ key = key, blind_type = "Small" })
                 play_sound("generic1", 0.9 + math.random() * 0.1, 0.8)
                 play_sound("holo1", 1.2 + math.random() * 0.1, 0.4)
                 return true
@@ -723,11 +719,7 @@ SMODS.Consumable{
                     play_sound("tarot1")
                     card:juice_up(0.3,0.5)
                     local key = G.GAME.round_resets.blind_tags.Big
-                    --if tag.ability and tag.ability.orbital_hand then
-                    --    G.orbital_hand = tag.ability.orbital_hand
-                    --end
-                    add_tag({ key = key })
-                    --G.orbital_hand = nil
+                    add_tag({ key = key, blind_type = "Big" })
                     play_sound("generic1", 0.9 + math.random() * 0.1, 0.8)
                     play_sound("holo1", 1.2 + math.random() * 0.1, 0.4)
                     return true

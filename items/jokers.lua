@@ -88,96 +88,6 @@ SMODS.Joker{
 }
 
 SMODS.Atlas{
-    key = "Yin",
-    path = "Yin.png",
-    px = 71,
-    py = 95
-}
-
-SMODS.Joker{
-    key = "Yin",
-    atlas = "Yin",
-    pos = {x = 0, y = 0},
-    attributes = {
-        "xchips"
-    },
-    cost = 6,
-    blueprint_compat = true,
-    eternal_compat = true,
-    perishable_compat = true,
-    rarity = 1,
-    config = { extra = {
-        Xchips = 1.5,
-        XchipsYang = 2
-    }
-    },
-    loc_vars = function(self,info_queue,card)
-        if not card.fake_card then
-            info_queue[#info_queue+1] = G.P_CENTERS.j_CGN_Yang
-        end
-        return {vars = {card.ability.extra.Xchips,card.ability.extra.XchipsYang}}
-    end,
-    calculate = function(self,card,context)
-        if context.joker_main then
-            if next(SMODS.find_card("j_CGN_Yang", false)) then
-                return {
-                    xchips = card.ability.extra.XchipsYang,
-                }
-            else
-                return {
-                    xchips = card.ability.extra.Xchips,
-                }
-            end
-        end
-    end
-}
-
-SMODS.Atlas{
-    key = "Yang",
-    path = "Yang.png",
-    px = 71,
-    py = 95
-}
-
-SMODS.Joker{
-    key = "Yang",
-    atlas = "Yang",
-    pos = {x = 0, y = 0},
-    attributes = {
-        "xmult"
-    },
-    cost = 6,
-    blueprint_compat = true,
-    eternal_compat = true,
-    perishable_compat = true,
-    rarity = 1,
-    config = { extra = {
-        Xmult = 1.5,
-        XmultYin = 2
-    }
-    },
-    loc_vars = function(self,info_queue,card)
-        if not card.fake_card then
-            info_queue[#info_queue+1] = G.P_CENTERS.j_CGN_Yin
-        end
-        return {vars = {card.ability.extra.Xmult,card.ability.extra.XmultYin}}
-    end,
-    calculate = function(self,card,context)
-        if context.joker_main then
-            if next(SMODS.find_card("j_CGN_Yin", false)) then
-                return {
-                    Xmult = card.ability.extra.XmultYin,
-                }
-            else
-                return {
-                    Xmult = card.ability.extra.Xmult,
-                }
-            end
-        end
-    end
-}
-
-SMODS.Atlas{
     key = "Pandemic",
     path = "Pandemic.png",
     px = 71,
@@ -2828,7 +2738,7 @@ SMODS.Joker{
     },
     loc_vars = function(self,info_queue,card)
         return {vars = {
-            card.ability.extra.decrease
+            card.ability.extra.modify_rank
         }}
     end,
     calculate = function(self,card,context)
@@ -2860,11 +2770,11 @@ SMODS.Joker{
         "generation",
         "CGN_Lua"
     },
-    cost = 7,
+    cost = 6,
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
-    rarity = 3,
+    rarity = 2,
     config = { extra = {
         odds = 3
     }
@@ -2884,6 +2794,54 @@ SMODS.Joker{
                             SMODS.add_card {
                                 set = "CGN_Lua",
                                 key_append = "CGN_IntegratedDevelopmentEnvironment"
+                            }
+                            G.GAME.consumeable_buffer = 0
+                            return true
+                        end
+                    }))
+                    local cardToMessage = card
+                    if context.blueprint then
+                        cardToMessage = context.blueprint_card
+                    end
+                    SMODS.calculate_effect({ message = localize("CGN_plus_lua"), colour = G.C.SECONDARY_SET.CGN_Lua },cardToMessage)
+                    return true
+                end)
+            }))
+            return nil, true
+        end
+    end
+}
+
+SMODS.Atlas{
+    key = "AbandonedJoker",
+    path = "JokerPlaceholder.png",
+    px = 71,
+    py = 95
+}
+
+SMODS.Joker{
+    key = "AbandonedJoker",
+    atlas = "AbandonedJoker",
+    pos = {x = 0, y = 0},
+    attributes = {
+        "generation",
+        "CGN_Lua"
+    },
+    cost = 6,
+    blueprint_compat = true,
+    eternal_compat = true,
+    perishable_compat = true,
+    rarity = 2,
+    calculate = function(self,card,context)
+        if context.skipping_booster and #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
+            G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
+            G.E_MANAGER:add_event(Event({
+                func = (function()
+                    G.E_MANAGER:add_event(Event({
+                        func = function()
+                            SMODS.add_card {
+                                set = "CGN_Lua",
+                                key_append = "CGN_AbandonedJoker"
                             }
                             G.GAME.consumeable_buffer = 0
                             return true

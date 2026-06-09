@@ -423,7 +423,7 @@ return {
 				["name"] = "Tire Billionaire",
 				["text"] = {
 					"When a {C:attention}single{} card is discarded",
-					"its {C:attention}rank{} is {C:attention}decreased{} by {C:attention}1{}"
+					"its {C:attention}rank{} is {C:attention}decreased{} by {C:attention}#1#{}"
 				},
 			},
 			["j_CGN_IntegratedDevelopmentEnvironment"] = {
@@ -432,6 +432,13 @@ return {
 					"{C:green}#1# in #2#{} chance to",
 					"create a {C:cgn_lua}Lua{} card",
 					"when shop is {C:attention}rerolled{}"
+				},
+			},
+			["j_CGN_AbandonedJoker"] = {
+				["name"] = "Abandoned Joker",
+				["text"] = {
+					"Creates a {C:cgn_lua}Lua{} card",
+					"when a {C:attention}Booster Pack{} is {C:attention}skipped{}"
 				},
 			}
 		},
