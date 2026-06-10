@@ -1,16 +1,9 @@
-SMODS.Atlas{
-    key = "Sommers",
-    path = "Sommers.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Joker{
     key = "Sommers",
-    atlas = "Sommers",
+    atlas = "souls1",
     unlocked = false,
-    pos = {x = 0, y = 0},
-    soul_pos = {x = 1, y = 0},
+    pos = {x = 2, y = 0},
+    soul_pos = {x = 3, y = 0},
     attributes = {
         "economy",
         "sell_value"

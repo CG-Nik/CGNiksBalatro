@@ -6,6 +6,7 @@ local folders = {
     {
         "misc/",
         {
+            "atlases",
             "miscMain",
             "menuCards",
             "attributes"

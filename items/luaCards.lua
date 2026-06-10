@@ -7,23 +7,16 @@ SMODS.ConsumableType{
     secondary_colour = HEX("0028c8")
 }
 
-SMODS.Atlas{
-    key = "UndiscoveredLuaCard",
-    path = "UndiscoveredLuaCard.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.UndiscoveredSprite{
     key = "CGN_Lua",
-    atlas = "UndiscoveredLuaCard",
-    pos = {x = 0, y = 0},
-    overlay_pos = {x = 1, y = 0}
+    atlas = "souls1",
+    pos = {x = 4, y = 0},
+    overlay_pos = {x = 5, y = 0}
 }
 
 SMODS.Atlas{
-    key = "JokersLua",
-    path = "JokersLua.png",
+    key = "luaCards1",
+    path = "luaCards1.png",
     px = 71,
     py = 95
 }
@@ -31,7 +24,7 @@ SMODS.Atlas{
 SMODS.Consumable{
     key = "JokersLua",
     set = "CGN_Lua",
-    atlas = "JokersLua",
+    atlas = "luaCards1",
     pos = {x = 0, y = 0},
     cost = 4,
     loc_vars = function(self,info_queue,card)
@@ -74,18 +67,11 @@ SMODS.Consumable{
     end
 }
 
-SMODS.Atlas{
-    key = "PokerHandsLua",
-    path = "PokerHandsLua.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Consumable{
     key = "PokerHandsLua",
     set = "CGN_Lua",
-    atlas = "PokerHandsLua",
-    pos = {x = 0, y = 0},
+    atlas = "luaCards1",
+    pos = {x = 1, y = 0},
     cost = 4,
     config = {
         extra = {
@@ -121,18 +107,11 @@ SMODS.Consumable{
     end
 }
 
-SMODS.Atlas{
-    key = "EnhancementsLua",
-    path = "EnhancementsLua.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Consumable{
     key = "EnhancementsLua",
     set = "CGN_Lua",
-    atlas = "EnhancementsLua",
-    pos = {x = 0, y = 0},
+    atlas = "luaCards1",
+    pos = {x = 2, y = 0},
     cost = 4,
     config = {
         max_highlighted = 4
@@ -200,18 +179,11 @@ SMODS.Consumable{
     end
 }
 
-SMODS.Atlas{
-    key = "EditionsLua",
-    path = "EditionsLua.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Consumable{
     key = "EditionsLua",
     set = "CGN_Lua",
-    atlas = "EditionsLua",
-    pos = {x = 0, y = 0},
+    atlas = "luaCards1",
+    pos = {x = 3, y = 0},
     cost = 4,
     config = {
         extra = {
@@ -313,18 +285,11 @@ SMODS.Consumable{
     end
 }
 
-SMODS.Atlas{
-    key = "SealsLua",
-    path = "SealsLua.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Consumable{
     key = "SealsLua",
     set = "CGN_Lua",
-    atlas = "SealsLua",
-    pos = {x = 0, y = 0},
+    atlas = "luaCards1",
+    pos = {x = 0, y = 1},
     cost = 4,
     config = {
         max_highlighted = 2
@@ -367,18 +332,11 @@ SMODS.Consumable{
     end
 }
 
-SMODS.Atlas{
-    key = "SuitsLua",
-    path = "SuitsLua.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Consumable{
     key = "SuitsLua",
     set = "CGN_Lua",
-    atlas = "SuitsLua",
-    pos = {x = 0, y = 0},
+    atlas = "luaCards1",
+    pos = {x = 1, y = 1},
     cost = 4,
     config = {
         max_highlighted = 4
@@ -451,18 +409,11 @@ SMODS.Consumable{
     end
 }
 
-SMODS.Atlas{
-    key = "RanksLua",
-    path = "RanksLua.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Consumable{
     key = "RanksLua",
     set = "CGN_Lua",
-    atlas = "RanksLua",
-    pos = {x = 0, y = 0},
+    atlas = "luaCards1",
+    pos = {x = 2, y = 1},
     cost = 4,
     config = {
         max_highlighted = 3
@@ -535,18 +486,11 @@ SMODS.Consumable{
     end
 }
 
-SMODS.Atlas{
-    key = "ShopLua",
-    path = "ShopLua.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Consumable{
     key = "ShopLua",
     set = "CGN_Lua",
-    atlas = "ShopLua",
-    pos = {x = 0, y = 0},
+    atlas = "luaCards1",
+    pos = {x = 3, y = 1},
     cost = 4,
     select_card = "consumeables",
     config = {
@@ -637,18 +581,11 @@ SMODS.Consumable{
     end
 }
 
-SMODS.Atlas{
-    key = "BlindsLua",
-    path = "BlindsLua.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Consumable{
     key = "BlindsLua",
     set = "CGN_Lua",
-    atlas = "BlindsLua",
-    pos = {x = 0, y = 0},
+    atlas = "luaCards1",
+    pos = {x = 0, y = 2},
     cost = 4,
     select_card = "consumeables",
     use = function(self, card, area, copier)
@@ -668,18 +605,11 @@ SMODS.Consumable{
     end
 }
 
-SMODS.Atlas{
-    key = "TagsLua",
-    path = "TagsLua.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Consumable{
     key = "TagsLua",
     set = "CGN_Lua",
-    atlas = "TagsLua",
-    pos = {x = 0, y = 0},
+    atlas = "luaCards1",
+    pos = {x = 1, y = 2},
     cost = 4,
     select_card = "consumeables",
     loc_vars = function(self, info_queue, card)
@@ -733,18 +663,11 @@ SMODS.Consumable{
     end
 }
 
-SMODS.Atlas{
-    key = "PlanetsLua",
-    path = "PlanetsLua.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Consumable{
     key = "PlanetsLua",
     set = "CGN_Lua",
-    atlas = "PlanetsLua",
-    pos = {x = 0, y = 0},
+    atlas = "luaCards1",
+    pos = {x = 2, y = 2},
     cost = 4,
     use = function(self, card, area, copier)
         G.E_MANAGER:add_event(Event({
@@ -778,18 +701,11 @@ SMODS.Consumable{
     end
 }
 
-SMODS.Atlas{
-    key = "TarotsLua",
-    path = "TarotsLua.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Consumable{
     key = "TarotsLua",
     set = "CGN_Lua",
-    atlas = "TarotsLua",
-    pos = {x = 0, y = 0},
+    atlas = "luaCards1",
+    pos = {x = 3, y = 2},
     cost = 4,
     use = function(self, card, area, copier)
         G.E_MANAGER:add_event(Event({
@@ -823,18 +739,11 @@ SMODS.Consumable{
     end
 }
 
-SMODS.Atlas{
-    key = "SpectralsLua",
-    path = "SpectralsLua.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Consumable{
     key = "SpectralsLua",
     set = "CGN_Lua",
-    atlas = "SpectralsLua",
-    pos = {x = 0, y = 0},
+    atlas = "luaCards1",
+    pos = {x = 0, y = 3},
     cost = 4,
     use = function(self, card, area, copier)
         G.E_MANAGER:add_event(Event({
@@ -868,18 +777,11 @@ SMODS.Consumable{
     end
 }
 
-SMODS.Atlas{
-    key = "LuaCardsLua",
-    path = "LuaCardsLua.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Consumable{
     key = "LuaCardsLua",
     set = "CGN_Lua",
-    atlas = "LuaCardsLua",
-    pos = {x = 0, y = 0},
+    atlas = "luaCards1",
+    pos = {x = 1, y = 3},
     cost = 4,
     use = function(self, card, area, copier)
         G.E_MANAGER:add_event(Event({
@@ -913,19 +815,12 @@ SMODS.Consumable{
     end
 }
 
-SMODS.Atlas{
-    key = "VouchersLua",
-    path = "VouchersLua.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Consumable{
     key = "VouchersLua",
     set = "CGN_Lua",
-    atlas = "VouchersLua",
+    atlas = "luaCards1",
     select_card = "consumeables",
-    pos = {x = 0, y = 0},
+    pos = {x = 2, y = 3},
     cost = 4,
     use = function(self, card, area, copier)
         G.E_MANAGER:add_event(Event({
@@ -945,18 +840,11 @@ SMODS.Consumable{
     end
 }
 
-SMODS.Atlas{
-    key = "BoostersLua",
-    path = "BoostersLua.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Consumable{
     key = "BoostersLua",
     set = "CGN_Lua",
-    atlas = "BoostersLua",
-    pos = {x = 0, y = 0},
+    atlas = "luaCards1",
+    pos = {x = 3, y = 3},
     cost = 4,
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue+1] = G.P_TAGS["tag_charm"]

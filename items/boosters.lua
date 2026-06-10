@@ -1,6 +1,6 @@
 SMODS.Atlas{
-    key = "NeonArcanaPack",
-    path = "NeonArcanaPack.png",
+    key = "boosters1",
+    path = "boosters1.png",
     px = 71,
     py = 95
 }
@@ -9,7 +9,7 @@ SMODS.Booster {
     key = "NeonArcanaPack_1",
     weight = 0.125,
     kind = "Arcana",
-    atlas = "NeonArcanaPack",
+    atlas = "boosters1",
     cost = 8,
     pos = { x = 0, y = 0 },
     config = { extra = 3, choose = 3 },
@@ -72,7 +72,7 @@ SMODS.Booster {
     key = "NeonArcanaPack_2",
     weight = 0.125,
     kind = "Arcana",
-    atlas = "NeonArcanaPack",
+    atlas = "boosters1",
     cost = 8,
     pos = { x = 1, y = 0 },
     config = { extra = 3, choose = 3 },
@@ -135,7 +135,7 @@ SMODS.Booster {
     key = "NeonArcanaPack_3",
     weight = 0.125,
     kind = "Arcana",
-    atlas = "NeonArcanaPack",
+    atlas = "boosters1",
     cost = 8,
     pos = { x = 2, y = 0 },
     config = { extra = 3, choose = 3 },
@@ -198,7 +198,7 @@ SMODS.Booster {
     key = "NeonArcanaPack_4",
     weight = 0.125,
     kind = "Arcana",
-    atlas = "NeonArcanaPack",
+    atlas = "boosters1",
     cost = 8,
     pos = { x = 3, y = 0 },
     config = { extra = 3, choose = 3 },
@@ -257,20 +257,13 @@ SMODS.Booster {
     end
 }
 
-SMODS.Atlas{
-    key = "NeonCelestialPack",
-    path = "NeonCelestialPack.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Booster {
     key = "NeonCelestialPack_1",
     weight = 0.125,
     kind = "Celestial",
-    atlas = "NeonCelestialPack",
+    atlas = "boosters1",
     cost = 8,
-    pos = { x = 0, y = 0 },
+    pos = { x = 0, y = 1 },
     config = { extra = 3, choose = 3 },
     group_key = "k_celestial_pack",
     loc_vars = function(self, info_queue, card)
@@ -350,9 +343,9 @@ SMODS.Booster {
     key = "NeonCelestialPack_2",
     weight = 0.125,
     kind = "Celestial",
-    atlas = "NeonCelestialPack",
+    atlas = "boosters1",
     cost = 8,
-    pos = { x = 1, y = 0 },
+    pos = { x = 1, y = 1 },
     config = { extra = 3, choose = 3 },
     group_key = "k_celestial_pack",
     loc_vars = function(self, info_queue, card)
@@ -432,9 +425,9 @@ SMODS.Booster {
     key = "NeonCelestialPack_3",
     weight = 0.125,
     kind = "Celestial",
-    atlas = "NeonCelestialPack",
+    atlas = "boosters1",
     cost = 8,
-    pos = { x = 2, y = 0 },
+    pos = { x = 2, y = 1 },
     config = { extra = 3, choose = 3 },
     group_key = "k_celestial_pack",
     loc_vars = function(self, info_queue, card)
@@ -514,9 +507,9 @@ SMODS.Booster {
     key = "NeonCelestialPack_4",
     weight = 0.125,
     kind = "Celestial",
-    atlas = "NeonCelestialPack",
+    atlas = "boosters1",
     cost = 8,
-    pos = { x = 3, y = 0 },
+    pos = { x = 3, y = 1 },
     config = { extra = 3, choose = 3 },
     group_key = "k_celestial_pack",
     loc_vars = function(self, info_queue, card)
@@ -592,20 +585,13 @@ SMODS.Booster {
     end
 }
 
-SMODS.Atlas{
-    key = "NeonStandardPack",
-    path = "NeonStandardPack.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Booster {
     key = "NeonStandardPack_1",
     weight = 0.125,
     kind = "Standard",
-    atlas = "NeonStandardPack",
+    atlas = "boosters1",
     cost = 8,
-    pos = { x = 0, y = 0 },
+    pos = { x = 0, y = 2 },
     config = { extra = 3, choose = 3 },
     group_key = "k_standard_pack",
     loc_vars = function(self, info_queue, card)
@@ -655,9 +641,9 @@ SMODS.Booster {
     key = "NeonStandardPack_2",
     weight = 0.125,
     kind = "Standard",
-    atlas = "NeonStandardPack",
+    atlas = "boosters1",
     cost = 8,
-    pos = { x = 1, y = 0 },
+    pos = { x = 1, y = 2 },
     config = { extra = 3, choose = 3 },
     group_key = "k_standard_pack",
     loc_vars = function(self, info_queue, card)
@@ -707,9 +693,9 @@ SMODS.Booster {
     key = "NeonStandardPack_3",
     weight = 0.125,
     kind = "Standard",
-    atlas = "NeonStandardPack",
+    atlas = "boosters1",
     cost = 8,
-    pos = { x = 2, y = 0 },
+    pos = { x = 2, y = 2 },
     config = { extra = 3, choose = 3 },
     group_key = "k_standard_pack",
     loc_vars = function(self, info_queue, card)
@@ -759,9 +745,9 @@ SMODS.Booster {
     key = "NeonStandardPack_4",
     weight = 0.125,
     kind = "Standard",
-    atlas = "NeonStandardPack",
+    atlas = "boosters1",
     cost = 8,
-    pos = { x = 3, y = 0 },
+    pos = { x = 3, y = 2 },
     config = { extra = 3, choose = 3 },
     group_key = "k_standard_pack",
     loc_vars = function(self, info_queue, card)
@@ -807,20 +793,13 @@ SMODS.Booster {
     end,
 }
 
-SMODS.Atlas{
-    key = "NeonBuffoonPack",
-    path = "NeonBuffoonPack.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Booster {
     key = "NeonBuffoonPack_1",
     weight = 0.075,
     kind = "Buffoon",
-    atlas = "NeonBuffoonPack",
+    atlas = "boosters1",
     cost = 8,
-    pos = { x = 0, y = 0 },
+    pos = { x = 0, y = 3 },
     config = { extra = 3, choose = 3 },
     group_key = "k_buffoon_pack",
     loc_vars = function(self, info_queue, card)
@@ -845,9 +824,9 @@ SMODS.Booster {
     key = "NeonBuffoonPack_2",
     weight = 0.075,
     kind = "Buffoon",
-    atlas = "NeonBuffoonPack",
+    atlas = "boosters1",
     cost = 8,
-    pos = { x = 1, y = 0 },
+    pos = { x = 1, y = 3 },
     config = { extra = 3, choose = 3 },
     group_key = "k_buffoon_pack",
     loc_vars = function(self, info_queue, card)
@@ -868,20 +847,13 @@ SMODS.Booster {
     end,
 }
 
-SMODS.Atlas{
-    key = "NeonSpectralPack",
-    path = "NeonSpectralPack.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Booster {
     key = "NeonSpectralPack_1",
     weight = 0.035,
     kind = "Spectral",
-    atlas = "NeonSpectralPack",
+    atlas = "boosters1",
     cost = 8,
-    pos = { x = 0, y = 0 },
+    pos = { x = 2, y = 3 },
     config = { extra = 3, choose = 3 },
     group_key = "k_spectral_pack",
     draw_hand = true,
@@ -928,9 +900,9 @@ SMODS.Booster {
     key = "NeonSpectralPack_2",
     weight = 0.035,
     kind = "Spectral",
-    atlas = "NeonSpectralPack",
+    atlas = "boosters1",
     cost = 8,
-    pos = { x = 1, y = 0 },
+    pos = { x = 3, y = 3 },
     config = { extra = 3, choose = 3 },
     group_key = "k_spectral_pack",
     draw_hand = true,
@@ -981,20 +953,13 @@ local lua_digital_hallucinations_compat = {
 	end,
 }
 
-SMODS.Atlas{
-    key = "LuaPack",
-    path = "LuaPack.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Booster {
     key = "LuaPack_1",
     weight = 0.3,
     kind = "CGN_Lua",
-    atlas = "LuaPack",
+    atlas = "boosters1",
     cost = 4,
-    pos = { x = 0, y = 0 },
+    pos = { x = 0, y = 4 },
     config = { extra = 2, choose = 1 },
     group_key = "k_CGN_LuaPack",
     draw_hand = true,
@@ -1043,9 +1008,9 @@ SMODS.Booster {
     key = "LuaPack_2",
     weight = 0.3,
     kind = "CGN_Lua",
-    atlas = "LuaPack",
+    atlas = "boosters1",
     cost = 4,
-    pos = { x = 1, y = 0 },
+    pos = { x = 1, y = 4 },
     config = { extra = 2, choose = 1 },
     group_key = "k_CGN_LuaPack",
     draw_hand = true,
@@ -1090,20 +1055,13 @@ SMODS.Booster {
     end,
 }
 
-SMODS.Atlas{
-    key = "JumboLuaPack",
-    path = "JumboLuaPack.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Booster {
     key = "JumboLuaPack_1",
     weight = 0.3,
     kind = "CGN_Lua",
-    atlas = "JumboLuaPack",
+    atlas = "boosters1",
     cost = 6,
-    pos = { x = 0, y = 0 },
+    pos = { x = 2, y = 4 },
     config = { extra = 4, choose = 1 },
     group_key = "k_CGN_LuaPack",
     draw_hand = true,
@@ -1148,20 +1106,13 @@ SMODS.Booster {
     end,
 }
 
-SMODS.Atlas{
-    key = "MegaLuaPack",
-    path = "MegaLuaPack.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Booster {
     key = "MegaLuaPack_1",
     weight = 0.07,
     kind = "CGN_Lua",
-    atlas = "MegaLuaPack",
+    atlas = "boosters1",
     cost = 8,
-    pos = { x = 0, y = 0 },
+    pos = { x = 3, y = 4 },
     config = { extra = 4, choose = 2 },
     group_key = "k_CGN_LuaPack",
     draw_hand = true,
@@ -1206,20 +1157,13 @@ SMODS.Booster {
     end,
 }
 
-SMODS.Atlas{
-    key = "NeonLuaPack",
-    path = "NeonLuaPack.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Booster {
     key = "NeonLuaPack_1",
     weight = 0.07,
     kind = "CGN_Lua",
-    atlas = "NeonLuaPack",
+    atlas = "boosters1",
     cost = 8,
-    pos = { x = 0, y = 0 },
+    pos = { x = 0, y = 5 },
     config = { extra = 3, choose = 3 },
     group_key = "k_CGN_LuaPack",
     draw_hand = true,
@@ -1268,9 +1212,9 @@ SMODS.Booster {
     key = "NeonLuaPack_2",
     weight = 0.07,
     kind = "CGN_Lua",
-    atlas = "NeonLuaPack",
+    atlas = "boosters1",
     cost = 8,
-    pos = { x = 1, y = 0 },
+    pos = { x = 1, y = 5 },
     config = { extra = 3, choose = 3 },
     group_key = "k_CGN_LuaPack",
     draw_hand = true,

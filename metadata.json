@@ -3,7 +3,7 @@
 	"name": "CGNik's Balatro",
 	"display_name": "CGNik's Balatro",
 	"author": ["CGNik"],
-	"description": "",
+	"description": "A Balatro mod including a variety of content, with the intent for the added content to be balanced.",
 	"prefix": "CGN",
 	"main_file": "main.lua",
 	"icon_path": "modicon.png",

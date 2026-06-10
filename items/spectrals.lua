@@ -1,6 +1,6 @@
 SMODS.Atlas{
-    key = "Apparition",
-    path = "Apparition.png",
+    key = "spectrals1",
+    path = "spectrals1.png",
     px = 71,
     py = 95
 }
@@ -8,7 +8,7 @@ SMODS.Atlas{
 SMODS.Consumable{
     key = "Apparition",
     set = "Spectral",
-    atlas = "Apparition",
+    atlas = "spectrals1",
     pos = {x = 0, y = 0},
     cost = 4,
     config = {
@@ -55,18 +55,11 @@ SMODS.Consumable{
     end
 }
 
-SMODS.Atlas{
-    key = "Hallucination",
-    path = "Hallucination.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Consumable{
     key = "Hallucination",
     set = "Spectral",
-    atlas = "Hallucination",
-    pos = {x = 0, y = 0},
+    atlas = "spectrals1",
+    pos = {x = 1, y = 0},
     cost = 4,
     config = {
         extra = {
@@ -112,18 +105,11 @@ SMODS.Consumable{
     end
 }
 
-SMODS.Atlas{
-    key = "Fortune",
-    path = "Fortune.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Consumable{
     key = "Fortune",
     set = "Spectral",
-    atlas = "Fortune",
-    pos = {x = 0, y = 0},
+    atlas = "spectrals1",
+    pos = {x = 2, y = 0},
     cost = 4,
     config = {
         max_highlighted = 2,

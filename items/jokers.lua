@@ -52,15 +52,15 @@ function SMODS.calculate_individual_effect(effect, scored_card, key, amount, fro
 end
 
 SMODS.Atlas{
-    key = "Obmij",
-    path = "Obmij.png",
+    key = "jokers1",
+    path = "jokers1.png",
     px = 71,
     py = 95
 }
 
 SMODS.Joker{
     key = "Obmij",
-    atlas = "Obmij",
+    atlas = "jokers1",
     pos = {x = 0, y = 0},
     attributes = {
         "chips",
@@ -87,17 +87,10 @@ SMODS.Joker{
     end
 }
 
-SMODS.Atlas{
-    key = "Pandemic",
-    path = "Pandemic.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Joker{
     key = "Pandemic",
-    atlas = "Pandemic",
-    pos = {x = 0, y = 0},
+    atlas = "jokers1",
+    pos = {x = 1, y = 0},
     attributes = {
         "xmult",
         "CGN_Disease"
@@ -141,17 +134,10 @@ SMODS.Joker{
     end
 }
 
-SMODS.Atlas{
-    key = "Cure",
-    path = "Cure.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Joker{
     key = "Cure",
-    atlas = "Cure",
-    pos = {x = 0, y = 0},
+    atlas = "jokers1",
+    pos = {x = 2, y = 0},
     attributes = {
         "xmult",
         "chance",
@@ -223,17 +209,10 @@ SMODS.Joker{
     end
 }
 
-SMODS.Atlas{
-    key = "UraniumRod",
-    path = "UraniumRod.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Joker{
     key = "UraniumRod",
-    atlas = "UraniumRod",
-    pos = {x = 0, y = 0},
+    atlas = "jokers1",
+    pos = {x = 3, y = 0},
     attributes = {
         "xmult",
         "economy"
@@ -260,17 +239,10 @@ SMODS.Joker{
     end
 }
 
-SMODS.Atlas{
-    key = "TrashCan",
-    path = "TrashCan.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Joker{
     key = "TrashCan",
-    atlas = "TrashCan",
-    pos = {x = 0, y = 0},
+    atlas = "jokers1",
+    pos = {x = 4, y = 0},
     attributes = {
         "generation",
         "joker",
@@ -342,17 +314,10 @@ SMODS.Joker{
     end
 }
 
-SMODS.Atlas{
-    key = "RedJoker",
-    path = "RedJoker.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Joker{
     key = "RedJoker",
-    atlas = "RedJoker",
-    pos = {x = 0, y = 0},
+    atlas = "jokers1",
+    pos = {x = 0, y = 1},
     attributes = {
         "mult",
         "scaling"
@@ -382,17 +347,10 @@ SMODS.Joker{
     end
 }
 
-SMODS.Atlas{
-    key = "ShadowIllusion",
-    path = "ShadowIllusion.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Joker{
     key = "ShadowIllusion",
-    atlas = "ShadowIllusion",
-    pos = {x = 0, y = 0},
+    atlas = "jokers1",
+    pos = {x = 1, y = 1},
     attributes = {
         "xmult",
         "suit"
@@ -436,17 +394,10 @@ SMODS.Joker{
     end
 }
 
-SMODS.Atlas{
-    key = "Alloy",
-    path = "Alloy.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Joker{
     key = "Alloy",
-    atlas = "Alloy",
-    pos = {x = 0, y = 0},
+    atlas = "jokers1",
+    pos = {x = 2, y = 1},
     attributes = {
         "on_sell",
         "enhancements"
@@ -507,17 +458,10 @@ SMODS.Joker{
     end
 }
 
-SMODS.Atlas{
-    key = "Sharpshooter",
-    path = "Sharpshooter.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Joker{
     key = "Sharpshooter",
-    atlas = "Sharpshooter",
-    pos = {x = 0, y = 0},
+    atlas = "jokers1",
+    pos = {x = 3, y = 1},
     attributes = {
         "xmult",
     },
@@ -544,17 +488,10 @@ SMODS.Joker{
     end
 }
 
-SMODS.Atlas{
-    key = "D6",
-    path = "D6.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Joker{
     key = "D6",
-    atlas = "D6",
-    pos = {x = 0, y = 0},
+    atlas = "jokers1",
+    pos = {x = 4, y = 1},
     pixel_size = {h = 71},
     attributes = {
         "mult",
@@ -619,17 +556,10 @@ SMODS.Joker{
     end
 }
 
-SMODS.Atlas{
-    key = "Quarter",
-    path = "Quarter.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Joker{
     key = "Quarter",
-    atlas = "Quarter",
-    pos = {x = 0, y = 0},
+    atlas = "jokers1",
+    pos = {x = 0, y = 2},
     pixel_size = {h = 71},
     attributes = {
         "xmult",
@@ -664,17 +594,10 @@ SMODS.Joker{
     end
 }
 
-SMODS.Atlas{
-    key = "WildJoker",
-    path = "WildJoker.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Joker{
     key = "WildJoker",
-    atlas = "WildJoker",
-    pos = {x = 0, y = 0},
+    atlas = "jokers1",
+    pos = {x = 1, y = 2},
     attributes = {
         "xmult",
         "full_deck",
@@ -736,17 +659,10 @@ SMODS.Joker{
     end
 }
 
-SMODS.Atlas{
-    key = "InfectedJoker",
-    path = "InfectedJoker.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Joker{
     key = "InfectedJoker",
-    atlas = "InfectedJoker",
-    pos = {x = 0, y = 0},
+    atlas = "jokers1",
+    pos = {x = 2, y = 2},
     attributes = {
         "xmult",
         "full_deck",
@@ -809,17 +725,10 @@ SMODS.Joker{
     end
 }
 
-SMODS.Atlas{
-    key = "CyberJoker",
-    path = "CyberJoker.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Joker{
     key = "CyberJoker",
-    atlas = "CyberJoker",
-    pos = {x = 0, y = 0},
+    atlas = "jokers1",
+    pos = {x = 3, y = 2},
     attributes = {
         "xmult",
         "scaling",
@@ -884,17 +793,10 @@ SMODS.Joker{
     end
 }
 
-SMODS.Atlas{
-    key = "Vaporwave",
-    path = "Vaporwave.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Joker{
     key = "Vaporwave",
-    atlas = "Vaporwave",
-    pos = {x = 0, y = 0},
+    atlas = "jokers1",
+    pos = {x = 4, y = 2},
     attributes = {
         "mult",
         "scaling",
@@ -978,15 +880,15 @@ SMODS.Joker{
 }
 
 SMODS.Atlas{
-    key = "Theta",
-    path = "Theta.png",
+    key = "jokers2",
+    path = "jokers2.png",
     px = 71,
     py = 95
 }
 
 SMODS.Joker{
     key = "Theta",
-    atlas = "Theta",
+    atlas = "jokers2",
     pos = {x = 0, y = 0},
     attributes = {
         "xmult",
@@ -1051,17 +953,10 @@ SMODS.Joker{
     end
 }
 
-SMODS.Atlas{
-    key = "GoldenBow",
-    path = "GoldenBow.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Joker{
     key = "GoldenBow",
-    atlas = "GoldenBow",
-    pos = {x = 0, y = 0},
+    atlas = "jokers2",
+    pos = {x = 1, y = 0},
     attributes = {
         "economy",
         "hands"
@@ -1092,17 +987,10 @@ SMODS.Joker{
     end
 }
 
-SMODS.Atlas{
-    key = "Assassin",
-    path = "Assassin.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Joker{
     key = "Assassin",
-    atlas = "Assassin",
-    pos = {x = 0, y = 0},
+    atlas = "jokers2",
+    pos = {x = 2, y = 0},
     attributes = {
         "economy",
         "hand_type"
@@ -1272,17 +1160,10 @@ SMODS.Joker{
     end
 }
 
-SMODS.Atlas{
-    key = "Coupon",
-    path = "Coupon.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Joker{
     key = "Coupon",
-    atlas = "Coupon",
-    pos = {x = 0, y = 0},
+    atlas = "jokers2",
+    pos = {x = 3, y = 0},
     attributes = {
         "passive"
     },
@@ -1313,17 +1194,10 @@ SMODS.Joker{
     end
 }
 
-SMODS.Atlas{
-    key = "ThreeSevens",
-    path = "ThreeSevens.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Joker{
     key = "ThreeSevens",
-    atlas = "ThreeSevens",
-    pos = {x = 0, y = 0},
+    atlas = "jokers2",
+    pos = {x = 4, y = 0},
     attributes = {
         "rank",
         "xmult",
@@ -1352,17 +1226,10 @@ SMODS.Joker{
     end
 }
 
-SMODS.Atlas{
-    key = "Jegg",
-    path = "Jegg.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Joker{
     key = "Jegg",
-    atlas = "Jegg",
-    pos = {x = 0, y = 0},
+    atlas = "jokers2",
+    pos = {x = 0, y = 1},
     attributes = {
         "on_sell",
         "generation",
@@ -1431,17 +1298,10 @@ SMODS.Joker{
     end
 }
 
-SMODS.Atlas{
-    key = "BestJoker",
-    path = "BestJoker.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Joker{
     key = "BestJoker",
-    atlas = "BestJoker",
-    pos = {x = 0, y = 0},
+    atlas = "jokers2",
+    pos = {x = 1, y = 1},
     attributes = {
         "xmult"
     },
@@ -1482,17 +1342,10 @@ SMODS.Joker{
     end,
 }
 
-SMODS.Atlas{
-    key = "OldTV",
-    path = "OldTV.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Joker{
     key = "OldTV",
-    atlas = "OldTV",
-    pos = {x = 0, y = 0},
+    atlas = "jokers2",
+    pos = {x = 2, y = 1},
     attributes = {
         "chips"
     },
@@ -1521,17 +1374,10 @@ SMODS.Joker{
     end
 }
 
-SMODS.Atlas{
-    key = "Mushroom",
-    path = "Mushroom.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Joker{
     key = "Mushroom",
-    atlas = "Mushroom",
-    pos = {x = 0, y = 0},
+    atlas = "jokers2",
+    pos = {x = 3, y = 1},
     attributes = {
         "on_sell",
         "enhancements"
@@ -1592,17 +1438,10 @@ SMODS.Joker{
     end
 }
 
-SMODS.Atlas{
-    key = "TarotStencil",
-    path = "TarotStencil.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Joker{
     key = "TarotStencil",
-    atlas = "TarotStencil",
-    pos = {x = 0, y = 0},
+    atlas = "jokers2",
+    pos = {x = 4, y = 1},
     pixel_size = {w = 65},
     attributes = {
         "xmult"
@@ -1644,17 +1483,10 @@ SMODS.Joker{
     end
 }
 
-SMODS.Atlas{
-    key = "StainedGlass",
-    path = "StainedGlass.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Joker{
     key = "StainedGlass",
-    atlas = "StainedGlass",
-    pos = {x = 0, y = 0},
+    atlas = "jokers2",
+    pos = {x = 0, y = 2},
     attributes = {
         "chips",
         "mult",
@@ -1692,17 +1524,10 @@ SMODS.Joker{
     end
 }
 
-SMODS.Atlas{
-    key = "Skillet",
-    path = "Skillet.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Joker{
     key = "Skillet",
-    atlas = "Skillet",
-    pos = {x = 0, y = 0},
+    atlas = "jokers2",
+    pos = {x = 1, y = 2},
     attributes = {
         "xmult",
         "suit",
@@ -1740,58 +1565,10 @@ SMODS.Joker{
     end
 }
 
-SMODS.Atlas{
-    key = "Uranium",
-    path = "Uranium.png",
-    px = 71,
-    py = 95
-}
-
-SMODS.Joker{
-    key = "Uranium",
-    atlas = "Uranium",
-    pos = {x = 0, y = 0},
-    pixel_size = {h = 71},
-    attributes = {
-        "enhancements",
-        "CGN_Disease",
-        "passive"
-    },
-    cost = 7,
-    blueprint_compat = false,
-    eternal_compat = true,
-    perishable_compat = true,
-    rarity = 2,
-    config = { extra = {
-        add = 1
-    }},
-    loc_vars = function(self,info_queue,card)
-        info_queue[#info_queue+1] = G.P_CENTERS["m_CGN_Disease"]
-        return {vars = {
-            card.ability.extra.add
-        }}
-    end,
-    in_pool = function(self,args)
-        for i, v in ipairs(G.playing_cards or {}) do
-            if SMODS.has_enhancement(v, "m_CGN_Disease") then
-                return true
-            end
-        end
-        return false
-    end
-}
-
-SMODS.Atlas{
-    key = "BluePaint",
-    path = "BluePaint.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Joker{
     key = "BluePaint",
-    atlas = "BluePaint",
-    pos = {x = 0, y = 0},
+    atlas = "jokers2",
+    pos = {x = 2, y = 2},
     attributes = {
         "chips",
         "enhancements"
@@ -1819,17 +1596,10 @@ SMODS.Joker{
     end
 }
 
-SMODS.Atlas{
-    key = "CursedJoker",
-    path = "CursedJoker.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Joker{
     key = "CursedJoker",
-    atlas = "CursedJoker",
-    pos = {x = 0, y = 0},
+    atlas = "jokers2",
+    pos = {x = 3, y = 2},
     attributes = {
         "chips",
         "mult"
@@ -1860,17 +1630,10 @@ SMODS.Joker{
     end
 }
 
-SMODS.Atlas{
-    key = "EggJoker",
-    path = "EggJoker.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Joker{
     key = "EggJoker",
-    atlas = "EggJoker",
-    pos = {x = 0, y = 0},
+    atlas = "jokers2",
+    pos = {x = 4, y = 2},
     attributes = {
         "mult",
         "scaling"
@@ -1908,15 +1671,15 @@ SMODS.Joker{
 }
 
 SMODS.Atlas{
-    key = "StarOfTheShow",
-    path = "StarOfTheShow.png",
+    key = "jokers3",
+    path = "jokers3.png",
     px = 71,
     py = 95
 }
 
 SMODS.Joker{
     key = "StarOfTheShow",
-    atlas = "StarOfTheShow",
+    atlas = "jokers3",
     pos = {x = 0, y = 0},
     attributes = {
         "rank",
@@ -1938,17 +1701,10 @@ SMODS.Joker{
     end
 }
 
-SMODS.Atlas{
-    key = "SmudgedJoker",
-    path = "SmudgedJoker.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Joker{
     key = "SmudgedJoker",
-    atlas = "SmudgedJoker",
-    pos = {x = 0, y = 0},
+    atlas = "jokers3",
+    pos = {x = 1, y = 0},
     attributes = {
         "suit",
         "passive",
@@ -1976,17 +1732,10 @@ function SMODS.smeared_check(card, suit, ...)
     return smods_smeared_check_ref(card, suit, ...)
 end
 
-SMODS.Atlas{
-    key = "BoosterJoker",
-    path = "BoosterJoker.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Joker{
     key = "BoosterJoker",
-    atlas = "BoosterJoker",
-    pos = {x = 0, y = 0},
+    atlas = "jokers3",
+    pos = {x = 2, y = 0},
     pixel_size = {w = 59},
     attributes = {
         "generation",
@@ -2038,17 +1787,10 @@ SMODS.Joker{
     end
 }
 
-SMODS.Atlas{
-    key = "BurningHand",
-    path = "BurningHand.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Joker{
     key = "BurningHand",
-    atlas = "BurningHand",
-    pos = {x = 0, y = 0},
+    atlas = "jokers3",
+    pos = {x = 3, y = 0},
     attributes = {
         "chips",
         "hands"
@@ -2161,17 +1903,10 @@ SMODS.Joker{
     end
 }
 
-SMODS.Atlas{
-    key = "KingOfPranks",
-    path = "KingOfPranks.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Joker{
     key = "KingOfPranks",
-    atlas = "KingOfPranks",
-    pos = {x = 0, y = 0},
+    atlas = "jokers3",
+    pos = {x = 4, y = 0},
     pixel_size = {h = 71},
     attributes = {
         "economy",
@@ -2217,17 +1952,10 @@ SMODS.Joker{
     end
 }
 
-SMODS.Atlas{
-    key = "Aluminum",
-    path = "Aluminum.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Joker{
     key = "Aluminum",
-    atlas = "Aluminum",
-    pos = {x = 0, y = 0},
+    atlas = "jokers3",
+    pos = {x = 0, y = 1},
     pixel_size = {h = 71},
     attributes = {
         "editions",
@@ -2258,17 +1986,10 @@ SMODS.Joker{
     end
 }
 
-SMODS.Atlas{
-    key = "Bismuth",
-    path = "Bismuth.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Joker{
     key = "Bismuth",
-    atlas = "Bismuth",
-    pos = {x = 0, y = 0},
+    atlas = "jokers3",
+    pos = {x = 1, y = 1},
     pixel_size = {h = 71},
     attributes = {
         "editions",
@@ -2299,17 +2020,10 @@ SMODS.Joker{
     end
 }
 
-SMODS.Atlas{
-    key = "Iridium",
-    path = "Iridium.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Joker{
     key = "Iridium",
-    atlas = "Iridium",
-    pos = {x = 0, y = 0},
+    atlas = "jokers3",
+    pos = {x = 2, y = 1},
     pixel_size = {h = 71},
     attributes = {
         "editions",
@@ -2340,17 +2054,10 @@ SMODS.Joker{
     end
 }
 
-SMODS.Atlas{
-    key = "BirthCertificate",
-    path = "BirthCertificate.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Joker{
     key = "BirthCertificate",
-    atlas = "BirthCertificate",
-    pos = {x = 0, y = 0},
+    atlas = "jokers3",
+    pos = {x = 3, y = 1},
     attributes = {
         "joker",
         "generation"
@@ -2382,17 +2089,10 @@ SMODS.Joker{
     end
 }
 
-SMODS.Atlas{
-    key = "EMP",
-    path = "EMP.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Joker{
     key = "EMP",
-    atlas = "EMP",
-    pos = {x = 0, y = 0},
+    atlas = "jokers3",
+    pos = {x = 4, y = 1},
     attributes = {
         "passive",
         "planet"
@@ -2425,17 +2125,10 @@ SMODS.Joker{
     end
 }
 
-SMODS.Atlas{
-    key = "StuntDouble",
-    path = "StuntDouble.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Joker{
     key = "StuntDouble",
-    atlas = "StuntDouble",
-    pos = {x = 0, y = 0},
+    atlas = "jokers3",
+    pos = {x = 0, y = 2},
     attributes = {
         "mult",
         "hands"
@@ -2471,17 +2164,10 @@ SMODS.Joker{
     end
 }
 
-SMODS.Atlas{
-    key = "Accretion",
-    path = "Accretion.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Joker{
     key = "Accretion",
-    atlas = "Accretion",
-    pos = {x = 0, y = 0},
+    atlas = "jokers3",
+    pos = {x = 1, y = 2},
     attributes = {
         "mult",
         "full_deck",
@@ -2520,17 +2206,10 @@ SMODS.Joker{
     end
 }
 
-SMODS.Atlas{
-    key = "InstantGratification",
-    path = "InstantGratification.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Joker{
     key = "InstantGratification",
-    atlas = "InstantGratification",
-    pos = {x = 0, y = 0},
+    atlas = "jokers3",
+    pos = {x = 2, y = 2},
     attributes = {
         "economy",
         "discard"
@@ -2638,17 +2317,10 @@ SMODS.Joker{
     end
 }
 
-SMODS.Atlas{
-    key = "IndexCard",
-    path = "IndexCard.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Joker{
     key = "IndexCard",
-    atlas = "IndexCard",
-    pos = {x = 0, y = 0},
+    atlas = "jokers3",
+    pos = {x = 3, y = 2},
     pixel_size = {h = 29},
     attributes = {
         "economy"
@@ -2672,17 +2344,10 @@ SMODS.Joker{
     end
 }
 
-SMODS.Atlas{
-    key = "FireAndIce",
-    path = "FireAndIce.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Joker{
     key = "FireAndIce",
-    atlas = "FireAndIce",
-    pos = {x = 0, y = 0},
+    atlas = "jokers3",
+    pos = {x = 4, y = 2},
     attributes = {
         "chips",
         "scaling"
@@ -2713,15 +2378,15 @@ SMODS.Joker{
 }
 
 SMODS.Atlas{
-    key = "TireBillionaire",
-    path = "TireBillionaire.png",
+    key = "jokers4",
+    path = "jokers4.png",
     px = 71,
     py = 95
 }
 
 SMODS.Joker{
     key = "TireBillionaire",
-    atlas = "TireBillionaire",
+    atlas = "jokers4",
     pos = {x = 0, y = 0},
     attributes = {
         "discard",
@@ -2753,17 +2418,10 @@ SMODS.Joker{
     end
 }
 
-SMODS.Atlas{
-    key = "IntegratedDevelopmentEnvironment",
-    path = "IntegratedDevelopmentEnvironment.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Joker{
     key = "IntegratedDevelopmentEnvironment",
-    atlas = "IntegratedDevelopmentEnvironment",
-    pos = {x = 0, y = 0},
+    atlas = "jokers4",
+    pos = {x = 1, y = 0},
     attributes = {
         "reroll",
         "chance",
@@ -2812,17 +2470,10 @@ SMODS.Joker{
     end
 }
 
-SMODS.Atlas{
-    key = "AbandonedJoker",
-    path = "AbandonedJoker.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Joker{
     key = "AbandonedJoker",
-    atlas = "AbandonedJoker",
-    pos = {x = 0, y = 0},
+    atlas = "jokers4",
+    pos = {x = 2, y = 0},
     attributes = {
         "generation",
         "CGN_Lua"
@@ -2860,18 +2511,12 @@ SMODS.Joker{
     end
 }
 
-SMODS.Atlas{
-    key = "Nope",
-    path = "Nope.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Joker{
     key = "Nope",
-    atlas = "Nope",
+    atlas = "souls1",
     pos = {x = 0, y = 0},
     soul_pos = {x = 1, y = 0},
+    pixel_size = {h = 55},
     attributes = {
         "economy"
     },

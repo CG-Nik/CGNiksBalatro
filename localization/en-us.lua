@@ -454,12 +454,12 @@ return {
 				["name"] = "Infected Deck",
 				["text"] = {
 					"{C:attention}Aces{} and {C:attention}2s{}",
-					"start out as {C:attention}Disease Cards{}",
+					"start out as {C:attention,T:m_CGN_Disease}Disease Cards{}",
 				},
 				["unlock"] = {
 					"Play a {C:attention}hand{}",
 					"that contains {C:attention}5{}",
-					"{C:attention}Disease Cards{}"
+					"{C:attention,T:m_CGN_Disease}Disease Cards{}"
 				}
 			},
 			["b_CGN_OopsAllSixesDeck"] = {
@@ -481,7 +481,7 @@ return {
 				["unlock"] = {
 					"Play a {C:attention}hand{}",
 					"that contains {C:attention}5{}",
-					"{C:attention}Bonus Cards{}"
+					"{C:attention,T:m_bonus}Bonus Cards{}"
 				}
 			},
 			["b_CGN_PirateDeck"] = {
@@ -509,8 +509,8 @@ return {
 			["b_CGN_DecksLua"] = {
 				["name"] = "decks.lua",
 				["text"] = {
-					"Start run with the {C:attention}#1#{} voucher",
-					"and {C:attention}1{} copy of {C:cgn_lua}#2#{}"
+					"Start run with the {C:attention,T:v_CGN_MainLua}#1#{} voucher",
+					"and {C:attention}1{} copy of {C:cgn_lua,T:c_CGN_LuaCardsLua}#2#{}"
 				},
 				["unlock"] = {
 					"Discard a {C:attention}Flush Five{}"
@@ -522,14 +522,14 @@ return {
 				["name"] = "Infected Sleeve",
 				["text"] = {
 					"{C:attention}Aces{} and {C:attention}2s{}",
-					"start out as {C:attention}Disease Cards{}",
+					"start out as {C:attention,T:m_CGN_Disease}Disease Cards{}",
 				},
 			},
 			["sleeve_CGN_InfectedSleeve_alt"] = {
 				["name"] = "Infected Sleeve",
 				["text"] = {
 					"{C:attention}Face Cards{} also",
-					"start out as {C:attention}Disease Cards{}",
+					"start out as {C:attention,T:m_CGN_Disease}Disease Cards{}",
 				},
 			},
 			["sleeve_CGN_OopsAllSixesSleeve"] = {
@@ -594,15 +594,15 @@ return {
 			["sleeve_CGN_SleevesLua"] = {
 				["name"] = "sleeves.lua",
 				["text"] = {
-					"Start run with the {C:attention}#1#{} voucher",
-					"and {C:attention}1{} copy of {C:cgn_lua}#2#{}"
+					"Start run with the {C:attention,T:v_CGN_MainLua}#1#{} voucher",
+					"and {C:attention}1{} copy of {C:cgn_lua,T:c_CGN_LuaCardsLua}#2#{}"
 				},
 			},
 			["sleeve_CGN_SleevesLua_alt"] = {
 				["name"] = "sleeves.lua",
 				["text"] = {
-					"Start run with the {C:attention}#1#{} voucher",
-					"and an additional copy of {C:cgn_lua}#2#{}"
+					"Start run with the {C:attention,T:v_CGN_ConfigLua}#1#{} voucher",
+					"and an additional copy of {C:cgn_lua,T:c_CGN_LuaCardsLua}#2#{}"
 				},
 			},
 		},

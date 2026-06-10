@@ -1,6 +1,6 @@
 SMODS.Atlas{
-    key = "TheInfection",
-    path = "TheInfection.png",
+    key = "tarots1",
+    path = "tarots1.png",
     px = 71,
     py = 95
 }
@@ -8,7 +8,7 @@ SMODS.Atlas{
 SMODS.Consumable{
     key = "TheInfection",
     set = "Tarot",
-    atlas = "TheInfection",
+    atlas = "tarots1",
     pos = {x = 0, y = 0},
     cost = 3,
     config = {
@@ -21,18 +21,11 @@ SMODS.Consumable{
     end,
 }
 
-SMODS.Atlas{
-    key = "Weakness",
-    path = "Weakness.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Consumable{
     key = "Weakness",
     set = "Tarot",
-    atlas = "Weakness",
-    pos = {x = 0, y = 0},
+    atlas = "tarots1",
+    pos = {x = 1, y = 0},
     cost = 3,
     config = {
         max_highlighted = 3,
@@ -102,18 +95,11 @@ SMODS.Consumable{
     end
 }
 
-SMODS.Atlas{
-    key = "SuperStrength",
-    path = "SuperStrength.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Consumable{
     key = "SuperStrength",
     set = "Tarot",
-    atlas = "SuperStrength",
-    pos = {x = 0, y = 0},
+    atlas = "tarots1",
+    pos = {x = 2, y = 0},
     cost = 3,
     config = {
         max_highlighted = 1,

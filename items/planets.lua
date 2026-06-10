@@ -1,13 +1,13 @@
 SMODS.Atlas{
-    key = "Sol",
-    path = "Sol.png",
+    key = "planets1",
+    path = "planets1.png",
     px = 71,
     py = 95
 }
 
 SMODS.Consumable {
     key = "Sol",
-    atlas = "Sol",
+    atlas = "planets1",
     set = "Planet",
     cost = 3,
     pos = { x = 0, y = 0 },
@@ -117,19 +117,12 @@ SMODS.Consumable {
     end
 }
 
-SMODS.Atlas{
-    key = "Europa",
-    path = "Europa.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Consumable {
     key = "Europa",
-    atlas = "Europa",
+    atlas = "planets1",
     set = "Planet",
     cost = 3,
-    pos = { x = 0, y = 0 },
+    pos = { x = 1, y = 0 },
     config = {
         extra = {
             levels = 2

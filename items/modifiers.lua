@@ -1,13 +1,13 @@
 SMODS.Atlas{
-    key = "Disease",
-    path = "Disease.png",
+    key = "enhancements1",
+    path = "enhancements1.png",
     px = 71,
     py = 95
 }
 
 SMODS.Enhancement{
     key = "Disease",
-    atlas = "Disease",
+    atlas = "enhancements1",
     discovered = true,
     pos = {x = 0, y = 0},
     config = { bonus = 15,

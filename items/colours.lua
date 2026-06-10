@@ -1,13 +1,13 @@
 SMODS.Atlas{
-    key = "Blua",
-    path = "Blua.png",
+    key = "colours1",
+    path = "colours1.png",
     px = 71,
     py = 95
 }
 
 FLUFF.Colour{
     key = "Blua",
-    atlas = "Blua",
+    atlas = "colours1",
     pos = { x = 0, y = 0 },
     config = {
         upgrade_rounds = 3,
@@ -15,17 +15,10 @@ FLUFF.Colour{
     }
 }
 
-SMODS.Atlas{
-    key = "Purple",
-    path = "Purple.png",
-    px = 71,
-    py = 95
-}
-
 FLUFF.Colour{
     key = "Purple",
-    atlas = "Purple",
-    pos = { x = 0, y = 0 },
+    atlas = "colours1",
+    pos = { x = 1, y = 0 },
     config = {
         upgrade_rounds = 2,
         extra = {

@@ -1,13 +1,13 @@
 SMODS.Atlas{
-    key = "FunctionTag",
-    path = "FunctionTag.png",
+    key = "tags1",
+    path = "tags1.png",
     px = 34,
     py = 34
 }
 
 SMODS.Tag {
     key = "FunctionTag",
-    atlas = "FunctionTag",
+    atlas = "tags1",
     min_ante = 2,
     pos = { x = 0, y = 0 },
     loc_vars = function(self, info_queue, tag)
@@ -36,18 +36,11 @@ SMODS.Tag {
     end
 }
 
-SMODS.Atlas{
-    key = "NeonTag",
-    path = "NeonTag.png",
-    px = 34,
-    py = 34
-}
-
 SMODS.Tag {
     key = "NeonTag",
-    atlas = "NeonTag",
+    atlas = "tags1",
     min_ante = 2,
-    pos = { x = 0, y = 0 },
+    pos = { x = 1, y = 0 },
     loc_vars = function(self, info_queue, tag)
         info_queue[#info_queue + 1] = G.P_CENTERS.p_CGN_NeonArcanaPack_1
         info_queue[#info_queue + 1] = G.P_CENTERS.p_CGN_NeonCelestialPack_1

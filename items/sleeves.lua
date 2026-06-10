@@ -1,13 +1,13 @@
 SMODS.Atlas{
-    key = "InfectedSleeve",
-    path = "InfectedSleeve.png",
+    key = "sleeves1",
+    path = "sleeves1.png",
     px = 73,
     py = 95
 }
 
 CardSleeves.Sleeve {
     key = "InfectedSleeve",
-    atlas = "InfectedSleeve",
+    atlas = "sleeves1",
     pos = {x = 0, y = 0},
     unlocked = false,
     unlock_condition = { deck = "b_CGN_InfectedDeck", stake = "stake_white" },
@@ -51,17 +51,10 @@ CardSleeves.Sleeve {
     end
 }
 
-SMODS.Atlas{
-    key = "OopsAllSixesSleeve",
-    path = "OopsAllSixesSleeve.png",
-    px = 73,
-    py = 95
-}
-
 CardSleeves.Sleeve {
     key = "OopsAllSixesSleeve",
-    atlas = "OopsAllSixesSleeve",
-    pos = {x = 0, y = 0},
+    atlas = "sleeves1",
+    pos = {x = 1, y = 0},
     unlocked = false,
     unlock_condition = { deck = "b_CGN_OopsAllSixesDeck", stake = "stake_white" },
     config = {
@@ -108,17 +101,10 @@ CardSleeves.Sleeve {
     end
 }
 
-SMODS.Atlas{
-    key = "InverseTealSleeve",
-    path = "InverseTealSleeve.png",
-    px = 73,
-    py = 95
-}
-
 CardSleeves.Sleeve {
     key = "InverseTealSleeve",
-    atlas = "InverseTealSleeve",
-    pos = {x = 0, y = 0},
+    atlas = "sleeves1",
+    pos = {x = 2, y = 0},
     unlocked = false,
     unlock_condition = { deck = "b_CGN_InverseTealDeck", stake = "stake_white" },
     config = {
@@ -167,17 +153,10 @@ CardSleeves.Sleeve {
     end
 }
 
-SMODS.Atlas{
-    key = "PirateSleeve",
-    path = "PirateSleeve.png",
-    px = 73,
-    py = 95
-}
-
 CardSleeves.Sleeve {
     key = "PirateSleeve",
-    atlas = "PirateSleeve",
-    pos = {x = 0, y = 0},
+    atlas = "sleeves1",
+    pos = {x = 3, y = 0},
     unlocked = false,
     unlock_condition = { deck = "b_CGN_PirateDeck", stake = "stake_white" },
     config = {
@@ -223,17 +202,10 @@ CardSleeves.Sleeve {
     end
 }
 
-SMODS.Atlas{
-    key = "TheseusSleeve",
-    path = "TheseusSleeve.png",
-    px = 73,
-    py = 95
-}
-
 CardSleeves.Sleeve {
     key = "TheseusSleeve",
-    atlas = "TheseusSleeve",
-    pos = {x = 0, y = 0},
+    atlas = "sleeves1",
+    pos = {x = 4, y = 0},
     unlocked = false,
     unlock_condition = { deck = "b_CGN_TheseusDeck", stake = "stake_white" },
     config = {
@@ -288,17 +260,10 @@ CardSleeves.Sleeve {
     end
 }
 
-SMODS.Atlas{
-    key = "SleevesLua",
-    path = "SleevesLua.png",
-    px = 73,
-    py = 95
-}
-
 CardSleeves.Sleeve {
     key = "SleevesLua",
-    atlas = "SleevesLua",
-    pos = {x = 0, y = 0},
+    atlas = "sleeves1",
+    pos = {x = 0, y = 1},
     unlocked = false,
     unlock_condition = { deck = "b_CGN_DecksLua", stake = "stake_white" },
     config = {

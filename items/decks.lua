@@ -1,13 +1,13 @@
 SMODS.Atlas{
-    key = "InfectedDeck",
-    path = "InfectedDeck.png",
+    key = "decks1",
+    path = "decks1.png",
     px = 71,
     py = 95
 }
 
 SMODS.Back{
     key = "InfectedDeck",
-    atlas = "InfectedDeck",
+    atlas = "decks1",
     unlocked = false,
     pos = {x = 0, y = 0},
     apply = function(self,back)
@@ -39,18 +39,11 @@ SMODS.Back{
     end
 }
 
-SMODS.Atlas{
-    key = "OopsAllSixesDeck",
-    path = "OopsAllSixesDeck.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Back{
     key = "OopsAllSixesDeck",
-    atlas = "OopsAllSixesDeck",
+    atlas = "decks1",
     unlocked = false,
-    pos = {x = 0, y = 0},
+    pos = {x = 1, y = 0},
     apply = function(self,back)
         G.E_MANAGER:add_event(Event({
             func = function()
@@ -78,18 +71,11 @@ SMODS.Back{
     end
 }
 
-SMODS.Atlas{
-    key = "InverseTealDeck",
-    path = "InverseTealDeck.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Back{
     key = "InverseTealDeck",
-    atlas = "InverseTealDeck",
+    atlas = "decks1",
     unlocked = false,
-    pos = {x = 0, y = 0},
+    pos = {x = 2, y = 0},
     apply = function(self,back)
         G.E_MANAGER:add_event(Event({
             func = function()
@@ -118,18 +104,11 @@ SMODS.Back{
     end
 }
 
-SMODS.Atlas{
-    key = "PirateDeck",
-    path = "PirateDeck.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Back{
     key = "PirateDeck",
-    atlas = "PirateDeck",
+    atlas = "decks1",
     unlocked = false,
-    pos = {x = 0, y = 0},
+    pos = {x = 3, y = 0},
     config = {
         ante_scaling = 1.5,
         extra = {
@@ -154,18 +133,11 @@ SMODS.Back{
     end
 }
 
-SMODS.Atlas{
-    key = "TheseusDeck",
-    path = "TheseusDeck.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Back{
     key = "TheseusDeck",
-    atlas = "TheseusDeck",
+    atlas = "decks1",
     unlocked = false,
-    pos = {x = 0, y = 0},
+    pos = {x = 4, y = 0},
     config = {
         extra = {
             cardsAdded = 4,
@@ -217,18 +189,11 @@ SMODS.Back{
     end
 }
 
-SMODS.Atlas{
-    key = "DecksLua",
-    path = "DecksLua.png",
-    px = 71,
-    py = 95
-}
-
 SMODS.Back{
     key = "DecksLua",
-    atlas = "DecksLua",
+    atlas = "decks1",
     unlocked = false,
-    pos = {x = 0, y = 0},
+    pos = {x = 0, y = 1},
     config = {
         voucher = "v_CGN_MainLua",
         consumables = {
