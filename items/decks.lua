@@ -121,11 +121,9 @@ SMODS.Back{
             self.config.extra.dollars
         }}
     end,
-    calculate = function(self, back, context)
-        if context.end_of_round and context.game_over == false and context.main_eval and context.beat_boss then
-            return {
-                dollars = self.config.extra.dollars
-            }
+    calc_dollar_bonus = function(self, back)
+        if G.GAME.blind.boss then
+            return self.config.extra.dollars
         end
     end,
     check_for_unlock = function(self,args)

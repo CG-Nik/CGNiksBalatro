@@ -809,7 +809,7 @@ SMODS.Joker{
     rarity = 1,
     config = { extra = {
         scalingFalse = 1,
-        scalingTrue = 3,
+        scalingTrue = 4,
         poker_hand = "High Card",
         mult = 0,
         playedRightHand = false,
@@ -915,8 +915,12 @@ SMODS.Joker{
             card.ability.extra.handsToUpgrade
         }}
     end,
+    add_to_deck = function(self, card, from_debuff)
+        local eval = function() return card.ability.extra.handsPlayed + 1 >= card.ability.extra.handsToUpgrade and not card.debuff end
+        juice_card_until(card, eval, true)
+    end,
     load = function(self, card, card_table, other_card)
-        local eval = function() return card.ability.extra.handsPlayed + 1 >= card.ability.extra.handsToUpgrade end
+        local eval = function() return card.ability.extra.handsPlayed + 1 >= card.ability.extra.handsToUpgrade and not card.debuff end
         juice_card_until(card, eval, true)
     end,
     calculate = function(self,card,context)
@@ -942,7 +946,7 @@ SMODS.Joker{
             if card.ability.extra.handsPlayed + 1 >= card.ability.extra.handsToUpgrade then
                 G.E_MANAGER:add_event(Event({
                     func = function()
-                        local eval = function() return card.ability.extra.handsPlayed + 1 >= card.ability.extra.handsToUpgrade end
+                        local eval = function() return card.ability.extra.handsPlayed + 1 >= card.ability.extra.handsToUpgrade and not card.debuff end
                         juice_card_until(card, eval, true)
                         return true
                     end
@@ -1015,8 +1019,12 @@ SMODS.Joker{
             card.ability.extra.handsLeft
         }}
     end,
+    add_to_deck = function(self, card, from_debuff)
+        local eval = function() return card.ability.extra.handsLeft == "Complete!" and not card.debuff end
+        juice_card_until(card, eval, true)
+    end,
     load = function(self, card, card_table, other_card)
-        local eval = function() return card.ability.extra.handsLeft == "Complete!" end
+        local eval = function() return card.ability.extra.handsLeft == "Complete!" and not card.debuff end
         juice_card_until(card, eval, true)
     end,
     calculate = function(self,card,context)
@@ -1095,7 +1103,7 @@ SMODS.Joker{
                 SMODS.calculate_effect({message="Complete!",colour = G.C.FILTER}, card)
                 G.E_MANAGER:add_event(Event({
                     func = function()
-                        local eval = function() return card.ability.extra.handsLeft == "Complete!" end
+                        local eval = function() return card.ability.extra.handsLeft == "Complete!" and not card.debuff end
                         juice_card_until(card, eval, true)
                         return true
                     end
@@ -2520,23 +2528,46 @@ SMODS.Joker{
     attributes = {
         "economy"
     },
-    cost = 6,
+    cost = 8,
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
-    rarity = 2,
+    rarity = 3,
     config = { extra = {
-        dollars = 3
+        dollars = 3,
+        active = true,
+        activeText = "Active!"
     }
     },
     loc_vars = function(self,info_queue,card)
-        return {vars = {card.ability.extra.dollars}}
+        return {vars = {card.ability.extra.dollars,card.ability.extra.active,card.ability.extra.activeText}}
+    end,
+    add_to_deck = function(self, card, from_debuff)
+        local eval = function() return card.ability.extra.active and not card.debuff end
+        juice_card_until(card, eval, true)
+    end,
+    load = function(self, card, card_table, other_card)
+        local eval = function() return card.ability.extra.active and not card.debuff end
+        juice_card_until(card, eval, true)
     end,
     calculate = function(self,card,context)
-        if context.pseudorandom_result and context.result == false then
-            return {
-                dollars = card.ability.extra.dollars
-            }
+        if context.pseudorandom_result then
+            if context.result == false and card.ability.extra.active then
+                card.ability.extra.active = false
+                card.ability.extra.activeText = "Inactive"
+                return {
+                    dollars = card.ability.extra.dollars
+                }
+            elseif context.result == true and not card.ability.extra.active then
+                card.ability.extra.active = true
+                card.ability.extra.activeText = "Active!"
+                local eval = function() return card.ability.extra.active and not card.debuff end
+                juice_card_until(card, eval, true)
+                return {
+                    message = "Active!",
+                    colour = G.C.FILTER
+                }
+            end
         end
     end
 }

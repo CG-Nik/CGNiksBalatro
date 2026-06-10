@@ -444,8 +444,10 @@ return {
 			["j_CGN_Nope"] = {
 				["name"] = "Nope!",
 				["text"] = {
-					"Earn {C:money}$#1#{} when a",
-					"{C:green}listed probability{} {C:red}fails{}"
+					"Earn {C:money}$#1#{} and {C:attention}deactivates{} when a",
+					"{C:green}listed probability{} {C:red}fails{}",
+					"{C:attention}Reactivates{} when a {C:green}listed probability{} {C:attention}succeeds{}",
+					"{C:inactive}(#3#){}"
 				},
 			}
 		},
