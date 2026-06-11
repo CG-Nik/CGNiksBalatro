@@ -2122,13 +2122,12 @@ SMODS.Joker{
         }}
     end,
     calculate = function(self,card,context)
-        if context.using_consumeable and context.consumeable.ability.set == "Planet" and context.consumeable.ability.hand_type and SMODS.pseudorandom_probability(card, "CGN_EMP", 1, card.ability.extra.odds) then
-            local cardToMessage = card
-            if context.blueprint then
-                cardToMessage = context.blueprint_card
-            end
-            SMODS.calculate_effect({message=localize("k_level_up_ex"),colour=G.C.SECONDARY_SET.Planet},cardToMessage)
-            SMODS.upgrade_poker_hands({hands = context.consumeable.ability.hand_type, from = cardToMessage})
+        if context.using_consumeable and context.consumeable.ability.set == "Planet"
+        and context.consumeable.ability.hand_type and SMODS.pseudorandom_probability(card, "CGN_EMP", 1, card.ability.extra.odds) then
+            return {
+                level_up = 1,
+                level_up_hand = context.consumeable.ability.hand_type
+            }
         end
     end
 }
@@ -2434,7 +2433,7 @@ SMODS.Joker{
         "reroll",
         "chance",
         "generation",
-        "CGN_Lua"
+        "attribute_CGN_Lua"
     },
     cost = 6,
     blueprint_compat = true,
@@ -2484,7 +2483,7 @@ SMODS.Joker{
     pos = {x = 2, y = 0},
     attributes = {
         "generation",
-        "CGN_Lua"
+        "attribute_CGN_Lua"
     },
     cost = 6,
     blueprint_compat = true,
@@ -2566,6 +2565,63 @@ SMODS.Joker{
                 return {
                     message = "Active!",
                     colour = G.C.FILTER
+                }
+            end
+        end
+    end
+}
+
+SMODS.Atlas{
+    key = "1080p",
+    path = "1080p.png",
+    px = 71,
+    py = 95
+}
+
+SMODS.Joker{
+    key = "1080p",
+    atlas = "1080p",
+    pos = {x = 0, y = 0},
+    attributes = {
+        "economy",
+        "rank",
+        "ace",
+        "two",
+        "three",
+        "four",
+        "five",
+        "six",
+        "seven",
+        "eight",
+        "nine",
+        "ten"
+    },
+    cost = 6,
+    blueprint_compat = true,
+    eternal_compat = true,
+    perishable_compat = true,
+    rarity = 2,
+    config = { extra = {
+        oddDollars = 1,
+        evenDollars = 1
+    }
+    },
+    loc_vars = function(self,info_queue,card)
+        return {vars = {
+            card.ability.extra.oddDollars,
+            card.ability.extra.evenDollars
+        }}
+    end,
+    calculate = function(self,card,context)
+        if context.individual and context.cardarea == G.play then
+            local id = context.other_card:get_id()
+            if id <= 10 and id >= 0 and id % 2 == 0 then
+                return {
+                    dollars = -card.ability.extra.evenDollars
+                }
+            elseif (id <= 10 and id >= 0 and id % 2 == 1) or (id == 14) then
+                return {
+                    dollars = card.ability.extra.oddDollars
                 }
             end
         end

@@ -449,6 +449,16 @@ return {
 					"{C:attention}Reactivates{} when a {C:green}listed probability{} {C:attention}succeeds{}",
 					"{C:inactive}(#3#){}"
 				},
+			},
+			["j_CGN_1080p"] = {
+				["name"] = "1080p",
+				["text"] = {
+					"Earn {C:money}$#1#{} when a played {C:attention}odd{} {C:inactive}(A,3,5,7,9){} ranked card is {C:attention}scored{}",
+					"{C:red}Lose{} {C:money}$#2#{} when a played {C:attention}even{} {C:inactive}(2,4,6,8,10){} ranked card is {C:attention}scored{}",
+					"{s:0.5} {}",
+					"{C:inactive,s:0.75}\"This Joker knows whether or not you have",
+					"{C:inactive,s:0.75}the Pixel Art Smoothing setting on or not.\""
+				},
 			}
 		},
 		["Back"] = {

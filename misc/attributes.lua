@@ -3,7 +3,7 @@ SMODS.Attribute{ -- related to Disease Card
 }
 
 SMODS.Attribute{ -- related to Lua cards
-    key = "CGN_Lua"
+    key = "attribute_CGN_Lua"
 }
 
 SMODS.Attribute{ -- related to nonscoring cards
