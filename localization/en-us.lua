@@ -66,8 +66,9 @@ return {
 			["j_CGN_CursedJoker"] = {
 				["name"] = "Cursed Joker",
 				["text"] = {
-					"{C:chips}+#1#{} Chips",
-					"{C:mult}+#2#{} Mult",
+					"Adds the same random {C:attention}enhancement{}",
+					"to all cards in {C:attention}scoring hand{}",
+					"if played poker hand is a {C:attention}#1#{}"
 				},
 			},
 			["j_CGN_EggJoker"] = {
@@ -175,9 +176,7 @@ return {
 			["j_CGN_RedJoker"] = {
 				["name"] = "Red Joker",
 				["text"] = {
-					"This Joker gains {C:mult}+#1#{} Mult every time {X:mult,C:white}XMult{} is triggered",
-					"{C:inactive}({X:mult,C:white}XMult{C:inactive} must be greater than {X:mult,C:white}X1{C:inactive} Mult){}",
-					"{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult){}",
+					"Played {C:attention}Mult Cards{} give {C:mult}+#1#{} Mult when scored"
 				},
 			},
 			["j_CGN_Obmij"] = {
@@ -414,9 +413,8 @@ return {
 			["j_CGN_FireAndIce"] = {
 				["name"] = "Fire and Ice",
 				["text"] = {
-					"This Joker gains {C:chips}+#2#{} Chips every time {C:mult}+Mult{} is triggered",
-					"{C:inactive}({C:mult}+Mult{C:inactive} must be greater than {C:mult}+0{C:inactive} Mult){}",
-					"{C:inactive}(Currently {C:chips}+#1#{C:inactive} Chips){}",
+					"{C:chips}+#1#{} Chips if this Joker is in the {C:attention}leftmost{} slot",
+					"{C:mult}+#2#{} Mult if this Joker is in the {C:attention}rightmost{} slot"
 				},
 			},
 			["j_CGN_TireBillionaire"] = {
@@ -459,14 +457,23 @@ return {
 					"{C:inactive,s:0.75}\"This Joker knows whether or not you have",
 					"{C:inactive,s:0.75}the Pixel Art Smoothing setting on or not.\""
 				},
+			},
+			["j_CGN_Maximum"] = {
+				["name"] = "Maximum",
+				["text"] = {
+					"Earn {C:money}$#1#{} when",
+					"a {C:attention}tag{} is acquired",
+					"{s:0.5} {}",
+					"{C:inactive,s:0.75}\"-x^2+9\""
+				},
 			}
 		},
 		["Back"] = {
 			["b_CGN_InfectedDeck"] = {
 				["name"] = "Infected Deck",
 				["text"] = {
-					"{C:attention}Aces{} and {C:attention}2s{}",
-					"start out as {C:attention,T:m_CGN_Disease}Disease Cards{}",
+					"{C:attention}2s{} start out",
+					"as {C:attention,T:m_CGN_Disease}Disease Cards{}",
 				},
 				["unlock"] = {
 					"Play a {C:attention}hand{}",
@@ -477,7 +484,7 @@ return {
 			["b_CGN_OopsAllSixesDeck"] = {
 				["name"] = "Oops! All 6s Deck",
 				["text"] = {
-					"All {C:attention}5s{} and {C:attention}7s{} are instead {C:attention}6s{}",
+					"{C:green}X#1#{} all {C:attention}listed{} {C:green}probabilities{}"
 				},
 				["unlock"] = {
 					"Have at least {C:attention}16{} {C:attention}6s{}",
@@ -533,27 +540,27 @@ return {
 			["sleeve_CGN_InfectedSleeve"] = {
 				["name"] = "Infected Sleeve",
 				["text"] = {
-					"{C:attention}Aces{} and {C:attention}2s{}",
-					"start out as {C:attention,T:m_CGN_Disease}Disease Cards{}",
+					"{C:attention}2s{} start out",
+					"as {C:attention,T:m_CGN_Disease}Disease Cards{}",
 				},
 			},
 			["sleeve_CGN_InfectedSleeve_alt"] = {
 				["name"] = "Infected Sleeve",
 				["text"] = {
-					"{C:attention}Face Cards{} also",
-					"start out as {C:attention,T:m_CGN_Disease}Disease Cards{}",
+					"{C:attention}Aces{} also start out",
+					"as {C:attention,T:m_CGN_Disease}Disease Cards{}",
 				},
 			},
 			["sleeve_CGN_OopsAllSixesSleeve"] = {
 				["name"] = "Oops! All 6s Sleeve",
 				["text"] = {
-					"All {C:attention}5s{} and {C:attention}7s{} are instead {C:attention}6s{}",
+					"{C:green}X#1#{} all {C:attention}listed{} {C:green}probabilities{}"
 				},
 			},
 			["sleeve_CGN_OopsAllSixesSleeve_alt"] = {
 				["name"] = "Oops! All 6s Sleeve",
 				["text"] = {
-					"{C:green}X#1#{} all {C:attention}listed{} {C:green}probabilities{}",
+					"{C:green}X#1#{} all {C:attention}listed{} {C:green}probabilities{} {C:inactive}(stacks){}"
 				},
 			},
 			["sleeve_CGN_InverseTealSleeve"] = {
@@ -583,12 +590,6 @@ return {
 					"Earn {C:money}$#1#{} after defeating a non {C:attention}Boss Blind{}",
 				},
 			},
-			["sleeve_CGN_PirateSleeve_plasma"] = {
-				["name"] = "Pirate Sleeve",
-				["text"] = {
-					"Earn {C:money}$#1#{} after defeating a {C:attention}Boss Blind{}",
-				},
-			},
 			["sleeve_CGN_TheseusSleeve"] = {
 				["name"] = "Theseus Sleeve",
 				["text"] = {
@@ -600,7 +601,8 @@ return {
 			["sleeve_CGN_TheseusSleeve_alt"] = {
 				["name"] = "Theseus Sleeve",
 				["text"] = {
-					"Added cards also have a random {C:attention}edition{} and {C:attention}seal{}"
+					"Added cards also have a random {C:attention}edition{} and {C:attention}seal{}",
+					"{C:red}X#1#{} base Blind size"
 				},
 			},
 			["sleeve_CGN_SleevesLua"] = {

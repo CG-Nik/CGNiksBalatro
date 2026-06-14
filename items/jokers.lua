@@ -1,56 +1,3 @@
-local scie = SMODS.calculate_individual_effect
-function SMODS.calculate_individual_effect(effect, scored_card, key, amount, from_edition)
-    local ret = scie(effect, scored_card, key, amount, from_edition)
-
-    local lk = string.lower(key)
-
-    if
-        (
-            lk == "x_mult"
-            or lk == "xmult"
-            or lk == "x_mult_mod"
-            or lk == "xmult_mod"
-        )
-        and amount > 1
-        and mult
-    then
-        if next(SMODS.find_card("j_CGN_RedJoker", false)) then
-            for i,v in ipairs(SMODS.find_card("j_CGN_RedJoker", false)) do
-                SMODS.scale_card(v, {
-                    ref_table = v.ability.extra,
-                    ref_value = "mult",
-                    scalar_value = "scaling",
-                    message_key = "a_mult",
-                    message_colour = G.C.FILTER
-                })
-            end
-        end
-    end
-
-    if
-        (
-            lk == "mult"
-            or lk == "mult_mod"
-        )
-        and amount > 0
-        and mult
-    then
-        if next(SMODS.find_card("j_CGN_FireAndIce", false)) then
-            for i,v in ipairs(SMODS.find_card("j_CGN_FireAndIce", false)) do
-                SMODS.scale_card(v, {
-                    ref_table = v.ability.extra,
-                    ref_value = "chips",
-                    scalar_value = "scaling",
-                    message_key = "a_chips",
-                    message_colour = G.C.FILTER
-                })
-            end
-        end
-    end
-
-    return ret
-end
-
 SMODS.Atlas{
     key = "jokers1",
     path = "jokers1.png",
@@ -92,8 +39,7 @@ SMODS.Joker{
     atlas = "jokers1",
     pos = {x = 1, y = 0},
     attributes = {
-        "xmult",
-        "CGN_Disease"
+        "xmult"
     },
     cost = 6,
     blueprint_compat = true,
@@ -141,7 +87,6 @@ SMODS.Joker{
     attributes = {
         "xmult",
         "chance",
-        "CGN_Disease",
         "enhancements"
     },
     cost = 7,
@@ -320,30 +265,37 @@ SMODS.Joker{
     pos = {x = 0, y = 1},
     attributes = {
         "mult",
-        "scaling"
+        "enhancements"
     },
-    cost = 7,
+    cost = 5,
     blueprint_compat = true,
     eternal_compat = true,
-    perishable_compat = false,
-    rarity = 3,
+    perishable_compat = true,
+    rarity = 1,
     config = { extra = {
-        scaling = 1,
-        mult = 0
+        mult = 10
     }
     },
     loc_vars = function(self,info_queue,card)
+        info_queue[#info_queue+1] = G.P_CENTERS["m_mult"]
         return {vars = {
-            card.ability.extra.scaling,
             card.ability.extra.mult
         }}
     end,
     calculate = function(self,card,context)
-        if context.joker_main then
+        if context.individual and context.cardarea == G.play and SMODS.has_enhancement(context.other_card, "m_mult") then
             return {
                 mult = card.ability.extra.mult
             }
         end
+    end,
+    in_pool = function(self,args)
+        for i, v in ipairs(G.playing_cards or {}) do
+            if SMODS.has_enhancement(v, "m_mult") then
+                return true
+            end
+        end
+        return false
     end
 }
 
@@ -471,7 +423,7 @@ SMODS.Joker{
     perishable_compat = true,
     rarity = 2,
     config = { extra = {
-        mult = 2
+        mult = 1.75
     }
     },
     loc_vars = function(self,info_queue,card)
@@ -666,8 +618,7 @@ SMODS.Joker{
     attributes = {
         "xmult",
         "full_deck",
-        "enhancements",
-        "CGN_Disease"
+        "enhancements"
     },
     cost = 7,
     blueprint_compat = true,
@@ -904,7 +855,7 @@ SMODS.Joker{
         scaling = 0.25,
         mult = 1,
         handsPlayed = 0,
-        handsToUpgrade = 5
+        handsToUpgrade = 3
     }
     },
     loc_vars = function(self,info_queue,card)
@@ -1609,30 +1560,39 @@ SMODS.Joker{
     atlas = "jokers2",
     pos = {x = 3, y = 2},
     attributes = {
-        "chips",
-        "mult"
+        "hand_type",
+        "modify_card",
+        "enhancements"
     },
     cost = 6,
-    blueprint_compat = true,
+    blueprint_compat = false,
     eternal_compat = true,
     perishable_compat = true,
     rarity = 2,
     config = { extra = {
-        chips = 66,
-        mult = 6
+        handType = "Three of a Kind"
     }
     },
     loc_vars = function(self,info_queue,card)
         return {vars = {
-            card.ability.extra.chips,
-            card.ability.extra.mult
+            localize(card.ability.extra.handType, "poker_hands")
         }}
     end,
     calculate = function(self,card,context)
-        if context.joker_main then
+        if context.before and next(context.poker_hands[card.ability.extra.handType]) and not context.blueprint then
+            local enhancement = SMODS.poll_enhancement({key="CGN_CursedJoker",guaranteed=true})
+            for i,v in ipairs(context.scoring_hand) do
+                v:set_ability(enhancement, nil, true)
+                G.E_MANAGER:add_event(Event({
+                    func = function()
+                        v:juice_up()
+                        return true
+                    end
+                }))
+            end
             return {
-                chips = card.ability.extra.chips,
-                mult = card.ability.extra.mult
+                message = "Cursed! ("..localize({type = "name_text", set = "Enhanced", key = enhancement})..")",
+                colour = G.C.RED
             }
         end
     end
@@ -1925,7 +1885,7 @@ SMODS.Joker{
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
-    rarity = 2,
+    rarity = 1,
     config = { extra = {
         payoutMin = 7,
         payoutMax = 9
@@ -2357,29 +2317,32 @@ SMODS.Joker{
     pos = {x = 4, y = 2},
     attributes = {
         "chips",
-        "scaling"
+        "mult"
     },
-    cost = 6,
+    cost = 5,
     blueprint_compat = true,
     eternal_compat = true,
-    perishable_compat = false,
+    perishable_compat = true,
     rarity = 2,
     config = { extra = {
-        chips = 0,
-        scaling = 2
+        chips = 100,
+        mult = 10
     }
     },
     loc_vars = function(self,info_queue,card)
         return {vars = {
             card.ability.extra.chips,
-            card.ability.extra.scaling
+            card.ability.extra.mult
         }}
     end,
     calculate = function(self,card,context)
         if context.joker_main then
-            return {
-                chips = card.ability.extra.chips
-            }
+            if G.jokers.cards[1] == card then
+                SMODS.calculate_effect({chips=card.ability.extra.chips},card)
+            end
+            if G.jokers.cards[#G.jokers.cards] == card then
+                SMODS.calculate_effect({mult=card.ability.extra.mult},card)
+            end
         end
     end
 }
@@ -2624,6 +2587,37 @@ SMODS.Joker{
                     dollars = card.ability.extra.oddDollars
                 }
             end
+        end
+    end
+}
+
+SMODS.Joker{
+    key = "Maximum",
+    atlas = "jokers4",
+    pos = {x = 3, y = 0},
+    attributes = {
+        "economy",
+        "tag"
+    },
+    cost = 6,
+    blueprint_compat = true,
+    eternal_compat = true,
+    perishable_compat = true,
+    rarity = 1,
+    config = { extra = {
+        dollars = 7
+    }
+    },
+    loc_vars = function(self,info_queue,card)
+        return {vars = {
+            card.ability.extra.dollars
+        }}
+    end,
+    calculate = function(self,card,context)
+        if context.tag_added then
+            return {
+                dollars = card.ability.extra.dollars
+            }
         end
     end
 }

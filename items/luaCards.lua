@@ -682,9 +682,11 @@ SMODS.Consumable{
         local slotsEmpty = (G.consumeables.config.card_limit - #G.consumeables.cards)
         for i = 1, slotsEmpty do
             local percent = 0.85 + (i - 0.999) / (slotsEmpty - 0.998) * 0.3
-            play_sound("tarot2", percent, 0.6)
             G.E_MANAGER:add_event(Event({
+                trigger = "after",
+                delay = 0.15,
                 func = function()
+                    play_sound("tarot2", percent, 0.6)
                     SMODS.add_card({ set = "Planet", soulable = false, key_append = "CGN_PlanetsLua" })
                     return true
                 end
@@ -720,9 +722,11 @@ SMODS.Consumable{
         local slotsEmpty = (G.consumeables.config.card_limit - #G.consumeables.cards)
         for i = 1, slotsEmpty do
             local percent = 0.85 + (i - 0.999) / (slotsEmpty - 0.998) * 0.3
-            play_sound("tarot2", percent, 0.6)
             G.E_MANAGER:add_event(Event({
+                trigger = "after",
+                delay = 0.15,
                 func = function()
+                    play_sound("tarot2", percent, 0.6)
                     SMODS.add_card({ set = "Tarot", soulable = false, key_append = "CGN_TarotsLua" })
                     return true
                 end
@@ -758,9 +762,11 @@ SMODS.Consumable{
         local slotsEmpty = (G.consumeables.config.card_limit - #G.consumeables.cards)
         for i = 1, slotsEmpty do
             local percent = 0.85 + (i - 0.999) / (slotsEmpty - 0.998) * 0.3
-            play_sound("tarot2", percent, 0.6)
             G.E_MANAGER:add_event(Event({
+                trigger = "after",
+                delay = 0.15,
                 func = function()
+                    play_sound("tarot2", percent, 0.6)
                     SMODS.add_card({ set = "Spectral", soulable = false, key_append = "CGN_SpectralsLua" })
                     return true
                 end
@@ -796,9 +802,11 @@ SMODS.Consumable{
         local slotsEmpty = (G.consumeables.config.card_limit - #G.consumeables.cards)
         for i = 1, slotsEmpty do
             local percent = 0.85 + (i - 0.999) / (slotsEmpty - 0.998) * 0.3
-            play_sound("tarot2", percent, 0.6)
             G.E_MANAGER:add_event(Event({
+                trigger = "after",
+                delay = 0.15,
                 func = function()
+                    play_sound("tarot2", percent, 0.6)
                     SMODS.add_card({ set = "CGN_Lua", soulable = false, key_append = "CGN_LuaCardsLua" })
                     return true
                 end

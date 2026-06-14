@@ -15,7 +15,7 @@ SMODS.Back{
             func = function()
                 if not G.playing_cards then return false end
                 for i, v in ipairs(G.playing_cards) do
-                    if v:get_id() == 2 or v:get_id() == 14 then
+                    if v:get_id() == 2 then
                         v:set_ability(G.P_CENTERS["m_CGN_Disease"])
                     end
                 end
@@ -44,18 +44,23 @@ SMODS.Back{
     atlas = "decks1",
     unlocked = false,
     pos = {x = 1, y = 0},
-    apply = function(self,back)
-        G.E_MANAGER:add_event(Event({
-            func = function()
-                if not G.playing_cards then return false end
-                for i, v in ipairs(G.playing_cards) do
-                    if v:get_id() == 5 or v:get_id() == 7 then
-                        assert(SMODS.change_base(v, nil, "6"))
-                    end
-                end
-                return true
-            end
-        }))
+    config = {
+        extra = {
+            probMod = 1.5
+        }
+    },
+    loc_vars = function(self, info_queue, back)
+        return { vars = {
+            self.config.extra.probMod
+        }}
+    end,
+    calculate = function(self,sleeve,context)
+        if context.mod_probability then
+            return {
+                numerator = context.numerator * self.config.extra.probMod * 2,
+                denominator = context.denominator * 2
+            }
+        end
     end,
     check_for_unlock = function(self, args)
         if args.type == "modify_deck" then
@@ -112,7 +117,7 @@ SMODS.Back{
     config = {
         ante_scaling = 1.5,
         extra = {
-            dollars = 8
+            dollars = 12
         }
     },
     loc_vars = function(self, info_queue, back)
@@ -150,12 +155,18 @@ SMODS.Back{
     end,
     calculate = function(self, back, context)
         if context.end_of_round and context.game_over == false and context.main_eval and context.beat_boss then
-            for i = 1,self.config.extra.cardsDestroyed do
+            local cardsToDestroy = math.min(self.config.extra.cardsDestroyed,#G.deck.cards)
+            local pluralization = "s"
+            if cardsToDestroy == 1 then
+                pluralization = ""
+            end
+
+            for i = 1,cardsToDestroy do
                 local cardDestroyed = pseudorandom_element(G.deck.cards, "CGN_TheseusDeck")
                 SMODS.destroy_cards(cardDestroyed)
             end
 
-            SMODS.calculate_effect({message="-"..self.config.extra.cardsDestroyed.." Cards",colour=G.C.RED},G.deck)
+            SMODS.calculate_effect({message="-"..cardsToDestroy.." Card"..pluralization,colour=G.C.RED},G.deck)
 
             local newCards = {}
             for i = 1,self.config.extra.cardsAdded do

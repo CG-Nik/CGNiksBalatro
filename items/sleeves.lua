@@ -26,7 +26,7 @@ CardSleeves.Sleeve {
                 func = function()
                     if not G.playing_cards then return false end
                     for i, v in ipairs(G.playing_cards) do
-                        if v:is_face() then
+                        if v:get_id() == 14 then
                             v:set_ability(G.P_CENTERS["m_CGN_Disease"])
                         end
                     end
@@ -38,7 +38,7 @@ CardSleeves.Sleeve {
                 func = function()
                     if not G.playing_cards then return false end
                     for i, v in ipairs(G.playing_cards) do
-                        if v:get_id() == 2 or v:get_id() == 14 then
+                        if v:get_id() == 2 then
                             v:set_ability(G.P_CENTERS["m_CGN_Disease"])
                         end
                     end
@@ -71,28 +71,14 @@ CardSleeves.Sleeve {
             }
         else
             key = self.key
+            vars = {
+                self.config.extra.probMod
+            }
         end
         return { key = key, vars = vars }
     end,
-    apply = function(self,sleeve)
-        if self.get_current_deck_key() ~= "b_CGN_OopsAllSixesDeck" then
-            G.E_MANAGER:add_event(Event({
-                func = function()
-                    if not G.playing_cards then return false end
-                    for i, v in ipairs(G.playing_cards) do
-                        if v:get_id() == 5 or v:get_id() == 7 then
-                            assert(SMODS.change_base(v, nil, "6"))
-                        end
-                    end
-                    return true
-                end
-            }))
-        end
-
-        CardSleeves.Sleeve.apply(self, sleeve)
-    end,
     calculate = function(self,sleeve,context)
-        if context.mod_probability and self.get_current_deck_key() == "b_CGN_OopsAllSixesDeck" then
+        if context.mod_probability then
             return {
                 numerator = context.numerator * self.config.extra.probMod * 2,
                 denominator = context.denominator * 2
@@ -160,32 +146,34 @@ CardSleeves.Sleeve {
     unlocked = false,
     unlock_condition = { deck = "b_CGN_PirateDeck", stake = "stake_white" },
     config = {
-        ante_scaling = 1.5,
         extra = {
-            dollars = 8,
+            ante_scaling = 1.5,
+            dollars = 12,
             dollars_alt = 3
         }
     },
     loc_vars = function(self)
         local key, vars
-        if self.get_current_deck_key() == "b_plasma" then -- you can't have multiple ante_scaling effects at once (at least simply), so it doesn't have the ante_scaling effect with plasma
-            key = self.key .. "_plasma"
-            vars = {
-                self.config.extra.dollars
-            }
-        elseif self.get_current_deck_key() == "b_CGN_PirateDeck" then
+        if self.get_current_deck_key() == "b_CGN_PirateDeck" then
             key = self.key .. "_alt"
             vars = {
-                self.config.extra.dollars_alt
+                self.config.extra.dollars_alt,
             }
         else
             key = self.key
             vars = {
-                self.config.ante_scaling,
+                self.config.extra.ante_scaling,
                 self.config.extra.dollars
             }
         end
         return { key = key, vars = vars }
+    end,
+    apply = function(self,sleeve)
+        if self.get_current_deck_key() ~= "b_CGN_PirateDeck" then
+            G.GAME.starting_params.ante_scaling = (G.GAME.starting_params.ante_scaling or 1) * self.config.extra.ante_scaling
+        end
+
+        CardSleeves.Sleeve.apply(self, sleeve)
     end,
     calculate = function(self,sleeve,context)
         if context.end_of_round and context.game_over == false and context.main_eval then
@@ -210,6 +198,7 @@ CardSleeves.Sleeve {
     unlock_condition = { deck = "b_CGN_TheseusDeck", stake = "stake_white" },
     config = {
         extra = {
+            ante_scaling = 1.5,
             cardsAdded = 4,
             cardsDestroyed = 2
         }
@@ -219,7 +208,7 @@ CardSleeves.Sleeve {
         if self.get_current_deck_key() == "b_CGN_TheseusDeck" then
             key = self.key .. "_alt"
             vars = {
-                
+                self.config.extra.ante_scaling
             }
         else
             key = self.key
@@ -230,17 +219,30 @@ CardSleeves.Sleeve {
         end
         return { key = key, vars = vars }
     end,
+    apply = function(self,sleeve)
+        if self.get_current_deck_key() == "b_CGN_TheseusDeck" then
+            G.GAME.starting_params.ante_scaling = (G.GAME.starting_params.ante_scaling or 1) * self.config.extra.ante_scaling
+        end
+
+        CardSleeves.Sleeve.apply(self, sleeve)
+    end,
     calculate = function(self,sleeve,context)
         if self.get_current_deck_key() == "b_CGN_TheseusDeck" then
             -- effect is handled in the Theseus Deck itself
         else
             if context.end_of_round and context.game_over == false and context.main_eval and context.beat_boss then
-                for i = 1,self.config.extra.cardsDestroyed do
+                local cardsToDestroy = math.min(self.config.extra.cardsDestroyed,#G.deck.cards)
+                local pluralization = "s"
+                if cardsToDestroy == 1 then
+                    pluralization = ""
+                end
+                
+                for i = 1,cardsToDestroy do
                     local cardDestroyed = pseudorandom_element(G.deck.cards, "CGN_TheseusSleeve")
                     SMODS.destroy_cards(cardDestroyed)
                 end
 
-                SMODS.calculate_effect({message="-"..self.config.extra.cardsDestroyed.." Cards",colour=G.C.RED},G.deck)
+                SMODS.calculate_effect({message="-"..cardsToDestroy.." Card"..pluralization,colour=G.C.RED},G.deck)
 
                 local newCards = {}
                 for i = 1,self.config.extra.cardsAdded do
