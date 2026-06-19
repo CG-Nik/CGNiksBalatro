@@ -28,10 +28,10 @@ SMODS.Consumable{
     pos = {x = 0, y = 0},
     cost = 4,
     loc_vars = function(self,info_queue,card)
-        info_queue[#info_queue + 1] = { key = "eternal", set = "Other" }
-        if not card.edition or (card.edition and not card.edition.negative) then
-            info_queue[#info_queue + 1] = G.P_CENTERS["e_negative"]
+        if not (card.ability and card.ability.perishable) then
+            info_queue[#info_queue+1] = { set = "Other", key = "perishable", specific_vars = {G.GAME.perishable_rounds or 5, G.GAME.perishable_rounds or 5} }
         end
+        info_queue[#info_queue + 1] = G.P_CENTERS["e_negative"] -- this doesn't check for negative since they're two different negatives, and I want the Joker one to show up
     end,
     use = function(self, card, area, copier)
         G.E_MANAGER:add_event(Event({
@@ -43,7 +43,7 @@ SMODS.Consumable{
                     local allUnavailable = true
                     for i,v in ipairs(pool) do
                         local center = G.P_CENTERS[v.key]
-                        if not center or not center.eternal_compat then
+                        if not center or not center.perishable_compat then
                             v.key = "UNAVAILABLE"
                         else
                             allUnavailable = false
@@ -55,7 +55,7 @@ SMODS.Consumable{
                     return pool
                 end})
                 local newCard = SMODS.add_card({ key = newCardKey, set = "Joker", edition = "e_negative", key_append = "CGN_JokersLua" })
-                newCard:add_sticker("eternal", true)
+                newCard:add_sticker("perishable", true)
                 card:juice_up(0.3, 0.5)
                 return true
             end
@@ -63,7 +63,7 @@ SMODS.Consumable{
         delay(0.5)
     end,
     can_use = function(self, card)
-        return G.jokers and #G.jokers.cards <= G.jokers.config.card_limit
+        return G.jokers and (#G.jokers.cards <= G.jokers.config.card_limit)
     end
 }
 
@@ -187,11 +187,11 @@ SMODS.Consumable{
     cost = 4,
     config = {
         extra = {
-            odds = 4
+            odds = 2
         }
     },
     loc_vars = function(self, info_queue, card)
-        local num,denom = SMODS.get_probability_vars(card, 3, card.ability.extra.odds)
+        local num,denom = SMODS.get_probability_vars(card, 1, card.ability.extra.odds)
         return {
             vars = {
                 num,
@@ -200,7 +200,7 @@ SMODS.Consumable{
         }
     end,
     use = function(self, card, area, copier)
-        if SMODS.pseudorandom_probability(card, "CGN_EditionsLua", 3, card.ability.extra.odds) then
+        if SMODS.pseudorandom_probability(card, "CGN_EditionsLua", 1, card.ability.extra.odds) then
             local edition = SMODS.poll_edition({key="CGN_EditionsLua",guaranteed=true})
             local rightmost = nil
             G.E_MANAGER:add_event(Event({

@@ -472,8 +472,8 @@ return {
 			["b_CGN_InfectedDeck"] = {
 				["name"] = "Infected Deck",
 				["text"] = {
-					"{C:attention}2s{} start out",
-					"as {C:attention,T:m_CGN_Disease}Disease Cards{}",
+					"{C:attention}2s{} in {C:attention}initial{} deck",
+					"are {C:attention,T:m_CGN_Disease}Disease Cards{}"
 				},
 				["unlock"] = {
 					"Play a {C:attention}hand{}",
@@ -540,15 +540,15 @@ return {
 			["sleeve_CGN_InfectedSleeve"] = {
 				["name"] = "Infected Sleeve",
 				["text"] = {
-					"{C:attention}2s{} start out",
-					"as {C:attention,T:m_CGN_Disease}Disease Cards{}",
+					"{C:attention}2s{} in {C:attention}initial{} deck",
+					"are {C:attention,T:m_CGN_Disease}Disease Cards{}"
 				},
 			},
 			["sleeve_CGN_InfectedSleeve_alt"] = {
 				["name"] = "Infected Sleeve",
 				["text"] = {
-					"{C:attention}Aces{} also start out",
-					"as {C:attention,T:m_CGN_Disease}Disease Cards{}",
+					"{C:attention}Aces{} in {C:attention}initial{} deck",
+					"are also {C:attention,T:m_CGN_Disease}Disease Cards{}"
 				},
 			},
 			["sleeve_CGN_OopsAllSixesSleeve"] = {
@@ -682,8 +682,8 @@ return {
 			["c_CGN_JokersLua"] = {
 				["name"] = "jokers.lua",
 				["text"] = {
-					"Creates a random",
-					"{C:dark_edition}Negative{} {C:attention}Eternal{} {C:attention}Joker{} card"
+					"Creates a random {C:dark_edition}Negative{}",
+					"{C:attention}Perishable{} {C:attention}Joker{} card"
 				}
 			},
 			["c_CGN_PokerHandsLua"] = {
